@@ -1,0 +1,10 @@
+[2026-02-05T12:58:01.776+0000] {processor.py:161} INFO - Started process (PID=149821) to work on /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/listener_plugin.py
+[2026-02-05T12:58:01.776+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/listener_plugin.py for tasks to queue
+[2026-02-05T12:58:01.778+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:01.778+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/listener_plugin.py
+[2026-02-05T12:58:01.781+0000] {processor.py:842} WARNING - No viable dags retrieved from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/listener_plugin.py
+[2026-02-05T12:58:01.793+0000] {processor.py:183} INFO - Processing /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/listener_plugin.py took 0.024 seconds
+[2026-02-05T12:59:03.440+0000] {processor.py:161} INFO - Started process (PID=150733) to work on /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/listener_plugin.py
+[2026-02-05T12:59:03.467+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/listener_plugin.py for tasks to queue
+[2026-02-05T12:59:03.471+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:59:03.470+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/listener_plugin.py
+[2026-02-05T12:59:03.476+0000] {processor.py:842} WARNING - No viable dags retrieved from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/listener_plugin.py
+[2026-02-05T12:59:03.501+0000] {processor.py:183} INFO - Processing /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/listener_plugin.py took 0.088 seconds

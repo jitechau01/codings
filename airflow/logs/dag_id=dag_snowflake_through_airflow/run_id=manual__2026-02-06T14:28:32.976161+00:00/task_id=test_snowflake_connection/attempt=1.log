@@ -1,0 +1,36 @@
+[2026-02-06T14:28:37.010+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-06T14:28:37.042+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_snowflake_through_airflow.test_snowflake_connection manual__2026-02-06T14:28:32.976161+00:00 [queued]>
+[2026-02-06T14:28:37.054+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_snowflake_through_airflow.test_snowflake_connection manual__2026-02-06T14:28:32.976161+00:00 [queued]>
+[2026-02-06T14:28:37.055+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-02-06T14:28:37.083+0000] {taskinstance.py:2330} INFO - Executing <Task(SnowflakeOperator): test_snowflake_connection> on 2026-02-06 14:28:32.976161+00:00
+[2026-02-06T14:28:37.097+0000] {logging_mixin.py:188} WARNING - /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=5630) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-06T14:28:37.096+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'dag_snowflake_through_airflow', 'test_snowflake_connection', 'manual__2026-02-06T14:28:32.976161+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/dag_snowflake_through_airflow.py', '--cfg-path', '/tmp/tmp09x6yczr']
+[2026-02-06T14:28:37.102+0000] {standard_task_runner.py:64} INFO - Started process 5646 to run task
+[2026-02-06T14:28:37.102+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask test_snowflake_connection
+[2026-02-06T14:28:37.171+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_snowflake_through_airflow.test_snowflake_connection manual__2026-02-06T14:28:32.976161+00:00 [running]> on host DESKTOP-OGBECNS.localdomain
+[2026-02-06T14:28:37.575+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='dag_snowflake_through_airflow' AIRFLOW_CTX_TASK_ID='test_snowflake_connection' AIRFLOW_CTX_EXECUTION_DATE='2026-02-06T14:28:32.976161+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-06T14:28:32.976161+00:00'
+[2026-02-06T14:28:37.576+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-06T14:28:37.608+0000] {sql.py:282} INFO - Executing: use schema working.DP_RDPORTFOLIO360;show tables
+[2026-02-06T14:28:37.619+0000] {base.py:84} INFO - Using connection ID 'snowflake_conn_id' for task execution.
+[2026-02-06T14:28:37.677+0000] {base.py:84} INFO - Using connection ID 'snowflake_conn_id' for task execution.
+[2026-02-06T14:28:37.678+0000] {connection.py:408} INFO - Snowflake Connector for Python Version: 3.11.0, Python Version: 3.12.3, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[2026-02-06T14:28:37.679+0000] {connection.py:1258} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-02-06T14:28:39.786+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2026-02-06T14:28:39.786+0000] {sql.py:495} INFO - Running statement: use schema working.DP_RDPORTFOLIO360;, parameters: None
+[2026-02-06T14:28:40.375+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2026-02-06T14:28:40.375+0000] {sql.py:504} INFO - Rows affected: 1
+[2026-02-06T14:28:40.376+0000] {snowflake.py:422} INFO - Rows affected: 1
+[2026-02-06T14:28:40.376+0000] {snowflake.py:423} INFO - Snowflake query id: 01c23ba4-0004-77a6-000b-1a3e000730e6
+[2026-02-06T14:28:40.376+0000] {sql.py:495} INFO - Running statement: show tables, parameters: None
+[2026-02-06T14:28:40.705+0000] {cursor.py:1149} INFO - Number of results in first chunk: 0
+[2026-02-06T14:28:40.705+0000] {sql.py:504} INFO - Rows affected: 0
+[2026-02-06T14:28:40.705+0000] {snowflake.py:422} INFO - Rows affected: 0
+[2026-02-06T14:28:40.706+0000] {snowflake.py:423} INFO - Snowflake query id: 01c23ba4-0004-77a6-000b-1a3e000730ea
+[2026-02-06T14:28:40.987+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2026-02-06T14:28:40.988+0000] {connection.py:773} INFO - closed
+[2026-02-06T14:28:41.227+0000] {connection.py:779} INFO - No async queries seem to be running, deleting session
+[2026-02-06T14:28:41.480+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-06T14:28:41.501+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_snowflake_through_airflow, task_id=test_snowflake_connection, run_id=manual__2026-02-06T14:28:32.976161+00:00, execution_date=20260206T142832, start_date=20260206T142837, end_date=20260206T142841
+[2026-02-06T14:28:41.540+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-02-06T14:28:41.550+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-06T14:28:41.551+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,7 @@
+[2026-02-05T12:58:57.421+0000] {processor.py:161} INFO - Started process (PID=150628) to work on /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2026-02-05T12:58:57.423+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2026-02-05T12:58:57.427+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:57.426+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2026-02-05T12:58:57.450+0000] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2026-02-05T12:58:57.626+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:57.626+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-05T12:58:57.639+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:57.638+0000] {dag.py:3947} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2026-02-05T12:58:57.709+0000] {processor.py:183} INFO - Processing /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.301 seconds

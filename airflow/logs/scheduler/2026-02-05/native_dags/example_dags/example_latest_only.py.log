@@ -1,0 +1,7 @@
+[2026-02-05T12:58:44.521+0000] {processor.py:161} INFO - Started process (PID=150534) to work on /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2026-02-05T12:58:44.523+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2026-02-05T12:58:44.527+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:44.526+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2026-02-05T12:58:44.538+0000] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2026-02-05T12:58:44.731+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:44.730+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-05T12:58:44.800+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:44.800+0000] {dag.py:3947} INFO - Setting next_dagrun for latest_only to 2026-02-05 08:00:00+00:00, run_after=2026-02-05 12:00:00+00:00
+[2026-02-05T12:58:44.858+0000] {processor.py:183} INFO - Processing /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.347 seconds

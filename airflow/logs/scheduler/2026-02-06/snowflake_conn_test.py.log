@@ -1,0 +1,21 @@
+[2026-02-06T14:18:34.894+0000] {processor.py:161} INFO - Started process (PID=1909) to work on /home/cloud/codings/airflow/dags/snowflake_conn_test.py
+[2026-02-06T14:18:34.895+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/snowflake_conn_test.py for tasks to queue
+[2026-02-06T14:18:34.897+0000] {logging_mixin.py:188} INFO - [2026-02-06T14:18:34.896+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/snowflake_conn_test.py
+[2026-02-06T14:18:34.933+0000] {processor.py:840} INFO - DAG(s) 'snowflake_conn_test' retrieved from /home/cloud/codings/airflow/dags/snowflake_conn_test.py
+[2026-02-06T14:18:34.939+0000] {logging_mixin.py:188} INFO - [2026-02-06T14:18:34.939+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-06T14:18:34.952+0000] {logging_mixin.py:188} INFO - [2026-02-06T14:18:34.952+0000] {dag.py:3947} INFO - Setting next_dagrun for snowflake_conn_test to None, run_after=None
+[2026-02-06T14:18:34.983+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/snowflake_conn_test.py took 0.096 seconds
+[2026-02-06T14:19:05.396+0000] {processor.py:161} INFO - Started process (PID=2071) to work on /home/cloud/codings/airflow/dags/snowflake_conn_test.py
+[2026-02-06T14:19:05.400+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/snowflake_conn_test.py for tasks to queue
+[2026-02-06T14:19:05.403+0000] {logging_mixin.py:188} INFO - [2026-02-06T14:19:05.402+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/snowflake_conn_test.py
+[2026-02-06T14:19:05.425+0000] {processor.py:840} INFO - DAG(s) 'snowflake_conn_test' retrieved from /home/cloud/codings/airflow/dags/snowflake_conn_test.py
+[2026-02-06T14:19:05.513+0000] {logging_mixin.py:188} INFO - [2026-02-06T14:19:05.512+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-06T14:19:05.522+0000] {logging_mixin.py:188} INFO - [2026-02-06T14:19:05.521+0000] {dag.py:3947} INFO - Setting next_dagrun for snowflake_conn_test to None, run_after=None
+[2026-02-06T14:19:05.543+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/snowflake_conn_test.py took 0.152 seconds
+[2026-02-06T14:19:35.622+0000] {processor.py:161} INFO - Started process (PID=2301) to work on /home/cloud/codings/airflow/dags/snowflake_conn_test.py
+[2026-02-06T14:19:35.624+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/snowflake_conn_test.py for tasks to queue
+[2026-02-06T14:19:35.626+0000] {logging_mixin.py:188} INFO - [2026-02-06T14:19:35.626+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/snowflake_conn_test.py
+[2026-02-06T14:19:35.649+0000] {processor.py:840} INFO - DAG(s) 'snowflake_conn_test' retrieved from /home/cloud/codings/airflow/dags/snowflake_conn_test.py
+[2026-02-06T14:19:35.664+0000] {logging_mixin.py:188} INFO - [2026-02-06T14:19:35.664+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-06T14:19:35.675+0000] {logging_mixin.py:188} INFO - [2026-02-06T14:19:35.674+0000] {dag.py:3947} INFO - Setting next_dagrun for snowflake_conn_test to None, run_after=None
+[2026-02-06T14:19:35.698+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/snowflake_conn_test.py took 0.085 seconds

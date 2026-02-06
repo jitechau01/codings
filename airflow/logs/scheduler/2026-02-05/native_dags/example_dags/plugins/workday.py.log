@@ -1,0 +1,10 @@
+[2026-02-05T12:57:58.658+0000] {processor.py:161} INFO - Started process (PID=149755) to work on /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2026-02-05T12:57:58.660+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py for tasks to queue
+[2026-02-05T12:57:58.662+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:57:58.661+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2026-02-05T12:57:59.338+0000] {processor.py:842} WARNING - No viable dags retrieved from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2026-02-05T12:57:59.367+0000] {processor.py:183} INFO - Processing /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py took 0.720 seconds
+[2026-02-05T12:59:00.227+0000] {processor.py:161} INFO - Started process (PID=150717) to work on /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2026-02-05T12:59:00.230+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py for tasks to queue
+[2026-02-05T12:59:00.233+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:59:00.233+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2026-02-05T12:59:01.079+0000] {processor.py:842} WARNING - No viable dags retrieved from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2026-02-05T12:59:01.086+0000] {processor.py:183} INFO - Processing /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py took 0.870 seconds

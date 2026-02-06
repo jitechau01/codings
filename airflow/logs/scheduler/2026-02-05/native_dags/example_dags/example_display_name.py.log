@@ -1,0 +1,7 @@
+[2026-02-05T12:58:40.674+0000] {processor.py:161} INFO - Started process (PID=150462) to work on /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_display_name.py
+[2026-02-05T12:58:40.677+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2026-02-05T12:58:40.679+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:40.679+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_display_name.py
+[2026-02-05T12:58:40.690+0000] {processor.py:840} INFO - DAG(s) 'example_display_name' retrieved from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_display_name.py
+[2026-02-05T12:58:40.804+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:40.803+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-05T12:58:40.814+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:40.813+0000] {dag.py:3947} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2026-02-05T12:58:40.843+0000] {processor.py:183} INFO - Processing /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_display_name.py took 0.179 seconds

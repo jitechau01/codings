@@ -1,0 +1,7 @@
+[2026-02-05T12:58:29.173+0000] {processor.py:161} INFO - Started process (PID=150355) to work on /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_decorator.py
+[2026-02-05T12:58:29.175+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_decorator.py for tasks to queue
+[2026-02-05T12:58:29.177+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:29.176+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_decorator.py
+[2026-02-05T12:58:29.191+0000] {processor.py:840} INFO - DAG(s) 'example_short_circuit_decorator' retrieved from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_decorator.py
+[2026-02-05T12:58:29.308+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:29.308+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-05T12:58:29.327+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:29.327+0000] {dag.py:3947} INFO - Setting next_dagrun for example_short_circuit_decorator to 2026-02-04 00:00:00+00:00, run_after=2026-02-05 00:00:00+00:00
+[2026-02-05T12:58:29.363+0000] {processor.py:183} INFO - Processing /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_short_circuit_decorator.py took 0.199 seconds

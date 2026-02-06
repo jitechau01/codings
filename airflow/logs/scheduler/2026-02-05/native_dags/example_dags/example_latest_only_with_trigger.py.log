@@ -1,0 +1,7 @@
+[2026-02-05T12:58:39.535+0000] {processor.py:161} INFO - Started process (PID=150455) to work on /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only_with_trigger.py
+[2026-02-05T12:58:39.539+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only_with_trigger.py for tasks to queue
+[2026-02-05T12:58:39.546+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:39.544+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only_with_trigger.py
+[2026-02-05T12:58:39.564+0000] {processor.py:840} INFO - DAG(s) 'latest_only_with_trigger' retrieved from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only_with_trigger.py
+[2026-02-05T12:58:39.785+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:39.785+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-05T12:58:39.811+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:39.811+0000] {dag.py:3947} INFO - Setting next_dagrun for latest_only_with_trigger to 2026-02-05 08:00:00+00:00, run_after=2026-02-05 12:00:00+00:00
+[2026-02-05T12:58:39.848+0000] {processor.py:183} INFO - Processing /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only_with_trigger.py took 0.331 seconds

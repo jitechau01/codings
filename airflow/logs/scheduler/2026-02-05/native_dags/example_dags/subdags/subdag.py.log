@@ -1,0 +1,10 @@
+[2026-02-05T12:57:57.472+0000] {processor.py:161} INFO - Started process (PID=149734) to work on /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/subdags/subdag.py
+[2026-02-05T12:57:57.473+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/subdags/subdag.py for tasks to queue
+[2026-02-05T12:57:57.476+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:57:57.475+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/subdags/subdag.py
+[2026-02-05T12:57:57.480+0000] {processor.py:842} WARNING - No viable dags retrieved from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/subdags/subdag.py
+[2026-02-05T12:57:57.500+0000] {processor.py:183} INFO - Processing /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/subdags/subdag.py took 0.037 seconds
+[2026-02-05T12:58:59.067+0000] {processor.py:161} INFO - Started process (PID=150680) to work on /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/subdags/subdag.py
+[2026-02-05T12:58:59.093+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/subdags/subdag.py for tasks to queue
+[2026-02-05T12:58:59.096+0000] {logging_mixin.py:188} INFO - [2026-02-05T12:58:59.095+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/subdags/subdag.py
+[2026-02-05T12:58:59.100+0000] {processor.py:842} WARNING - No viable dags retrieved from /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/subdags/subdag.py
+[2026-02-05T12:58:59.124+0000] {processor.py:183} INFO - Processing /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/example_dags/subdags/subdag.py took 0.072 seconds
