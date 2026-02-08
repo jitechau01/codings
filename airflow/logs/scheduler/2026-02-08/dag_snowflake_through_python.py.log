@@ -1,0 +1,455 @@
+[2026-02-08T06:56:41.428+0000] {processor.py:161} INFO - Started process (PID=245791) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:56:41.429+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T06:56:41.431+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:56:41.430+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:56:41.505+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:56:41.551+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:56:41.551+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T06:56:41.596+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:56:41.596+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T06:56:41.660+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.263 seconds
+[2026-02-08T06:57:12.737+0000] {processor.py:161} INFO - Started process (PID=246025) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:57:12.746+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T06:57:12.751+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:57:12.748+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:57:13.194+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:57:13.368+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:57:13.367+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T06:57:13.483+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:57:13.482+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T06:57:13.677+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.997 seconds
+[2026-02-08T06:57:45.975+0000] {processor.py:161} INFO - Started process (PID=246501) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:57:45.979+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T06:57:45.984+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:57:45.983+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:57:46.069+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:57:46.136+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:57:46.135+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T06:57:46.205+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:57:46.205+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T06:57:46.302+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.346 seconds
+[2026-02-08T06:58:16.692+0000] {processor.py:161} INFO - Started process (PID=246545) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:58:16.695+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T06:58:16.698+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:58:16.697+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:58:16.759+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:58:16.802+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:58:16.801+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T06:58:16.837+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:58:16.836+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T06:58:16.908+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.233 seconds
+[2026-02-08T06:58:47.313+0000] {processor.py:161} INFO - Started process (PID=246589) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:58:47.334+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T06:58:47.335+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:58:47.335+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:58:47.366+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:58:47.391+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:58:47.390+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T06:58:47.412+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:58:47.412+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T06:58:47.453+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.149 seconds
+[2026-02-08T06:59:17.848+0000] {processor.py:161} INFO - Started process (PID=246645) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:59:17.850+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T06:59:17.851+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:59:17.850+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:59:17.876+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:59:17.897+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:59:17.896+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T06:59:17.917+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:59:17.917+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T06:59:17.957+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.118 seconds
+[2026-02-08T06:59:48.462+0000] {processor.py:161} INFO - Started process (PID=246793) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:59:48.464+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T06:59:48.467+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:59:48.466+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:59:48.498+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T06:59:48.519+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:59:48.519+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T06:59:48.538+0000] {logging_mixin.py:188} INFO - [2026-02-08T06:59:48.538+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T06:59:48.572+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.120 seconds
+[2026-02-08T07:00:19.169+0000] {processor.py:161} INFO - Started process (PID=246849) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:00:19.170+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:00:19.172+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:00:19.171+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:00:19.206+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:00:19.236+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:00:19.235+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:00:19.276+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:00:19.275+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:00:19.326+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.168 seconds
+[2026-02-08T07:00:49.696+0000] {processor.py:161} INFO - Started process (PID=246929) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:00:49.699+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:00:49.700+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:00:49.699+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:00:49.742+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:00:49.768+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:00:49.767+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:00:49.790+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:00:49.789+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:00:49.827+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.145 seconds
+[2026-02-08T07:01:20.386+0000] {processor.py:161} INFO - Started process (PID=246986) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:01:20.388+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:01:20.390+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:01:20.390+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:01:20.439+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:01:20.472+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:01:20.471+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:01:20.502+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:01:20.502+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:01:20.566+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.194 seconds
+[2026-02-08T07:01:51.112+0000] {processor.py:161} INFO - Started process (PID=247116) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:01:51.141+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:01:51.145+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:01:51.144+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:01:51.180+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:01:51.203+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:01:51.202+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:01:51.224+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:01:51.224+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:01:51.255+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.154 seconds
+[2026-02-08T07:02:21.383+0000] {processor.py:161} INFO - Started process (PID=247296) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:02:21.393+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:02:21.395+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:02:21.394+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:02:21.422+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:02:21.442+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:02:21.442+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:02:21.460+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:02:21.459+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:02:21.486+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.113 seconds
+[2026-02-08T07:02:51.818+0000] {processor.py:161} INFO - Started process (PID=247584) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:02:51.821+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:02:51.830+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:02:51.828+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:02:51.871+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:02:51.904+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:02:51.903+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:02:51.940+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:02:51.940+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:02:51.987+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.187 seconds
+[2026-02-08T07:03:22.127+0000] {processor.py:161} INFO - Started process (PID=247931) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:03:22.155+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:03:22.156+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:03:22.156+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:03:22.193+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:03:22.215+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:03:22.215+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:03:22.236+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:03:22.236+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:03:22.267+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.151 seconds
+[2026-02-08T07:03:52.441+0000] {processor.py:161} INFO - Started process (PID=248158) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:03:52.459+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:03:52.461+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:03:52.460+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:03:52.506+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:03:52.533+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:03:52.532+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:03:52.562+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:03:52.562+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:03:52.623+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.195 seconds
+[2026-02-08T07:04:23.209+0000] {processor.py:161} INFO - Started process (PID=248423) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:04:23.211+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:04:23.212+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:04:23.211+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:04:23.252+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:04:23.272+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:04:23.272+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:04:23.294+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:04:23.293+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:04:23.347+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.154 seconds
+[2026-02-08T07:04:53.940+0000] {processor.py:161} INFO - Started process (PID=248625) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:04:53.961+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:04:53.962+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:04:53.962+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:04:53.991+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:04:54.023+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:04:54.021+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:04:54.060+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:04:54.059+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:04:54.120+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.190 seconds
+[2026-02-08T07:05:24.521+0000] {processor.py:161} INFO - Started process (PID=248831) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:05:24.524+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:05:24.526+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:05:24.525+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:05:24.557+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:05:24.577+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:05:24.577+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:05:24.602+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:05:24.602+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:05:24.640+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.129 seconds
+[2026-02-08T07:05:55.093+0000] {processor.py:161} INFO - Started process (PID=249043) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:05:55.095+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:05:55.096+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:05:55.095+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:05:55.130+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:05:55.150+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:05:55.150+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:05:55.169+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:05:55.169+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:05:55.202+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.120 seconds
+[2026-02-08T07:06:25.843+0000] {processor.py:161} INFO - Started process (PID=249250) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:06:25.860+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:06:25.863+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:06:25.862+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:06:25.900+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:06:25.922+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:06:25.922+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:06:25.944+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:06:25.944+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:06:25.980+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.150 seconds
+[2026-02-08T07:06:56.685+0000] {processor.py:161} INFO - Started process (PID=249420) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:06:56.711+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:06:56.713+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:06:56.712+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:06:56.799+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:06:56.882+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:06:56.881+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:06:56.934+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:06:56.934+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:06:57.012+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.337 seconds
+[2026-02-08T07:07:27.584+0000] {processor.py:161} INFO - Started process (PID=249479) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:07:27.610+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:07:27.612+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:07:27.611+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:07:27.645+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:07:27.667+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:07:27.666+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:07:27.686+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:07:27.685+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:07:27.729+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.156 seconds
+[2026-02-08T07:07:58.185+0000] {processor.py:161} INFO - Started process (PID=249542) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:07:58.187+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:07:58.189+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:07:58.188+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:07:58.220+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:07:58.245+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:07:58.245+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:07:58.269+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:07:58.269+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:07:58.306+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.129 seconds
+[2026-02-08T07:08:28.829+0000] {processor.py:161} INFO - Started process (PID=249635) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:08:28.832+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:08:28.834+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:08:28.833+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:08:28.961+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:08:29.030+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:08:29.029+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:08:29.091+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:08:29.091+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:08:29.199+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.401 seconds
+[2026-02-08T07:08:59.679+0000] {processor.py:161} INFO - Started process (PID=249854) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:08:59.682+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:08:59.683+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:08:59.683+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:08:59.717+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:08:59.739+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:08:59.739+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:08:59.758+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:08:59.758+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:08:59.802+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.136 seconds
+[2026-02-08T07:09:30.337+0000] {processor.py:161} INFO - Started process (PID=250055) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:09:30.362+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:09:30.364+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:09:30.363+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:09:30.409+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:09:30.446+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:09:30.445+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:09:30.469+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:09:30.469+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:09:30.506+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.179 seconds
+[2026-02-08T07:10:00.980+0000] {processor.py:161} INFO - Started process (PID=250261) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:10:01.005+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:10:01.006+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:10:01.006+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:10:01.031+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:10:01.048+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:10:01.047+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:10:01.066+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:10:01.066+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:10:01.102+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.132 seconds
+[2026-02-08T07:10:31.546+0000] {processor.py:161} INFO - Started process (PID=250393) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:10:31.567+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:10:31.569+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:10:31.568+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:10:31.600+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:10:31.621+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:10:31.621+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:10:31.642+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:10:31.641+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:10:31.681+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.143 seconds
+[2026-02-08T07:11:02.150+0000] {processor.py:161} INFO - Started process (PID=250551) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:11:02.169+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:11:02.171+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:11:02.170+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:11:02.197+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:11:02.218+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:11:02.217+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:11:02.234+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:11:02.234+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:11:02.266+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.125 seconds
+[2026-02-08T07:11:32.751+0000] {processor.py:161} INFO - Started process (PID=250787) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:11:32.752+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:11:32.754+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:11:32.753+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:11:32.782+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:11:32.799+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:11:32.799+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:11:32.814+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:11:32.814+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:11:32.839+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.097 seconds
+[2026-02-08T07:12:03.128+0000] {processor.py:161} INFO - Started process (PID=251036) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:12:03.129+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:12:03.130+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:12:03.130+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:12:03.154+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:12:03.170+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:12:03.170+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:12:03.184+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:12:03.183+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:12:03.219+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.098 seconds
+[2026-02-08T07:12:33.493+0000] {processor.py:161} INFO - Started process (PID=251239) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:12:33.495+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:12:33.496+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:12:33.496+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:12:33.519+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:12:33.535+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:12:33.535+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:12:33.550+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:12:33.549+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:12:33.577+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.091 seconds
+[2026-02-08T07:13:03.726+0000] {processor.py:161} INFO - Started process (PID=251496) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:13:03.727+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:13:03.728+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:13:03.728+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:13:03.752+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:13:03.771+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:13:03.771+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:13:03.785+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:13:03.785+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:13:03.813+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.094 seconds
+[2026-02-08T07:13:33.950+0000] {processor.py:161} INFO - Started process (PID=251705) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:13:33.967+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:13:33.969+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:13:33.968+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:13:34.001+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:13:34.022+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:13:34.022+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:13:34.040+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:13:34.040+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:13:34.076+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.136 seconds
+[2026-02-08T07:14:04.182+0000] {processor.py:161} INFO - Started process (PID=251933) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:14:04.184+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:14:04.186+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:14:04.185+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:14:04.220+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:14:04.240+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:14:04.239+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:14:04.260+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:14:04.259+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:14:04.293+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.121 seconds
+[2026-02-08T07:14:34.390+0000] {processor.py:161} INFO - Started process (PID=252214) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:14:34.392+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:14:34.393+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:14:34.392+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:14:34.414+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:14:34.429+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:14:34.429+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:14:34.443+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:14:34.442+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:14:34.465+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.081 seconds
+[2026-02-08T07:15:04.591+0000] {processor.py:161} INFO - Started process (PID=252424) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:15:04.592+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:15:04.593+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:15:04.593+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:15:04.616+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:15:04.634+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:15:04.634+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:15:04.649+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:15:04.649+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:15:04.674+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.089 seconds
+[2026-02-08T07:15:34.783+0000] {processor.py:161} INFO - Started process (PID=252615) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:15:34.784+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:15:34.786+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:15:34.785+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:15:34.819+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:15:34.840+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:15:34.840+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:15:34.863+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:15:34.862+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:15:34.909+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.137 seconds
+[2026-02-08T07:16:05.118+0000] {processor.py:161} INFO - Started process (PID=252694) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:16:05.122+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:16:05.124+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:16:05.123+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:16:05.189+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:16:05.225+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:16:05.224+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:16:05.259+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:16:05.259+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:16:05.309+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.211 seconds
+[2026-02-08T07:16:35.609+0000] {processor.py:161} INFO - Started process (PID=252758) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:16:35.611+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:16:35.616+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:16:35.613+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:16:35.730+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:16:35.827+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:16:35.827+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:16:35.916+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:16:35.916+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:16:35.978+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.391 seconds
+[2026-02-08T07:17:06.222+0000] {processor.py:161} INFO - Started process (PID=253182) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:17:06.224+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:17:06.226+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:17:06.225+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:17:06.265+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:17:06.306+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:17:06.305+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:17:06.346+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:17:06.345+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:17:06.408+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.197 seconds
+[2026-02-08T07:17:36.709+0000] {processor.py:161} INFO - Started process (PID=253260) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:17:36.711+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:17:36.714+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:17:36.713+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:17:36.753+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:17:36.775+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:17:36.774+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:17:36.797+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:17:36.797+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:17:36.828+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.135 seconds
+[2026-02-08T07:18:08.029+0000] {processor.py:161} INFO - Started process (PID=253326) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:18:08.049+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:18:08.053+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:18:08.051+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:18:08.138+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:18:08.182+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:18:08.182+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:18:08.208+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:18:08.208+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:18:08.238+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.228 seconds
+[2026-02-08T07:18:39.337+0000] {processor.py:161} INFO - Started process (PID=253390) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:18:39.358+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:18:39.359+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:18:39.358+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:18:39.379+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:18:39.392+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:18:39.392+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:18:39.407+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:18:39.407+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:18:39.433+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.101 seconds
+[2026-02-08T07:19:10.553+0000] {processor.py:161} INFO - Started process (PID=253454) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:19:10.554+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:19:10.555+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:19:10.555+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:19:10.576+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:19:10.592+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:19:10.592+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:19:10.608+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:19:10.607+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:19:10.643+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.097 seconds
+[2026-02-08T07:19:40.858+0000] {processor.py:161} INFO - Started process (PID=253516) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:19:40.875+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:19:40.876+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:19:40.876+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:19:40.904+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:19:40.923+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:19:40.923+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:19:40.939+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:19:40.939+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:19:40.966+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.116 seconds
+[2026-02-08T07:20:11.885+0000] {processor.py:161} INFO - Started process (PID=253578) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:20:11.886+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:20:11.887+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:20:11.887+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:20:11.909+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:20:11.925+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:20:11.925+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:20:11.938+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:20:11.938+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:20:11.962+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.084 seconds
+[2026-02-08T07:20:42.386+0000] {processor.py:161} INFO - Started process (PID=253646) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:20:42.388+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:20:42.389+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:20:42.388+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:20:42.414+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:20:42.446+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:20:42.445+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:20:42.467+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:20:42.466+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:20:42.493+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.115 seconds
+[2026-02-08T07:21:12.951+0000] {processor.py:161} INFO - Started process (PID=253758) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:21:12.952+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:21:12.953+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:21:12.953+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:21:12.990+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:21:13.009+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:21:13.009+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:21:13.025+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:21:13.024+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:21:13.058+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.116 seconds
+[2026-02-08T07:21:43.603+0000] {processor.py:161} INFO - Started process (PID=254045) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:21:43.620+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:21:43.621+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:21:43.621+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:21:43.644+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:21:43.660+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:21:43.660+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:21:43.675+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:21:43.675+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:21:43.702+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.105 seconds
+[2026-02-08T07:22:13.854+0000] {processor.py:161} INFO - Started process (PID=254163) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:22:13.855+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:22:13.857+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:22:13.856+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:22:13.896+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:22:13.920+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:22:13.920+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:22:13.942+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:22:13.941+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:22:13.986+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.144 seconds
+[2026-02-08T07:22:44.186+0000] {processor.py:161} INFO - Started process (PID=254227) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:22:44.189+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:22:44.191+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:22:44.190+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:22:44.233+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:22:44.256+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:22:44.255+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:22:44.277+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:22:44.276+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:22:44.309+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.135 seconds
+[2026-02-08T07:23:14.627+0000] {processor.py:161} INFO - Started process (PID=254339) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:23:14.628+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:23:14.629+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:23:14.629+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:23:14.657+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:23:14.675+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:23:14.674+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:23:14.691+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:23:14.691+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:23:14.721+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.102 seconds
+[2026-02-08T07:23:45.155+0000] {processor.py:161} INFO - Started process (PID=254545) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:23:45.172+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:23:45.173+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:23:45.173+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:23:45.197+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:23:45.219+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:23:45.219+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:23:45.237+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:23:45.237+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:23:45.277+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.129 seconds
+[2026-02-08T07:24:15.511+0000] {processor.py:161} INFO - Started process (PID=254758) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:24:15.538+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:24:15.541+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:24:15.540+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:24:15.584+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:24:15.605+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:24:15.605+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:24:15.620+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:24:15.620+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:24:15.643+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.151 seconds
+[2026-02-08T07:24:45.836+0000] {processor.py:161} INFO - Started process (PID=254966) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:24:45.838+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:24:45.840+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:24:45.839+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:24:45.875+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:24:45.896+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:24:45.896+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:24:45.915+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:24:45.914+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:24:45.953+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.126 seconds
+[2026-02-08T07:25:16.649+0000] {processor.py:161} INFO - Started process (PID=255173) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:25:16.652+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:25:16.654+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:25:16.653+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:25:16.705+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:25:16.728+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:25:16.728+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:25:16.745+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:25:16.745+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:25:16.768+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.133 seconds
+[2026-02-08T07:25:46.937+0000] {processor.py:161} INFO - Started process (PID=255357) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:25:46.938+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:25:46.939+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:25:46.939+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:25:46.963+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:25:46.981+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:25:46.980+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:25:46.995+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:25:46.995+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:25:47.023+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.093 seconds
+[2026-02-08T07:26:17.479+0000] {processor.py:161} INFO - Started process (PID=255563) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:26:17.509+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:26:17.510+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:26:17.510+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:26:17.544+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:26:17.570+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:26:17.570+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:26:17.593+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:26:17.592+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:26:17.627+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.157 seconds
+[2026-02-08T07:26:48.078+0000] {processor.py:161} INFO - Started process (PID=255860) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:26:48.080+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:26:48.082+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:26:48.081+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:26:48.115+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:26:48.143+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:26:48.142+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:26:48.170+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:26:48.169+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:26:48.207+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.141 seconds
+[2026-02-08T07:27:18.833+0000] {processor.py:161} INFO - Started process (PID=256069) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:27:18.859+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:27:18.863+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:27:18.862+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:27:18.904+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:27:18.933+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:27:18.933+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:27:18.953+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:27:18.953+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:27:18.978+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.158 seconds
+[2026-02-08T07:27:49.286+0000] {processor.py:161} INFO - Started process (PID=256319) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:27:49.315+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:27:49.316+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:27:49.316+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:27:49.338+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:27:49.354+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:27:49.354+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:27:49.367+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:27:49.367+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:27:49.391+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.112 seconds
+[2026-02-08T07:28:19.657+0000] {processor.py:161} INFO - Started process (PID=256487) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:28:19.662+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:28:19.665+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:28:19.664+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:28:19.747+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:28:19.781+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:28:19.781+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:28:19.805+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:28:19.805+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:28:19.855+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.225 seconds
+[2026-02-08T07:28:50.185+0000] {processor.py:161} INFO - Started process (PID=256557) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:28:50.203+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:28:50.204+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:28:50.204+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:28:50.225+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:28:50.240+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:28:50.239+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:28:50.252+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:28:50.252+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:28:50.274+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.099 seconds
+[2026-02-08T07:29:21.085+0000] {processor.py:161} INFO - Started process (PID=256722) to work on /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:29:21.089+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py for tasks to queue
+[2026-02-08T07:29:21.092+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:29:21.090+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:29:21.150+0000] {processor.py:840} INFO - DAG(s) 'dag_snowflake_through_python' retrieved from /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py
+[2026-02-08T07:29:21.195+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:29:21.195+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-02-08T07:29:21.231+0000] {logging_mixin.py:188} INFO - [2026-02-08T07:29:21.230+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_snowflake_through_python to None, run_after=None
+[2026-02-08T07:29:21.284+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_snowflake_through_python.py took 0.221 seconds
