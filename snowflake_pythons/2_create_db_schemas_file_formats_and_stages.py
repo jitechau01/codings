@@ -13,17 +13,17 @@ json_path='s3://salesinputsource/json/'
 parquet_path='s3://salesinputsource/parquet/'
 
 def create_db_schemas():
-    cur.execute("drop database if exists working")  #uncomment this if want to recreate database
-    cur.execute("create database if not exists sales")
-    print("Database 'sales' created successfully.")
-    cur.execute("create schema if not exists sales.staging")
-    print("Schema 'sales.staging' created successfully.")
-    cur.execute("create schema if not exists sales.intermediate")
-    print("Schema 'sales.intermediate' created successfully.")
-    cur.execute("create schema if not exists sales.marts")
-    print("Schema 'sales.marts' created successfully.")
-    cur.execute("use schema sales.staging") 
-    print("Using schema 'sales.staging' for subsequent operations.")
+    # cur.execute("drop database if exists working")  #uncomment this if want to recreate database
+    # cur.execute("create database if not exists sales")
+    # print("Database 'sales' created successfully.")
+    # cur.execute("create schema if not exists sales.staging")
+    # print("Schema 'sales.staging' created successfully.")
+    # cur.execute("create schema if not exists sales.intermediate")
+    # print("Schema 'sales.intermediate' created successfully.")
+    # cur.execute("create schema if not exists sales.marts")
+    # print("Schema 'sales.marts' created successfully.")
+    cur.execute("use schema working.landing") 
+    # print("Using schema 'sales.staging' for subsequent operations.")
     #cur.execute("drop schema if exists working.staging")  #use this if want to recreate schema
     #cur.execute("drop schema if exists working.intermediate") #use this if want to recreate schema
     #cur.execute("drop schema if exists working.marts") #use this if want to recreate schema
