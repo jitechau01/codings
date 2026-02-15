@@ -1,0 +1,6 @@
+with VW_MDM_FINANCIAL_ORGANIZATION_UNIT as (
+
+select * from {{ source('mdm', 'MDM_FINANCIAL_ORGANIZATION_UNIT') }}
+
+)
+select * from VW_MDM_FINANCIAL_ORGANIZATION_UNIT

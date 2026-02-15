@@ -5,7 +5,8 @@ def _conn():
     conn=sf.connect(
         account=os.getenv('account'),
         user=os.getenv('user'),
-        password=os.getenv('_snf_password'),
+        private_key_file=os.getenv('private_key_file_path'),
+        private_key_file_pwd=os.getenv('privatekey'),
         role=os.getenv('role'),
         warehouse=os.getenv('_snf_warehouse'),
         database=os.getenv('_snf_database'),

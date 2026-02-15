@@ -1,0 +1,113 @@
+TIME_ID,BAS_DESC,BAS_YEAR,BAS_TYPE,BAS_PHARMA_FLAG,BAS_VACCIN_FLAG,BAS_ID,BAS_PREV_BASELINE,BAS_PREV_YEARLY
+20220707,2022 Jun Monthly Baseline,2022,M,false,true,22106,22105,22000
+20230607,2023 May Monthly Baseline,2023,M,false,true,23105,23104,23000
+20231109,2023 Oct Monthly Baseline,2023,M,false,true,23110,23109,23000
+20230831,2023-08 - Monthly (P),2023,M,true,false,163,162,155
+20240605,2024 May Monthly Baseline,2024,M,false,true,24105,24104,24000
+20260103,2025-12 - Monthly ,2025,Y,true,false,191,190,167
+20251103,2025-10 - Monthly,2025,M,true,false,189,188,167
+20220128,2022-01 - Monthly (P),2022,M,true,false,144,143,143
+20221031,2022-10 - Monthly (P),2022,M,true,false,153,152,143
+20250407,2025 C1 / 2026-2031 Strat Plan - V0,2025,S,false,true,25201,,25000
+20230630,2023-06 - Quarterly (PRC),2023,Q,true,false,161,160,155
+20240504,2024 Apr Monthly Baseline,2024,M,false,true,24104,24103,24000
+20230110,2022 Dec Monthly Baseline,2022,M,false,true,22112,22111,22000
+20240229,2024-02 - Monthly,2024,M,true,false,169,168,167
+20230911,2023 F2/2024 Budget / 2023,2023,B,,,1028,,1012
+20220510,2022 Apr Monthly Baseline,2022,M,false,true,22104,22103,22000
+20210831,2021-08 - Monthly (P),2021,M,true,false,138,136,130
+20240705,2024 Jun Monthly Baseline,2024,M,false,true,24106,24105,24000
+20240507,2024 T1 / 2025-30 Strat Plan – VF,2024,S,false,true,24203,24104,24000
+20250503,2025 Apr Monthly Baseline,2025,M,false,true,25104,25103,25000
+20230228,2023-02 - Monthly (P),2023,M,true,false,157,156,155
+20241203,2024-11 - Monthly,2024,M,true,false,178,177,167
+20250904,2025 Jul-Aug Monthly Baseline,2025,M,false,true,25108,25106,25000
+20251004,C2 25 / B26-27 - V1,2025,B,false,true,25205,,25000
+20250912,C2 25 / B26-27 - V0,2025,B,false,true,25204,,25000
+20221105,2022 Oct Monthly Baseline,2022,M,false,true,22110,22109,22000
+20231214,2023 Nov-Dec Monthly Baseline,2023,M,false,true,23112,23110,23000
+20230215,2023 Jan Monthly Baseline,2023,M,false,true,23101,22112,23000
+20211222,2022 - Yearly (PRC),2022,Y,true,false,143,141,130
+20220831,2022-08 - Monthly (P),2022,M,true,false,151,150,143
+20230131,2023-01 - Monthly (P),2023,M,true,false,156,155,155
+20241022,T2 24 / B25-26 - VF,2024,B,false,true,24206,,24000
+20250522,2025 C1 / 2026-2031 Strat Plan - VF,2025,S,false,true,25203,,25000
+20241105,2024 Oct Monthly Baseline,2024,M,false,true,24110,24109,24000
+20220324,2022-03 - Quarterly (PRC),2022,Q,true,false,146,145,143
+20221007,2022 Sep Monthly Baseline,2022,M,false,true,22109,22108,22000
+20230906,2023 Jul-Aug Monthly Baseline,2023,M,false,true,23108,23106,23000
+20231017,2023 F2 / 2024 Budget VF,2023,B,false,true,23205,,23000
+20210630,2021-06 - Quarterly (PRC),2021,Q,true,false,136,135,130
+20220729,2022-07 - Monthly (P),2022,M,true,false,150,149,143
+20240329,2024-03 - Monthly,2024,Q,true,false,170,169,167
+20240803,2024-07 - Monthly,2024,M,true,false,174,173,167
+20251212,2025 Nov-Dec Monthly Baseline,2025,M,false,true,25112,25110,25000
+20240131,2024-01 - Monthly,2024,M,true,false,168,167,167
+20221130,2022-11 - Monthly (P),2022,M,true,false,154,153,143
+20250603,2025 May Monthly Baseline,2025,M,false,true,25105,25104,25000
+20220321,2022 Yearly Baseline,2022,Y,false,true,22000,,
+20230406,2023 Mar Monthly Baseline,2023,M,false,true,23103,23102,23000
+20220624,2022-06 - Quarterly (PRC),2022,Q,true,false,149,148,143
+20221222,2023 - Yearly (PRC),2023,Y,true,false,155,154,143
+20250703,2025 Jun Monthly Baseline,2025,M,false,true,25106,25105,25000
+20250203,2025-01 - Monthly,2025,M,true,false,180,179,167
+20250903,2025-08 - Monthly,2025,M,true,false,187,186,167
+20240705,2024-06 - Monthly,2024,Q,true,false,173,172,167
+20230506,2023 Apr Monthly Baseline,2023,M,false,true,23104,23103,23000
+20210730,2021-07 - Monthly (P),2021,M,true,false,137,136,130
+20211130,2021-11 - Monthly (P),2021,M,true,false,141,140,130
+20240531,2024-05 - Monthly,2024,M,true,false,172,171,167
+20250303,2025 Feb Monthly Baseline,2025,M,false,true,25102,25101,25000
+20240430,2024-04 - Monthly,2024,M,true,false,171,170,167
+20230928,2023-09 - Quarterly (PRC),2023,Q,true,false,164,163,155
+20220607,2022 May Monthly Baseline,2022,M,false,true,22105,22104,22000
+20220907,2022 Aug Monthly Baseline,2022,M,false,true,22108,22106,22000
+20231005,2023 Sep Monthly Baseline,2023,M,false,true,23109,23108,23000
+20250603,2025-05 - Monthly,2025,M,true,false,184,183,167
+20250403,2025 Mar Monthly Baseline,2025,M,false,true,25103,25102,25000
+20240306,2024 Feb Monthly Baseline,2024,M,false,true,24102,24101,24000
+20220309,2022 Feb Monthly Baseline,2022,M,false,true,22102,22101,22000
+20221208,2022 Nov Monthly Baseline,2022,M,false,true,22111,22110,22000
+20210927,2021-09 - Quarterly (PRC),2021,Q,true,false,139,138,130
+20230531,2023-05 - Monthly (P),2023,M,true,false,160,159,155
+20231130,2023-11 - Monthly (P),2023,M,true,false,166,165,155
+20240903,2024-08 - Monthly,2024,M,true,false,175,174,167
+20250204,2025 Yearly Baseline,2025,Y,false,true,25000,,24000
+20220211,2022 Jan Monthly Baseline,2022,M,false,true,22101,,22000
+20230213,2023 Yearly Baseline,2023,Y,false,true,23000,,22000
+20251203,2025-11 - Monthly,2025,M,true,false,190,189,167
+20220926,2022-09 - Quarterly (PRC),2022,Q,true,false,152,151,143
+20241214,2024 Nov-Dec Monthly Baseline,2024,M,false,true,24112,24110,24000
+20250803,2025-07 - Monthly,2025,M,true,false,186,185,167
+20220228,2022-02 - Monthly (P),2022,M,true,false,145,144,143
+20230731,2023-07 - Monthly (P),2023,M,true,false,162,161,155
+20251010,2025-09 - Monthly,2025,Q,true,false,188,187,167
+20240915,T2 24 / B25-26 - V0,2024,B,false,true,24204,,24000
+20260124,Live,2026,,true,true,0,,
+20230306,2023 Feb Monthly Baseline,2023,M,false,true,23102,23101,23000
+20230706,2023 Jun Monthly Baseline,2023,M,false,true,23106,23105,23000
+20230428,2023-04 - Monthly (P),2023,M,true,false,159,158,155
+20250303,2025-02 - Monthly,2025,M,true,false,181,180,167
+20240215,2024 Jan Monthly Baseline,2024,M,false,true,24101,23112,24000
+20250205,2025 Jan Monthly Baseline,2025,M,false,true,25101,24112,25000
+20241003,2024 Sep Monthly Baseline,2024,M,false,true,24109,24108,24000
+20211201,2021 - TEMPO Archived Data,2021,H,false,true,21112,,
+20251007,2025 Sep Monthly Baseline,2025,M,false,true,25109,25108,25000
+20220405,2022 Mar Monthly Baseline,2022,M,false,true,22103,22102,22000
+20211029,2021-10 - Monthly (P),2021,M,true,false,140,139,130
+20220429,2022-04 - Monthly (P),2022,M,true,false,147,146,143
+20230328,2023-03 - Quarterly (PRC),2023,Q,true,false,158,157,155
+20231221,2024 - Yearly (PRC),2024,Y,true,false,167,166,155
+20231031,2023-10 - Monthly (P),2023,M,true,false,165,164,155
+20240404,2024 Mar Monthly Baseline,2024,M,false,true,24103,24102,24000
+20250503,2025-04 - Monthly,2025,M,true,false,183,182,167
+20220530,2022-05 - Monthly (P),2022,M,true,false,148,147,143
+20240904,2024 Jul-Aug Monthly Baseline,2024,M,false,true,24108,24106,24000
+20241103,2024-10 - Monthly,2024,M,true,false,177,176,167
+20250103,2024-12 - Monthly,2024,Y,true,false,179,178,167
+20250703,2025-06 - Monthly,2025,Q,true,false,185,184,167
+20240213,2024 Yearly Baseline,2024,Y,false,true,24000,23112,23000
+20241003,2024-09 - Monthly,2024,Q,true,false,176,175,167
+20251103,2025 Oct Monthly Baseline,2025,M,false,true,25110,25109,25000
+20250403,2025-03 - Monthly,2025,Q,true,false,182,181,167
+20251022,C2 25 / B26-27 - VF,2025,B,false,true,25206,,25000

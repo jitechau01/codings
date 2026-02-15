@@ -64,9 +64,32 @@ def create_stage(stage_name, file_format_name, integration_name, path):
     """
     cur.execute(sql)
     print(f"stage '{stage_name}' created successfully.")
+    
+def create_local_stage():
+    sql = f"""
+    create stage if not exists local_csv_stage
+    file_format = {csv_file_format_name};
+    """
+    cur.execute(sql)
+    print(f"stage 'local_csv_stage' created successfully.")
+    
+    sql = f"""
+    create stage if not exists local_parquet_stage
+    file_format = {parquet_file_format_name};
+    """
+    cur.execute(sql)
+    print(f"stage 'local_parquet_stage' created successfully.")
+    
+    sql = f"""
+    create stage if not exists local_json_stage
+    file_format = {json_file_format_name};
+    """
+    cur.execute(sql)
+    print(f"stage 'local_json_stage' created successfully.")
 
 create_db_schemas()    
-create_file_formats()
-create_stage(csv_stage_name, csv_file_format_name, integration_name, csv_path)
-create_stage(json_stage_name, json_file_format_name, integration_name, json_path)
-create_stage(parquet_stage_name, parquet_file_format_name, integration_name, parquet_path)
+# create_file_formats()
+# create_stage(csv_stage_name, csv_file_format_name, integration_name, csv_path)
+# create_stage(json_stage_name, json_file_format_name, integration_name, json_path)
+# create_stage(parquet_stage_name, parquet_file_format_name, integration_name, parquet_path)
+create_local_stage()
