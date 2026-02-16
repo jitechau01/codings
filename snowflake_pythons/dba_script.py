@@ -39,9 +39,8 @@ def accountadmin_task():
                 print("user adam already exists, skipped creation")
     except Exception as e:
         print("Error:{e}")
-        #Handle error
-    
-def adam_task():
+        #Handle error    
+def create_db_schemas():
     cur=_conn_adam()
     cur.execute("use role lead")
     #print(cur.execute("select current_role()").fetchall())
@@ -82,7 +81,6 @@ def adam_task():
     except Exception as e:
         print(f"Error: {e}")
         # Handle error
- 
 def create_tables():
     cur=_conn_adam()
     cur.execute("""use schema sales.landing""")
@@ -1126,8 +1124,7 @@ def create_tables():
                     print("WBS_HIERARCHY Table already exists, skipped creation")
     except Exception as e:
         print("Error:{e}")
-        #Handle error
-        
+        #Handle error    
 def create_file_format():
     cur=_conn_adam()
     cur.execute("""use schema sales.landing""")
@@ -1190,8 +1187,7 @@ def create_file_format():
     except Exception as e:
         print(f"Error creating file format 'ff_json': {e}")
         
-    cur.close()
-        
+    cur.close()  
 def create_local_stage():
     cur=_conn_adam()
     cur.execute("use schema sales.landing")
@@ -1245,14 +1241,13 @@ def create_local_stage():
             elif "already exists" in message:
                 print(f"stage 'local_json_stage' already exists. Message, skipped creation")
     except Exception as e:
-        print(f"Error creating stage 'local_json_stage': {e}")
-        
+        print(f"Error creating stage 'local_json_stage': {e}")      
 def create_srv_rnd_df_views():
-    cur=_conn_adam()
+    cur=_conn_adam()    
     cur.execute("""use schema sales.srv_rnd_df""")
     print("\n-----------view Creation Starts-------------------")
     try: 
-        result=cur.execute("""create or replace view MVW_WBS_HIERARCHY(
+        result=cur.execute("""create view if not exists MVW_WBS_HIERARCHY(
 	WBS_ID,
 	WBS_TYPE,
 	WBS_FUNCTIONAL_ID,
@@ -1285,11 +1280,2257 @@ def create_srv_rnd_df_views():
     except Exception as e:
         print(f"Error creating view MVW_WBS_HIERARCHY: {e}")
         #Handle error
-    
-# accountadmin_task()       
-# adam_task()
-# create_tables()
-# create_file_format()
-# create_local_stage()
+        
+    try: 
+        result=cur.execute("""create view if not exists VW_INDICATION(
+	TIME_ID,
+	IND_WBS_ID,
+	IND_UNIQUE_CD,
+	HUB_START_DT,
+	IND_POS_TO_POCC,
+	IND_POTS,
+	IND_SR_POCC,
+	IND_NEXT_PHASE_SUCCESS_RATE,
+	IND_NEXT_PHASE_PRP,
+	IND_DEV_OBJECTIVE,
+	IND_FORMULATION,
+	IND_NUMBER,
+	IND_PHASE,
+	IND_PRIORITY,
+	IND_STATUS,
+	IND_STATUS_DETAILED,
+	IND_THP_FK,
+	IND_CD,
+	IND_ACTUAL_START_DT,
+	IND_PLANNED_START_DT,
+	IND_ACTUAL_FINISH_DT,
+	IND_PLANNED_FINISH_DT,
+	IND_ADMIN_ROUTE,
+	IND_FOU_FK,
+	IND_DESC,
+	IND_PHARMA_FLAG,
+	IND_VACCIN_FLAG,
+	IND_LEAD_FLAG,
+	IND_NEXT_GNG_DT,
+	IND_NEXT_PHASE,
+	IND_NEXT_PHASE_START_DT,
+	IND_STOPPED_DT,
+	MD5,
+	CREATE_TS,
+	UPDATE_TS,
+	CREATED_BY,
+	UPDATED_BY,
+	IND_ONB,
+	IND_V_COST_LAUNCH,
+	IND_V_CUSTO_PRJ_FLAG,
+	IND_V_INC_YEAR_CUMUL,
+	IND_V_PEAK_SALES,
+	IND_V_IND_DRIVER,
+	IND_V_IND_OBJ,
+	IND_V_NPV,
+	IND_V_PRIO_COMMENT,
+	IND_V_REASON_STOP,
+	IND_V_EXP_SYSTEM,
+	IND_V_SC_SHORT_NAME,
+	IND_V_SC_ASSUMPTION,
+	IND_V_MAIN_CHANGES,
+	IND_V_MARKET_POSITION,
+	IND_V_MARKET_RATIONAL,
+	IND_V_BUS_SUSTAINABILITY_FLAG,
+	IND_V_COMMITMENT,
+	IND_V_COMM_OPPORTUNITY,
+	IND_V_VELOCITY,
+	IND_SHORTNAME,
+	IND_V_PRIORITY,
+	IND_V_SITE,
+	IND_V_FINANCIAL_CATEGORY,
+	IND_V_PRODUCT_CD_SYNONYM,
+	IND_V_ALL_ROOT_PRODUCT_CODES,
+	IND_REPORTING,
+	IND_BENCHMARK_FORMULATION,
+	IND_V_PORTFOLIO_STRATEGIC_GROUPING,
+	IND_V_COMMITMENT_PIVOTAL,
+	IND_V_NBR_ANTIGEN,
+	IND_V_NBR_COMMITMENT_PIVOTAL,
+	IND_TERMINATION_REASON,
+	IND_FREE_FIELD_PROJECT_PPR,
+	IND_PFM,
+	IND_PFM_DESC,
+	IND_ECODES,
+	IND_ECODESIGN_STATUS,
+	IND_CLIMATE_CHANGE_IMPACT,
+	START_DT,
+	END_DT,
+	IS_LAST
+) as select * from landing.indication
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_INDICATION successfully created")
+                elif "already exists" in message:
+                    print("VW_INDICATION view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_INDICATION: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists VW_PHASE(
+	TIME_ID,
+	PHA_WBS_ID,
+	PHA_UNIQUE_CD,
+	HUB_START_DT,
+	PHA_SUCCESS_RATE,
+	PHA_PRP,
+	PHA_CD,
+	PHA_WEIGHTING,
+	PHA_PLANNED_START_DT,
+	PHA_PLANNED_FINISH_DT,
+	PHA_ACTUAL_START_DT,
+	PHA_ACTUAL_FINISH_DT,
+	PHA_ONB,
+	PHA_ORDER_NM,
+	PHA_DESC,
+	PHA_CURRENT_PHASE_FLAG,
+	PHA_PHARMA_FLAG,
+	PHA_VACCIN_FLAG,
+	PHA_V_REPORT_PHASE_FLG,
+	PHA_V_SUCCES_RATE,
+	PHA_V_SUCCES_RATE_APPROVAL_DT,
+	PHA_V_TYPE,
+	MD5,
+	CREATE_DT,
+	UPDATE_DT,
+	CREATED_BY,
+	UPDATED_BY,
+	PHA_V_YEARLY_START_DT,
+	PHA_V_YEARLY_FINISH_DT,
+	PHA_BUDGETED,
+	YEARLY_BASELINE_FINISH_DATE_2014,
+	YEARLY_BASELINE_START_DATE_2014,
+	YEARLY_BASELINE_FINISH_DATE_2015,
+	YEARLY_BASELINE_START_DATE_2015,
+	YEARLY_BASELINE_FINISH_DATE_2016,
+	YEARLY_BASELINE_START_DATE_2016,
+	YEARLY_BASELINE_FINISH_DATE_2017,
+	YEARLY_BASELINE_START_DATE_2017,
+	YEARLY_BASELINE_START_DATE_2018,
+	YEARLY_BASELINE_FINISH_DATE_2018,
+	YEARLY_BASELINE_START_DATE_2019,
+	YEARLY_BASELINE_FINISH_DATE_2019,
+	YEARLY_BASELINE_START_DATE_2020,
+	YEARLY_BASELINE_FINISH_DATE_2020,
+	START_DT,
+	END_DT,
+	IS_LAST
+) as select * from landing.phase
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_PHASE successfully created")
+                elif "already exists" in message:
+                    print("VW_PHASE view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_PHASE: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists VW_PROJECT(
+	TIME_ID,
+	PRJ_WBS_ID,
+	PRJ_CD,
+	HUB_START_DT,
+	PRJ_ONB,
+	PRJ_NM,
+	PRJ_DESC,
+	PRJ_COM_TERMINATION,
+	PRJ_TERMINATION_REASON,
+	PRJ_ADMINISTRATION_ROUTE,
+	PRJ_ANTIGEN,
+	PRJ_BRAND_NM,
+	PRJ_CMC_PORTFOLIO,
+	PRJ_CODEV_PARTNER,
+	PRJ_PIPELINE_COMMENT,
+	PRJ_CREATION_DT,
+	PRJ_CUSTOMIZED_FLAG,
+	PRJ_COST_LAUNCH_RELATED_DT,
+	PRJ_ACQUISITION_DT,
+	PRJ_COMPLETION_DT,
+	PRJ_TERMINATION_DT,
+	PRJ_DEV_DEVICE_FLAG,
+	PRJ_DISCO_DEV_LINKED_CODES,
+	PRJ_ENTERING_PREDEV_DT,
+	PRJ_ENTERING_DEV_DT,
+	PRJ_EXITING_DEV_DT,
+	PRJ_EXITING_PREDEV_DT,
+	PRJ_EXP_GENERIC_ENTRY_DT,
+	PRJ_FRANCHISE,
+	PRJ_FUNDING_ZONE,
+	PRJ_GEOGRAPHICAL_TARGET,
+	PRJ_HUB_OWNER,
+	PRJ_INN,
+	PRJ_INNOVATION_STATUS,
+	PRJ_MOA,
+	PRJ_MOLECULE_SUBTYPE,
+	PRJ_MOLECULE_TYPE,
+	PRJ_OBJECTIVE,
+	PRJ_PARTNER_NM,
+	PRJ_NME_ORIGIN,
+	PRJ_OWNER,
+	PRJ_PATENT_INFORMATION,
+	PRJ_PATHOGEN,
+	PRJ_V_PPP_PRJ_LEADER,
+	PRJ_V_PPP_PRJ_MANAGER,
+	PRJ_PLANNED_FINISH_DT,
+	PRJ_PLANNED_START_DT,
+	PRJ_TPR_FK,
+	PRJ_PROJECT_LEADER_ENTRY,
+	PRJ_PHASE,
+	PRJ_EBINDER_LINK,
+	PRJ_SITE,
+	PRJ_STATUS,
+	PRJ_STATUS_DETAILED,
+	PRJ_SUBCATEGORY,
+	PRJ_RESPONSABILITY_FOU_FK,
+	PRJ_ROOT_PRODUCT,
+	PRJ_PUBLIC_FUNDING_ORG,
+	PRJ_RECOMMANNDATION,
+	PRJ_STAGE,
+	PRJ_VACCIN_CATEGORY,
+	PRJ_STATE,
+	PRJ_VACCIN_TYPE,
+	PRJ_VARIANCE_ANALYSIS,
+	PRJ_APPROACH_PHASE_AT_PRIO,
+	PRJ_PROJECT_MANAGER,
+	PRJ_PARTNER_PRODUCT_CD,
+	PRJ_CLUSTER_CD,
+	PRJ_CLUSTER_DESC,
+	PRJ_PORTFOLIO_MAIN,
+	PRJ_PORTFOLIO,
+	PRJ_DATABASE,
+	PRJ_PHARMA_FLAG,
+	PRJ_VACCIN_FLAG,
+	PRJ_PRIORITY,
+	PRJ_DEV_ENTRY_DT,
+	PRJ_FIRST_APPROACH_DT,
+	PRJ_NEXT_GNG_DT,
+	PRJ_NEXT_GNG_CD,
+	PRJ_PERM_PROJECT_FLAG,
+	PRJ_NAME_EXT_SOURCE,
+	PRJ_V_GLOBAL_PRJ_HEAD,
+	PRJ_V_TARGET_POPULATION,
+	PRJ_V_SHINE_PRJ_CD,
+	PRJ_V_PRIORITY,
+	PRJ_MOLECULE_TYPE_CD,
+	PRJ_MOLECULE_SUBTYPE_CD,
+	PRJ_V_APAO_PRJ_LIST,
+	PRJ_V_APAO_PRJ_FLAG,
+	PRJ_V_KHM,
+	PRJ_MOA_SHORT_NM,
+	MD5,
+	CREATE_TS,
+	UPDTED_TS,
+	PRJ_V_FINANCIAL_CATEGORY,
+	PRJ_PHARMACOLOGICAL_EFFECT,
+	PRJ_CYCLE,
+	PRJ_V_PRODUCT_CD_SYNONYM,
+	PRJ_V_ALL_PRODUCT_CODES,
+	PRJ_REPORTING,
+	PRJ_RESPONSABILITY_DESC,
+	PRJ_DWG_BASELINE_DT,
+	PRJ_DWG_BASELINE_DESC,
+	PRJ_V_KEY_EVENT_IMPACTING_PROJECT_VALUE,
+	PRJ_V_KEY_EVENT_POTENTIAL_IMPACT,
+	PRJ_V_COMMITMENT_PIVOTAL,
+	PRJ_V_PORTFOLIO_STRATEGIC_GROUPING,
+	PRJ_BENCHMARK_MODALITY,
+	PRJ_TPR_CATEGORY,
+	PRJ_BLOCKBUSTER_OPPORTUNITY,
+	PRJ_PORTFOLIO_ID_VACCINES_PROJECTS,
+	PRJ_8BY28,
+	PRJ_TYPE,
+	PRJ_SUB_TYPE,
+	PRJ_SUB_ORG_TYPE,
+	PRJ_NEXT_MILESTONE_DATE,
+	PRJ_NEXT_MILESTONE_WBS_TYPE,
+	PRJ_TYPE_BUS_TERM,
+	START_DT,
+	END_DT,
+	IS_LAST,
+	CREATED_BY,
+	UPDATED_BY
+) as select * from landing.project
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_PROJECT successfully created")
+                elif "already exists" in message:
+                    print("VW_PROJECT view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_PROJECT: {e}")
+        #Handle error
+
+    try: 
+        result=cur.execute("""create view if not exists VW_REF_BASELINE(
+	TIME_ID,
+	BAS_DESC,
+	BAS_YEAR,
+	BAS_TYPE,
+	BAS_PHARMA_FLAG,
+	BAS_VACCIN_FLAG,
+	BAS_ID,
+	BAS_PREV_BASELINE,
+	BAS_PREV_YEARLY
+) as select * from landing.ref_baseline
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_REF_BASELINE successfully created")
+                elif "already exists" in message:
+                    print("VW_REF_BASELINE view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_REF_BASELINE: {e}")
+        #Handle error
+
+    try: 
+        result=cur.execute("""create view if not exists VW_RESOURCE(
+	TIME_ID,
+	RES_ID,
+	HUB_START_DT,
+	RES_PERC_ALLOCATION,
+	RES_PERC_CONTRACT,
+	RES_PERC_DIRECT,
+	RES_BASE_ENTITY,
+	RES_BUILDING_NUM,
+	RES_CALENDAR,
+	RES_CONTRACT_TYPE,
+	RES_COST_UNIT,
+	RES_CONTRACT_END_DT,
+	RES_CONTRACT_START_DT,
+	RES_EMPLOYEE_NUM,
+	RES_APPROACH_END_DT_FLAG,
+	RES_HEADCOUNT_EXCL_FLAG,
+	RES_INACTIVE_FLAG,
+	RES_MOVE_REASON,
+	RES_NETWORK_ID,
+	RES_OPEN_FLAG,
+	RES_OPERATIONALITY,
+	RES_POSITION_NUM,
+	RES_QUANTITY,
+	RES_RECRUITMENT_STATUS,
+	RES_RECRUITMENT_TYPE,
+	RES_RECRUITMENT_BKP,
+	RES_MANAGER,
+	RES_SKILL_TYPE,
+	RES_SIMULATION_FLAG,
+	RES_PHYSICAL_SITE_FK,
+	RES_MAIN_SKILL_FK,
+	RES_TEAM,
+	RES_TIMECARD_MANAGER,
+	RES_TYPE_MOVE_IN,
+	RES_TYPE_MOVE_OUT,
+	RES_WORKDAY_NUM,
+	RES_SERVICE_FOU_FK,
+	RES_SHARED_FLAG,
+	RES_GREENLIGHT_DT,
+	RES_VACCIN_FLAG,
+	RES_PHARMA_FLAG,
+	RES_PERC_AVAILABILITY,
+	RES_ONB,
+	MD5,
+	CREATE_DT,
+	UPDATE_DT,
+	CREATED_BY,
+	UPDATED_BY,
+	RES_V_COST_CENTER,
+	RES_V_DEPARTMENT_GROUP,
+	RES_V_TODAY_AVAILABILITY,
+	RES_V_SKILLS,
+	RES_V_EXCLUDE_ENTRY_FLAG,
+	RES_V_EXCLUDE_EXIT_FLAG,
+	RES_V_BUSINESS_UNIT_DESC,
+	RES_V_DEPARTMENT_DESC,
+	RES_V_PLATFORM_DESC,
+	RES_V_TODAY_AVAIL_END_DT,
+	RES_COUNTRY,
+	RES_CSU_REGION,
+	RES_NM,
+	RES_LAST_NM,
+	RES_FIRST_NM,
+	RES_DESC,
+	RES_HIRING_MANAGER,
+	RES_NAME_OF_THE_PERSON_REPLACED,
+	RES_POSITION_ID,
+	RES_MOVE_REASON_IN,
+	RES_ONGOING_ABSENCE_REASON,
+	RES_ABSENCE_START_DT,
+	RES_ABSENCE_END_DT,
+	RES_ABSENCE_ONGOING,
+	RES_V_EXTERNAL_FUNDING,
+	RES_V_CAPITALIZED,
+	RES_PROVIDER,
+	RES_SKILL_LEVEL,
+	RES_FUND_BY_NON_RD_DEPT,
+	RES_TSH_RESOURCE,
+	RES_USER_ACTIV_AD,
+	RES_CSU_CLUSTER,
+	RES_COUNTRY_DESC,
+	RES_SHARED_FROM,
+	RES_SHARED_TO,
+	RES_SHARED_RBS_LINE_NUM,
+	START_DT,
+	END_DT,
+	IS_LAST
+) as select * from landing.resource
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_RESOURCE successfully created")
+                elif "already exists" in message:
+                    print("VW_RESOURCE view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_RESOURCE: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists VW_TASK(
+	TIME_ID,
+	TSK_WBS_ID,
+	TSK_CD,
+	HUB_START_DT,
+	TSK_PARENT_ROOT_TSK_WBS_ID,
+	TSK_ACTUAL_FINISH_DT,
+	TSK_ACTUAL_START_DT,
+	TSK_ARMS_NUMBER,
+	TSK_CAMPAIGN_NUMBER,
+	TSK_COMPLEXITY_FACTOR,
+	TSK_CRO_COST,
+	TSK_CYCLE,
+	TSK_DS_DP_TO_PRODUCE,
+	TSK_DURATION,
+	TSK_ALL_DURATIONS,
+	TSK_END_DEFINITION,
+	TSK_IP_BATCH,
+	TSK_KITS_QTY,
+	TSK_KPI,
+	TSK_KPI_DESC,
+	TSK_LEADER,
+	TSK_MANUFACTURING_PROCESS,
+	TSK_MONITORING_SITE,
+	TSK_NB_PLANNED_SITES,
+	TSK_NB_PLANNED_SITES_COHORT,
+	TSK_NB_PLANNED_SITES_FOLLOWUP,
+	TSK_NB_PLANNED_SUBJ,
+	TSK_NB_PLANNED_SUBJ_COHORT,
+	TSK_NB_PLANNED_SUBJ_FOLLOWUP,
+	TSK_NB_OF_ANALYTES,
+	TSK_OPERATIONAL_LEVEL_FLAG,
+	TSK_PACKAGING_TYPE,
+	TSK_PLANNED_SAMPLES,
+	TSK_PLANNED_FINISH_DT,
+	TSK_PLANNED_START_DT,
+	TSK_PRODUCT_MANUFACT_LINE,
+	TSK_PROJECT_LEVEL_FLAG,
+	TSK_PROTOCOL_SAMPLES,
+	TSK_PROVIDER,
+	TSK_SAMPLE_COST,
+	TSK_SAMPLE_MGR_REF_TASK_FLAG,
+	TSK_SAMPLE_RATE,
+	TSK_SAMPLE_BY_SUBJECT,
+	TSK_SOURCING,
+	TSK_START_DEFINITION,
+	TSK_STORAGE_CONDITION,
+	TSK_COUNTRY,
+	TSK_REGION,
+	TSK_PHARMA_FLAG,
+	TSK_VACCIN_FLAG,
+	TSK_CALENDAR_FLOAT,
+	TSK_CALENDAR_FREE_FLOAT,
+	TSK_PLW_IDENTIFIER,
+	TSK_NM,
+	TSK_COMMENT,
+	TSK_ONB,
+	TSK_ACTIVITY_TYPE,
+	TSK_PROJECT_MILESTONE_FLAG,
+	TSK_FIRST_TO_EXCLUDE_FLAG,
+	TSK_PROGRESS_COMPL_STATUS,
+	TSK_TASK_RESPONSIBLE,
+	TSK_PACK_ITEM_UNIT_COST,
+	TSK_PACK_TOTAL_UNIT_COST,
+	TSK_END_OF_PHASE1,
+	TSK_SITE,
+	TSK_CSU_CLUSTER_DESC,
+	TSK_END_RELEASE_DT,
+	TSK_TASK_TYPE,
+	TSK_PACK_LOAD,
+	TSK_PACK_EXT_LOAD,
+	TSK_SPEC_TOOL,
+	TSK_ORDER_NUMBER,
+	TSK_RELEASE_ACT_FINISH_DT,
+	TSK_V_BLOODDRAW_FLG,
+	TSK_V_CANCELLED,
+	TSK_V_CRITICAL_FLG,
+	TSK_V_DEFINITION,
+	TSK_V_DELAY_ACTORS,
+	TSK_V_DPT_GROUPING,
+	TSK_V_DEVIATION_ROOT_CAUSE,
+	TSK_V_DURATION_DEVIATION,
+	TSK_V_FUNC_WORKPACKAGE,
+	TSK_V_GCI_RELEASE_DESC,
+	TSK_V_GCI_RELEASE_NUM,
+	TSK_V_KEY_MIL_FLG,
+	TSK_V_KEY_INFLEXION_POINT_FLG,
+	TSK_V_KEY_MIL_FUNC,
+	TSK_V_KEY_MIL_NUM,
+	TSK_V_KEY_MIL_PLATFORM,
+	TSK_V_MIL_ACHIEVEMENT,
+	TSK_V_MIL_PERIOD,
+	TSK_V_MIL_COMMENTS,
+	TSK_V_GCI_NO_TESTING_FLG,
+	TSK_V_PROGRESS_DT,
+	TSK_V_ROOT_PRODUCT_CD,
+	TSK_V_STEP_CD,
+	TSK_V_STEP_DESC,
+	TSK_V_STEP_NM,
+	TSK_V_PRODUCT_REQUEST_FLG,
+	TSK_V_PROGRESS_STATUS,
+	TSK_V_RISK_DELAY_FLG,
+	TSK_V_STEP_ONB,
+	TSK_REPORT_USED,
+	TSK_V_IS_STEP_FLAG,
+	TSK_V_YEARLY_BASELINE_START_DT,
+	TSK_V_YEARLY_BASELINE_FINISH_DT,
+	TSK_V_RISK_DELAY_FLAG,
+	MD5,
+	CREATE_DT,
+	UPDATE_DT,
+	CREATED_BY,
+	UPDATED_BY,
+	TSK_CMC_KPI_FLAG,
+	TSK_SPECY,
+	TSK_NB_ANIMALS,
+	TSK_V_VACCINATION_F_FLAG,
+	TSK_V_VACCINATION_FLAG,
+	TSK_V_CLI_PRJ_CAT,
+	TSK_V_CLI_PRJ_SIZE,
+	TSK_V_CLI_PRJ_COMPLEXITY,
+	TSK_V_ONGOING_STUDY_COUNT,
+	TSK_V_STUDY_MANY_REGION,
+	TSK_V_CTDS_MAJOR_SUBMISSIONS,
+	TSK_V_GMP_PRODUCT,
+	TSK_V_GMP_PRODUCT_PARENT,
+	TSK_V_GMP_FILTERS_FLAG,
+	TSK_LVL,
+	TSK_LINE_IDENTIFIER,
+	TSK_V_COMMITMENT_PIVOTAL,
+	TSK_V_DEVELOPMENT_STRATEGY,
+	TSK_V_AG_LIPID_DEPENDENT,
+	TSK_V_EXTERNAL_PARTNER_WBS,
+	TSK_V_KEY_MILESTONE_DEPARTMENT_CONTRIBUTORS,
+	TSK_V_BUILDING_BLOCK_NM,
+	TSK_V_BUILDING_BLOCK_IDENTIFY,
+	TSK_V_BUILDING_BLOCK_STATUS,
+	TSK_V_NBR_ANTIGEN,
+	TSK_V_NBR_COMMITMENT_PIVOTAL,
+	TSK_V_STUDY_CODE_CONSOLIDATION,
+	TSK_V_GCI_INFORMATION_AVAILABLE,
+	TSK_V_GCI_ASSAY,
+	TSK_V_GCI_LAB,
+	TSK_V_GCI_SAMPLE_NUMBER,
+	TSK_V_RELEASE_NUMBER,
+	TSK_V_GCI_ASSAY_PROVIDER,
+	TSK_V_COUNTRY_AGENCY,
+	TSK_V_ENDORSING_RATING,
+	TSK_V_IS_FIRST,
+	TSK_V_IS_LAST,
+	TSK_VARIANCE_ANALYSIS,
+	TSK_IS_A_TASK,
+	TSK_MILESTONE_CLINICAL_STUDY,
+	TSK_ADJUVANT,
+	TSK_MRNA_INITIATIVE_OBJECTIVE,
+	TSK_ACT_COUNTRY_REG_F,
+	TSK_NO_GCI_TESTING_TRIAL_STEP,
+	TSK_ENDORSED_RATING,
+	TSK_PRIM_DOSE,
+	YEARLY_BASELINE_FINISH_DATE_2014,
+	YEARLY_BASELINE_START_DATE_2014,
+	YEARLY_BASELINE_FINISH_DATE_2015,
+	YEARLY_BASELINE_START_DATE_2015,
+	YEARLY_BASELINE_FINISH_DATE_2016,
+	YEARLY_BASELINE_START_DATE_2016,
+	YEARLY_BASELINE_FINISH_DATE_2017,
+	YEARLY_BASELINE_START_DATE_2017,
+	YEARLY_BASELINE_START_DATE_2018,
+	YEARLY_BASELINE_FINISH_DATE_2018,
+	YEARLY_BASELINE_START_DATE_2019,
+	YEARLY_BASELINE_FINISH_DATE_2019,
+	YEARLY_BASELINE_START_DATE_2020,
+	YEARLY_BASELINE_FINISH_DATE_2020,
+	TSK_NEW_PRODUCTS_METRICS,
+	TSK_V_FREQUENCY_SAMPLE_EXTRACTION,
+	TSK_V_COST_CENTER_ASSAYS_SAMPLE,
+	TSK_V_GL_CODE_ASSAYS_SAMPLES,
+	TSK_V_SAP_INTERNAL_ORDER,
+	TSK_V_PO_NUMBER,
+	TSK_V_PO_AMOUNT,
+	TSK_V_CASA_OR_NON_CASA,
+	TSK_V_EXTERNAL_VENDOR_MANAGER_NAME,
+	TSK_V_COST_CATEGORY_ASSAYS,
+	TSK_V_REMAINING_AVAILABLE_PO_BALANCE,
+	TSK_V_PO_STATUS,
+	TSK_V_TOTAL_GOOD_RECEIPTS,
+	TSK_V_MONTHLY_ACCRUAL_BASED_UPEN_EST_POC,
+	TSK_V_DELAY_CATEGORY,
+	TSK_V_CSR_IN_CRITICAL_PATH,
+	TSK_V_DETAILED_DELAY,
+	TSK_BUDGET_DECISION,
+	TSK_TSH_ACTIVITY,
+	TSK_PERCENTAGE_COMPLETE_ASSAY,
+	TSK_IS_TRANSVERSAL,
+	TSK_BATCH_FAILED,
+	TSK_BATCH_TYPE,
+	TSK_BUILDING_BLOCK_DESCRIPTION,
+	TSK_IS_A_PIVOTAL_ACTIVITY,
+	TSK_IS_A_COMMITMENT_ACTIVITY,
+	TSK_ON_CRITICAL_PATH,
+	TSK_PRP,
+	TSK_DS_DP_QTY_TO_BE_LAUNCHED,
+	TSK_DS_DP_QTY_UNIT,
+	TSK_PRODUCT_TYPE,
+	TSK_DOSAGE_STRENGTH,
+	TSK_DOSAGE_STRENGTH_UNIT,
+	TSK_EARLIEST_MANUFACTURING_START_DATE,
+	TSK_LATEST_MANUFACTURING_END_DATE,
+	TSK_COMMITMENT_PIVOTAL_CALCULATED,
+	TSK_LEADER_EMAIL,
+	TSK_MANUFACT_TYPE,
+	TSK_MSP_PREDECESSORS,
+	TSK_MSP_SUCCESSORS,
+	TSK_FVFS_LINKED_ASSAY,
+	TSK_LVLS_LINKED_ASSAY,
+	TSK_DBL_LINKED_REL_DATE,
+	TSK_STATE,
+	TSK_BACK_UP_STRATEGY,
+	TSK_NEXT_READ_OUT,
+	TSK_PFM,
+	TSK_PFM_DESC,
+	TSK_PHARMA_FREE_FIELD_REP_1,
+	TSK_PHARMA_FREE_FIELD_REP_2,
+	TSK_V_MIL_TYPE,
+	START_DT,
+	END_DT,
+	IS_LAST
+) as select * from landing.task
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_TASK successfully created")
+                elif "already exists" in message:
+                    print("VW_TASK view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_TASK: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists VW_TEAM_MEMBER(
+	TIME_ID,
+	IS_LAST,
+	WBS_ID,
+	PTM_ID,
+	PTM_PRJ_ROLE,
+	PTM_PRJ_ROLE_DESC,
+	PTM_SANOFI_ID,
+	PTM_MEMBER_DESC,
+	PTM_EMAIL,
+	PTM_TEAMS,
+	PTM_SUB_TEAMS,
+	MD5,
+	START_DT,
+	CREATE_DT,
+	UPDATE_DT,
+	CREATED_BY,
+	UPDATED_BY,
+	END_DT,
+	PTM_DEPARTMENT,
+	PTM_LOCATION,
+	PTM_USER_INACTIVE,
+	PTM_BACK_UP,
+	PTM_NOTE_PAD
+) as select * from landing.team_member
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_TEAM_MEMBER successfully created")
+                elif "already exists" in message:
+                    print("VW_TEAM_MEMBER view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_TEAM_MEMBER: {e}")
+        #Handle error   
+def create_srv_mdm_rndmasterdata_views():
+    cur=_conn_adam()    
+    cur.execute("""use schema sales.srv_mdm_rndmasterdata""")
+    print("\n-----------view Creation Starts for schema srv_mdm_rndmasterdata-------------------")
+    try: 
+        result=cur.execute("""create view if not exists VW_MDM_CLINICAL_INDICATION(
+	RDM_NAME_NM,
+	RDM_CODE_CD,
+	MEDDRA_TERM,
+	ACRONYM,
+	ISACTIVE,
+	CREATED_BY,
+	CREATE_DATE_TS,
+	UPDATED_BY,
+	LAST_UPDATE_DATE_TS,
+	SOURCE_SYSTEM
+) as select * from landing.mdm_clinical_indication
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_MDM_CLINICAL_INDICATION successfully created")
+                elif "already exists" in message:
+                    print("VW_MDM_CLINICAL_INDICATION view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_MDM_CLINICAL_INDICATION: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists VW_MDM_FINANCIAL_ORGANIZATION_UNIT(
+	RDM_CODE_CD,
+	RDM_NAME_NM,
+	TYPE,
+	EN_NM,
+	PARENT_CODE_CD,
+	LEVEL2TYPE,
+	ISACTIVE,
+	CREATED_BY,
+	CREATE_DATE_TS,
+	UPDATED_BY,
+	LAST_UPDATE_DATE_TS,
+	SOURCE_SYSTEM
+) as select * from landing.mdm_financial_organization_unit
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_MDM_FINANCIAL_ORGANIZATION_UNIT successfully created")
+                elif "already exists" in message:
+                    print("VW_MDM_FINANCIAL_ORGANIZATION_UNIT view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_MDM_FINANCIAL_ORGANIZATION_UNIT: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists VW_MDM_PROJECT_IND_MASTER(
+	ID,
+	SOURCE_PKEY,
+	BUSINESS_ID,
+	PROJECT_IND_CODE_CD,
+	PROJECT_IND_NAME_NM,
+	PROJECT_IND_DESCRIPTION_DESC,
+	PROJECT_IND_RESPONSIBLE,
+	PROJECT_IND_STATUS,
+	PROJECT_IND_STATUS_DETAILED,
+	CLINICAL_IND,
+	MEDICAL_THERAPEUTIC_AREA,
+	SOURCE_SYSTEM,
+	CREATIONDATE_DT,
+	LASTUPDATEDATE_DT,
+	CREATEDBY,
+	UPDATEDBY,
+	PROJECT_IND_PHASE,
+	STATE
+) as select * from landing.mdm_project_ind_master
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_MDM_PROJECT_IND_MASTER successfully created")
+                elif "already exists" in message:
+                    print("VW_MDM_PROJECT_IND_MASTER view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_MDM_PROJECT_IND_MASTER: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists VW_MDM_PROJECT_MASTER(
+	ID,
+	SOURCE_PKEY,
+	BUSINESS_ID,
+	PROJECT_CODE_CD,
+	PROJECT_RESPONSIBLE,
+	PROJECT_ORGANIZATION_TYPE,
+	PROJECT_TYPE,
+	PROJECT_SUBTYPE,
+	PROJECT_NAME_NM,
+	PROJECT_DESCRIPTION_DESC,
+	PROJECT_CATEGORY,
+	PROJECT_STATUS,
+	PROJECT_STATUS_DETAILED,
+	PROJECT_PHASE,
+	MECHANISM_OF_ACTION,
+	ACTIVE_SUBSTANCE_TYPE,
+	ACTIVE_SUBSTANCE_SUB_TYPE,
+	ORIGIN_OF_ACTIVE_SUBSTANCE,
+	ORIGIN_COMPANY_OF_ACTIVE_SUBSTANCE,
+	EXTERNAL_ACTIVE_SUBSTANCE_CODE,
+	DATE_OF_AGREEMENT,
+	BRAND_NAME_NM,
+	INN,
+	RA_CODE,
+	ADDITIONAL_PROJECT_INFORMATION,
+	RESEARCH_PROJECT_TARGET,
+	RW_CLUSTER,
+	SCREENING_ORIENTATION,
+	SCREEN_TYPE,
+	TARGET_RATIONALE,
+	PROJECT_GLOBAL_OBJECTIVE,
+	SOURCE_SYSTEM,
+	CREATIONDATE_DT,
+	LASTUPDATEDATE_DT,
+	CREATEDBY,
+	UPDATEDBY,
+	SOURCE_OF_ORIGIN,
+	STATE
+) as select * from landing.mdm_project_master
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_MDM_PROJECT_MASTER successfully created")
+                elif "already exists" in message:
+                    print("VW_MDM_PROJECT_MASTER view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_MDM_PROJECT_MASTER: {e}")
+        #Handle error  
+def create_stg_manual_inputs_views():
+    cur=_conn_adam()    
+    cur.execute("""use schema sales.stg_manual_inputs""")
+    print("\n-----------view Creation Starts for schema stg_manual_inputs-------------------")
+    try: 
+        result=cur.execute("""create view if not exists ICD10_MEDDRA_MAPPING(
+	ICD10_CHAPTER_NUMBER_2019_INTL_CORE_VER,
+	ICD10_CHAPTER_2019_INTL_CORE_VER,
+	ICD10_CODE_2019_INTL_CORE_VER,
+	ICD10_TERM_2019_INTL_CORE_VER,
+	MAPPED_MEDDRA_LLT,
+	MAPPED_MEDDRA_LLT_CODE,
+	MAP_ATTRIBUTE,
+	MEDDRA_PT,
+	MEDDRA_PT_CODE,
+	MEDDRA_VER
+    ) as select * from landing.ICD10_MEDDRA_MAPPING
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view ICD10_MEDDRA_MAPPING successfully created")
+                elif "already exists" in message:
+                    print("ICD10_MEDDRA_MAPPING view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view ICD10_MEDDRA_MAPPING: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists MEDDRA_SNOMED_CT_MAPPING(
+	MEDDRA_LLT_CODE,
+	MEDDRA_LLT,
+	SNOMED_CT_CODE,
+	SNOMED_CT_FSN
+) as select * from landing.MEDDRA_SNOMED_CT_MAPPING
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view MEDDRA_SNOMED_CT_MAPPING successfully created")
+                elif "already exists" in message:
+                    print("MEDDRA_SNOMED_CT_MAPPING view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view MEDDRA_SNOMED_CT_MAPPING: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists PROJECT_TYPE(
+	TPR_ID,
+	TPR_CD,
+	TPR_DESC,
+	TPR_PRIME_TABLE,
+	TPR_PRIME_CATEGORY,
+	TPR_PRIME_PORTFOLIO,
+	TPR_FIRST_CD,
+	TPR_ORDER,
+	UPDATE_DT,
+	RW_UID,
+	PROCESS_UID
+) as select * from landing.PROJECT_TYPE
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view PROJECT_TYPE successfully created")
+                elif "already exists" in message:
+                    print("PROJECT_TYPE view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view PROJECT_TYPE: {e}")
+        #Handle error     
+def create_crdh_dea_iport_reporting_views():
+    cur=_conn_adam()    
+    cur.execute("""use schema sales.crdh_dea_iport_reporting""")
+    print("\n-----------view Creation Starts for schema crdh_dea_iport_reporting-------------------")
+    try: 
+        result=cur.execute("""create view if not exists PRTFL_TCP_PROFILE(
+	TCP_PROF_ID,
+	TITLE,
+	"ATTRIBUTE NAME",
+	INDICATION,
+	"PROJECT CODE",
+	"PROJECT NAME",
+	COMMENTS,
+	STATUS,
+	"CREATED BY",
+	"MODIFIED BY",
+	CREATED,
+	MODIFIED
+) as select * from landing.PRTFL_TCP_PROFILE
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view PRTFL_TCP_PROFILE successfully created")
+                elif "already exists" in message:
+                    print("PRTFL_TCP_PROFILE view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view PRTFL_TCP_PROFILE: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists PRTFL_TPP_PROFILE(
+	TPP_PROF_ID,
+	TITLE,
+	"ATTRIBUTE NAME",
+	INDICATION,
+	"STANDARD OF CARE AT LAUNCH NAME",
+	"BASE PROFILE",
+	"COMPARATIVE POSITION",
+	"STANDARD OF CARE",
+	"UPSIDE PROFILE",
+	"MINIMALLY MARKETABLE PROFILE",
+	"PROJECT CODE",
+	"PROJECT NAME",
+	"MINIMALLY VS SOC",
+	"UPSIDE VS SOC",
+	STATUS,
+	"CREATED BY",
+	"MODIFIED BY",
+	CREATED,
+	MODIFIED,
+	"SOC LAUNCH NAME 2",
+	"SOC DESCRIPTION 2",
+	"COMPARATIVE POSITION 2",
+	"SOC COUNT",
+	"SOC LAUNCH NAME 3",
+	"SOC DESCRIPTION 3",
+	"COMPARATIVE POSITION 3",
+	"UPSIDE VS SOC 2",
+	"UPSIDE VS SOC 3",
+	"MINIMALLY VS SOC 2",
+	"MINIMALLY VS SOC 3",
+	"SOC DESCRIPTION",
+	"SOC LAUNCH NAME",
+	PHASE1,
+	PHASE2,
+	PHASE3,
+	LATESTPUBLISHEDSOC
+) as select * from landing.prtfl_tpp_profile
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view PRTFL_TPP_PROFILE successfully created")
+                elif "already exists" in message:
+                    print("PRTFL_TPP_PROFILE view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view PRTFL_TPP_PROFILE: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists PRTFL_TVP_PROFILE(
+	TVP_PROF_ID,
+	TITLE,
+	"ATTRIBUTE NAME",
+	INDICATION,
+	"PROJECT CODE",
+	"PROJECT NAME",
+	COMMENTS,
+	STATUS,
+	"CREATED BY",
+	"MODIFIED BY",
+	CREATED,
+	MODIFIED
+) as select * from landing.PRTFL_TVP_PROFILE
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view PRTFL_TVP_PROFILE successfully created")
+                elif "already exists" in message:
+                    print("PRTFL_TVP_PROFILE view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view PRTFL_TVP_PROFILE: {e}")
+        #Handle error
+def create_dp_rdportfolio360_views():
+    cur=_conn_adam()    
+    cur.execute("""use schema sales.dp_rdportfolio360""")
+    print("\n-----------view Creation Starts for schema dp_rdportfolio360-------------------")
+    try: 
+        result=cur.execute("""create view if not exists  VW_MEDDRA_ICD10_MAPPING(
+	SANOFI_MEDDRA_INDICATION_CODE,
+	ICD10_CODE_2019_INTL_CORE_VER,
+	MEDDRA_PT_CODE,
+	MEDDRA_LLT_CODE
+) COMMENT='Maps MEDDRA codes to ICD10 codes for indications used in Sanofi Project Indications. This is filtered to Indications with a status of Ongoing, Completed, or Stopped and excludes the COMMON placeholder indication. The basis of this is the indication data in the R&D MDM and the mapping data from MedDRA'
+ as
+(select distinct indmdm.clinical_ind, icd10.icd10_code_2019_intl_core_ver, icd10.meddra_pt_code, icd10.mapped_meddra_llt_code
+from SRV_MDM_RNDMASTERDATA.vw_mdm_project_ind_master indmdm
+left join stg_manual_inputs.icd10_meddra_mapping icd10 on (icd10.meddra_pt_code = indmdm.clinical_ind or icd10.mapped_meddra_llt_code = indmdm.clinical_ind)
+where indmdm.project_ind_status in ('Ongoing', 'Completed', 'Stopped')
+and indmdm.clinical_ind not like 'COMM%')
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_MEDDRA_ICD10_MAPPING successfully created")
+                elif "already exists" in message:
+                    print("VW_MEDDRA_ICD10_MAPPING view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_MEDDRA_ICD10_MAPPING: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists  VW_MEDDRA_SNOMEDCT_MAPPING(
+	CLINICAL_IND,
+	MEDDRA_LLT_CODE,
+	SNOMED_CT_CODE
+) COMMENT='Maps MEDDRA codes to SNOMED CT codes for indications used in Sanofi Project Indications. This is filtered to Indications with a status of Ongoing, Completed, or Stopped and excludes the COMMON placeholder indication. The basis of this is the indication data in the R&D MDM and the SNOMED CT mapping data from MedDRA'
+ as
+(
+select distinct indmdm.clinical_ind as clinical_ind, snomedct.meddra_llt_code as meddra_llt_code, snomedct.snomed_ct_code as SNOMED_CT_CODE
+from SRV_MDM_RNDMASTERDATA.vw_mdm_project_ind_master indmdm
+left join stg_manual_inputs.meddra_snomed_ct_mapping snomedct on snomedct.meddra_llt_code = indmdm.clinical_ind
+where indmdm.project_ind_status in ('Ongoing', 'Completed', 'Stopped')
+and indmdm.clinical_ind not like 'COMM%')
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_MEDDRA_SNOMEDCT_MAPPING successfully created")
+                elif "already exists" in message:
+                    print("VW_MEDDRA_SNOMEDCT_MAPPING view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_MEDDRA_SNOMEDCT_MAPPING: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""
+        create view if not exists  VW_PROJECT_INDICATION_FLAT(
+	PROJECT_CODE,
+	PROJECT_CATEGORY,
+	PROJECT_ORGANIZATION,
+	PROJECT_NAME,
+	PROJECT_DESCRIPTION,
+	PROJECT_STATUS,
+	PROJECT_PHASE,
+	PROJECT_PRIORITY,
+	PROJECT_INNOVATION_STATUS,
+	PROJECT_RESEARCH_DEVELOPMENT_LINK,
+	PROJECT_SANOFI_THERAPEUTIC_AREA,
+	ASSET_INN,
+	ASSET_BRAND_NAME,
+	ASSET_MECHANISM_OF_ACTION,
+	ASSET_MOA_SHORT_NAME,
+	ASSET_ACTIVE_SUBSTANCE_TYPE,
+	ASSET_ACTIVE_SUBSTANCE_SUBTYPE,
+	ASSET_ORIGIN_OF_ACTIVE_SUBSTANCE,
+	ASSET_PHARMACOLOGICAL_EFFECT,
+	INDICATION_UNIQUE_CODE,
+	INDICATION_LEAD_FLAG,
+	INDICATION_LONGNAME,
+	INDICATION_SHORTNAME,
+	INDICATION_PHASE,
+	INDICATION_CODE_MEDDRA,
+	INDICATION_NAME_MEDDRA,
+	INDICATION_STATUS,
+	INDICATION_SANOFI_THERAPEUTIC_AREA,
+	INDICATION_SANOFI_SUB_THERAPEUTIC_AREA_FRANCHISE,
+	INDICATION_PTRS,
+	LAST_PROJECT_INDICATION_GATE_MILESTONE,
+	LAST_PROJECT_INDICATION_GATE_MILESTONE_DATE,
+	NEXT_PROJECT_INDICATION_GATE_MILESTONE,
+	NEXT_PROJECT_INDICATION_GATE_MILESTONE_DATE,
+	GOV_APPROVED_PHASE_1_POS,
+	GOV_APPROVED_PHASE_2A_POS,
+	GOV_APPROVED_PHASE_2B_POS,
+	GOV_APPROVED_PHASE_2_POS,
+	GOV_APPROVED_PHASE_3_POS,
+	LAST_REFRESH_DATE
+) as (
+    WITH fou                                                                            AS (
+    SELECT
+        rdm_code_cd,
+        CASE
+            WHEN fou.EN_NM LIKE 'Oncology%' THEN 'Oncology'
+            WHEN fou.EN_NM LIKE 'Immunology%' THEN 'Immuno-inflammation'
+            WHEN fou.EN_NM LIKE 'Rare &amp; Neurologic Disease R - Rare'  THEN 'Rare Diseases'
+            WHEN fou.EN_NM LIKE 'Rare &amp; Neurologic Disease R - Neuro' THEN 'Neurology'
+            WHEN fou.EN_NM LIKE 'DCV%' THEN 'DCVM'
+            WHEN fou.EN_NM LIKE 'Diabetes%' THEN 'DCVM'
+            WHEN fou.EN_NM LIKE 'Transplant%' THEN 'Transplant'
+            WHEN fou.EN_NM LIKE 'Genomic Medicine Unit%' THEN 'Rare Diseases'
+            WHEN fou.EN_NM LIKE 'Rare Blood Disorders%' THEN 'Rare Diseases'
+            WHEN fou.EN_NM LIKE '%Vaccine%' THEN 'Vaccines'
+            WHEN fou.EN_NM LIKE 'Neurology%' THEN 'Neurology'
+            WHEN fou.EN_NM LIKE 'Ophthalmology%' THEN 'Ophthalmology'
+            ELSE fou.EN_NM
+        END                                                                         AS EN_NM
+    FROM SRV_MDM_RNDMASTERDATA.vw_mdm_financial_organization_unit fou
+),
+
+prjmdm                                                                              AS (
+    SELECT
+        prjmdm.project_code_cd,
+        CASE
+            WHEN prjmdm.project_category = 'D' THEN 'Development'
+            WHEN prjmdm.project_category = 'R' THEN 'Research'
+            ELSE prjmdm.project_category
+        END                                                                         AS PROJECT_CATEGORY,
+        CASE
+            WHEN prjmdm.project_organization_type = 'VACCINE' THEN 'VACCINE'
+            WHEN prjmdm.project_organization_type IN ('DEVELOPMENT','RESEARCH') THEN 'PHARMA'
+            ELSE prjmdm.project_organization_type
+        END                                                                         AS PROJECT_ORGANIZATION,
+        prjmdm.project_name_nm,
+        prjmdm.project_description_desc,
+        prj.prj_status,
+        prj.prj_phase,
+        prjmdm.project_organization_type,
+        prj.prj_responsability_fou_fk,
+        prj.prj_brand_nm,
+        prj.prj_inn,
+        prjmdm.mechanism_of_action,
+        prj.prj_moa_short_nm,
+        prjmdm.active_substance_type,
+        prjmdm.active_substance_sub_type,
+        prjmdm.origin_of_active_substance,
+        prj.prj_priority,
+        prj.prj_innovation_status,
+        prj.PRJ_DISCO_DEV_LINKED_CODES,
+        prj.prj_franchise,
+        prj.time_id,
+        prj.PRJ_PHARMACOLOGICAL_EFFECT
+    FROM SRV_MDM_RNDMASTERDATA.vw_mdm_project_master prjmdm
+    JOIN (
+        SELECT DISTINCT
+            prj_cd, prj_phase, prj_priority, prj_responsability_fou_fk, prj_responsability_desc,
+            prj_innovation_status, prj_status, prj_inn, prj_brand_nm, prj_moa_short_nm,
+            PRJ_DISCO_DEV_LINKED_CODES, prj_franchise, prj.time_id,PRJ_PHARMACOLOGICAL_EFFECT
+        FROM srv_rnd_df.vw_project prj
+        JOIN srv_rnd_df.vw_ref_baseline bas
+            ON prj.time_id = bas.time_id
+        --WHERE bas.bas_desc = 'Live'
+    ) prj
+        ON prjmdm.project_code_cd = prj.prj_cd
+    WHERE prjmdm.project_category IN ('R','D')
+        AND prjmdm.project_organization_type IN ('RESEARCH','DEVELOPMENT','VACCINE')
+        AND prj.prj_status IN ('Ongoing','Completed')
+        AND prj.prj_phase IN ('M0-M1','M1-M2','M0-M2','Preclinical','Phase 1','Phase 2','Phase 2A','Phase 2B','Phase 3','Regulatory submission','LCM', 'Post-Launch')
+),
+
+indmdm                                                                              AS (
+    SELECT
+        indmdm.project_ind_code_cd,
+        REGEXP_SUBSTR(indmdm.project_ind_code_cd, '^(.*?)_IND', 1, 1, 'e', 1)       AS indmdm_project_code,
+        indmdm.project_ind_description_desc,
+        indmdm.project_ind_name_nm,
+        indmdm.clinical_ind,
+        indmdm.project_ind_status,
+        indmdm.project_ind_phase,
+        ind.ind_fou_fk,
+        ind.ind_unique_cd,
+        ind.ind_lead_flag,
+        ind.ind_pots,
+        ind.ind_v_portfolio_strategic_grouping
+    FROM SRV_MDM_RNDMASTERDATA.vw_mdm_project_ind_master indmdm
+    LEFT JOIN (
+        SELECT DISTINCT
+            ind_unique_cd,
+            ind_lead_flag,
+            ind_pots,
+            ind_v_portfolio_strategic_grouping,
+            ind_fou_fk
+        FROM srv_rnd_df.vw_indication ind
+        JOIN srv_rnd_df.vw_ref_baseline bas
+            ON ind.time_id = bas.time_id
+        WHERE bas.bas_desc = 'Live'
+    ) ind
+        ON indmdm.project_ind_code_cd = ind.ind_unique_cd
+    WHERE indmdm.project_ind_status IN ('Ongoing', 'Completed', 'Stopped', 'On Hold')
+        AND SUBSTRING(indmdm.project_ind_code_cd, -2) NOT LIKE '5%'
+),
+
+cindmdm                                                                             AS (
+    SELECT rdm_code_cd, meddra_term
+    FROM SRV_MDM_RNDMASTERDATA.vw_mdm_clinical_indication
+),
+phase_pos                                                           AS ( ---Feb 2nd, 2026: Phase_pos values added 
+  SELECT 
+    REGEXP_SUBSTR(pha.PHA_UNIQUE_CD, '^(.*)_Phase', 1, 1, 'e', 1)   AS IND_CODE,
+    MAX(CASE WHEN pha.PHA_CD = 'Phase 1' THEN pha.PHA_SUCCESS_RATE END) 
+	                                                                AS GOV_APPROVED_PHASE_1_POS,
+    MAX(CASE WHEN pha.PHA_CD = 'Phase 2A' THEN pha.PHA_SUCCESS_RATE END) 
+	                                                                AS GOV_APPROVED_PHASE_2A_POS,
+    MAX(CASE WHEN pha.PHA_CD = 'Phase 2B' THEN pha.PHA_SUCCESS_RATE END) 
+	                                                                AS GOV_APPROVED_PHASE_2B_POS,
+    MAX(CASE WHEN pha.PHA_CD = 'Phase 2' AND pha.PHA_UNIQUE_CD NOT LIKE '%Phase 2A%' 
+         AND pha.PHA_UNIQUE_CD NOT LIKE '%Phase 2B%' THEN pha.PHA_SUCCESS_RATE END) 
+		                                                            AS GOV_APPROVED_PHASE_2_POS,
+    MAX(CASE WHEN pha.PHA_CD = 'Phase 3' THEN pha.PHA_SUCCESS_RATE END) 
+	                                                                AS GOV_APPROVED_PHASE_3_POS
+  FROM SRV_RND_DF.VW_PHASE pha
+  JOIN srv_rnd_df.vw_ref_baseline bas
+    ON pha.time_id = bas.time_id
+  WHERE bas.bas_desc = 'Live'
+    AND pha.PHA_CD IN ('Phase 1', 'Phase 2', 'Phase 2A', 'Phase 2B', 'Phase 3')
+  GROUP BY REGEXP_SUBSTR(pha.PHA_UNIQUE_CD, '^(.*)_Phase', 1, 1, 'e', 1)
+),
+
+milestone_base                                                                      AS (
+    SELECT
+        prjmdm_ms.project_code_cd                                                   AS PROJECT_CODE,
+        prjmdm_ms.project_phase,wbs.ind_functional_id,
+        CASE
+            WHEN prjmdm_ms.project_phase IN ('M0-M1', 'M1-M2','M0-M2')
+                THEN prjmdm_ms.project_code_cd
+            ELSE wbs.ind_functional_id
+        END                                                                         AS MILESTONE_SCOPE_CODE,
+        tsk.tsk_activity_type                                                       AS MILESTONE_NAME,
+        tsk.tsk_planned_finish_dt                                                   AS MILESTONE_PLANNED_FINISH_DT
+    FROM srv_rnd_df.vw_task tsk
+    INNER JOIN srv_rnd_df.mvw_wbs_hierarchy wbs
+        ON wbs.wbs_id = tsk.tsk_wbs_id 
+		AND wbs.time_id = tsk.time_id
+    INNER JOIN SRV_MDM_RNDMASTERDATA.vw_mdm_project_master prjmdm_ms
+        ON prjmdm_ms.project_code_cd = wbs.prj_functional_id
+
+    -- =====================================================
+    -- NEW: Join to get indication phase/status for filtering (RT: Feb 6th 2026)
+    -- =====================================================
+    LEFT JOIN SRV_MDM_RNDMASTERDATA.vw_mdm_project_ind_master indmdm_ms
+        ON wbs.ind_functional_id = indmdm_ms.project_ind_code_cd
+    -- =====================================================
+
+    INNER JOIN srv_rnd_df.vw_ref_baseline bas
+        ON bas.time_id = wbs.time_id 
+		AND bas.bas_desc = 'Live'
+    WHERE tsk.is_last = TRUE
+        AND tsk.tsk_activity_type IN (
+            'Target Selection - M0', 'Lead Selection - M1', 'Pre Candidate Selection',
+            'Start Development - M2', 'Proof of Commercial Concept', 'Start Ph01',
+            'Start Ph02', 'Start Ph2A', 'Start Ph2B', 'Start Ph03',
+            'First Submission', 'First Approval', 'Submission', 'Approval','Entry into Portfolio'
+        )
+        AND prjmdm_ms.project_category IN ('R','D')
+        AND prjmdm_ms.project_organization_type IN ('RESEARCH', 'DEVELOPMENT', 'VACCINE')
+        AND prjmdm_ms.project_status IN ('Ongoing', 'Completed')
+        AND prjmdm_ms.project_phase IN ('M0-M1','M1-M2','M0-M2','Preclinical','Phase 1','Phase 2','Phase 2A','Phase 2B','Phase 3','Regulatory submission','LCM')
+
+        -- =====================================================
+        -- NEW: Apply indication filters only when we use indication scope
+        -- =====================================================
+        AND (
+            prjmdm_ms.project_phase IN ('M0-M1', 'M1-M2' ,'M0-M2')
+            OR (
+                indmdm_ms.project_ind_status IN ('Ongoing', 'Completed')
+                AND (
+                    indmdm_ms.project_ind_phase IS NULL
+                    OR indmdm_ms.project_ind_phase IN (
+                        'M0-M1', 'M1-M2', 'M0-M2', 'Preclinical',
+                        'Phase 1', 'Phase 2', 'Phase 2A', 'Phase 2B', 'Phase 3',
+                        'Regulatory submission', 'LCM'
+                    )
+                )
+            )
+        )
+        -- =====================================================
+),
+last_milestone                                                                      AS (
+    SELECT
+        PROJECT_CODE,
+        MILESTONE_SCOPE_CODE,
+        MILESTONE_NAME,
+        MILESTONE_PLANNED_FINISH_DT  
+    FROM (
+        SELECT *,
+            ROW_NUMBER() OVER (
+                PARTITION BY PROJECT_CODE, MILESTONE_SCOPE_CODE
+                ORDER BY MILESTONE_PLANNED_FINISH_DT DESC
+            )                                                                       AS rn
+        FROM milestone_base
+        WHERE MILESTONE_PLANNED_FINISH_DT <= CURRENT_DATE()
+    )
+    WHERE rn = 1
+),
+next_milestone                                                                      AS (
+    SELECT
+        PROJECT_CODE,
+        MILESTONE_SCOPE_CODE,
+        MILESTONE_NAME,
+        MILESTONE_PLANNED_FINISH_DT  
+    FROM (
+        SELECT *,
+            ROW_NUMBER() OVER (PARTITION BY PROJECT_CODE, MILESTONE_SCOPE_CODE
+                               ORDER BY MILESTONE_PLANNED_FINISH_DT ASC)            AS rn
+        FROM milestone_base
+        WHERE MILESTONE_PLANNED_FINISH_DT > CURRENT_DATE()
+    )
+    WHERE rn = 1
+)
+
+SELECT DISTINCT
+    prjmdm.project_code_cd                                                          AS PROJECT_CODE,
+    prjmdm.PROJECT_CATEGORY,
+    prjmdm.PROJECT_ORGANIZATION,
+    prjmdm.project_name_nm                                                          AS PROJECT_NAME,
+    prjmdm.project_description_desc                                                 AS PROJECT_DESCRIPTION,
+    prjmdm.prj_status                                                               AS PROJECT_STATUS,
+    prjmdm.prj_phase                                                                AS PROJECT_PHASE,
+    prjmdm.prj_priority                                                             AS PROJECT_PRIORITY,
+    prjmdm.prj_innovation_status                                                    AS PROJECT_INNOVATION_STATUS,
+    prjmdm.PRJ_DISCO_DEV_LINKED_CODES                                               AS PROJECT_RESEARCH_DEVELOPMENT_LINK,
+    CASE
+        WHEN prjmdm.project_organization_type = 'VACCINE' THEN 'Vaccines'
+        ELSE fou_prj.EN_NM
+    END                                                                             AS PROJECT_SANOFI_THERAPEUTIC_AREA,
+    prjmdm.prj_inn                                                                  AS ASSET_INN,
+    prjmdm.prj_brand_nm                                                             AS ASSET_BRAND_NAME,
+    prjmdm.mechanism_of_action                                                      AS ASSET_MECHANISM_OF_ACTION,
+    prjmdm.prj_moa_short_nm                                                         AS ASSET_MOA_SHORT_NAME,
+    prjmdm.active_substance_type                                                    AS ASSET_ACTIVE_SUBSTANCE_TYPE,
+    prjmdm.active_substance_sub_type                                                AS ASSET_ACTIVE_SUBSTANCE_SUBTYPE,
+    prjmdm.origin_of_active_substance                                               AS ASSET_ORIGIN_OF_ACTIVE_SUBSTANCE,
+    prjmdm.PRJ_PHARMACOLOGICAL_EFFECT                                               AS ASSET_PHARMACOLOGICAL_EFFECT,
+    indmdm.project_ind_code_cd                                                      AS INDICATION_UNIQUE_CODE,
+    indmdm.ind_lead_flag                                                            AS INDICATION_LEAD_FLAG,
+    indmdm.project_ind_description_desc                                             AS INDICATION_LONGNAME,
+    indmdm.project_ind_name_nm                                                      AS INDICATION_SHORTNAME,
+    indmdm.project_ind_phase                                                        AS INDICATION_PHASE,
+    indmdm.clinical_ind                                                             AS INDICATION_CODE_MEDDRA,
+    cindmdm.meddra_term                                                             AS INDICATION_NAME_MEDDRA,
+    indmdm.project_ind_status                                                       AS INDICATION_STATUS,
+    CASE
+        WHEN prjmdm.project_organization_type = 'VACCINE' THEN 'Vaccines'
+        ELSE fou_ind.EN_NM
+    END                                                                             AS INDICATION_SANOFI_THERAPEUTIC_AREA,
+    CASE
+        WHEN prjmdm.project_organization_type = 'VACCINE' THEN prjmdm.prj_franchise
+        ELSE indmdm.ind_v_portfolio_strategic_grouping
+    END                                                                             AS INDICATION_SANOFI_SUB_THERAPEUTIC_AREA_FRANCHISE,
+    CASE
+        WHEN indmdm.ind_pots IS NOT NULL THEN indmdm.ind_pots / 100
+        ELSE indmdm.ind_pots
+    END                                                                             AS INDICATION_PTRS,
+    last_milestone.MILESTONE_NAME                                                   AS LAST_PROJECT_INDICATION_GATE_MILESTONE,
+    last_milestone.MILESTONE_PLANNED_FINISH_DT                                      AS LAST_PROJECT_INDICATION_GATE_MILESTONE_DATE,
+    next_milestone.MILESTONE_NAME                                                   AS NEXT_PROJECT_INDICATION_GATE_MILESTONE,
+    next_milestone.MILESTONE_PLANNED_FINISH_DT                                      AS NEXT_PROJECT_INDICATION_GATE_MILESTONE_DATE,
+	  phase_pos.GOV_APPROVED_PHASE_1_POS                                AS GOV_APPROVED_PHASE_1_POS, -- Jan 27th 2026, Rohit T: adding Phase level POS for Phase 1, Phase 2a, Phase 2b, Phase 2, Phase 3
+  phase_pos.GOV_APPROVED_PHASE_2A_POS                               AS GOV_APPROVED_PHASE_2A_POS,
+  phase_pos.GOV_APPROVED_PHASE_2B_POS                               AS GOV_APPROVED_PHASE_2B_POS,
+  phase_pos.GOV_APPROVED_PHASE_2_POS                                AS GOV_APPROVED_PHASE_2_POS,
+  phase_pos.GOV_APPROVED_PHASE_3_POS                                AS GOV_APPROVED_PHASE_3_POS,
+	prjmdm.time_id                                                                  AS LAST_REFRESH_DATE
+FROM prjmdm
+JOIN indmdm
+    ON prjmdm.project_code_cd = indmdm.indmdm_project_code
+LEFT JOIN fou fou_prj
+    ON prjmdm.prj_responsability_fou_fk = fou_prj.rdm_code_cd
+LEFT JOIN fou fou_ind
+    ON indmdm.ind_fou_fk = fou_ind.rdm_code_cd
+LEFT JOIN cindmdm
+    ON indmdm.clinical_ind = cindmdm.rdm_code_cd
+LEFT JOIN phase_pos
+  ON indmdm.project_ind_code_cd = phase_pos.IND_CODE
+LEFT JOIN last_milestone
+    ON prjmdm.project_code_cd = last_milestone.PROJECT_CODE
+    AND (
+        ( prjmdm.prj_phase IN ('M0-M1', 'M1-M2','M0-M2')
+            AND last_milestone.MILESTONE_SCOPE_CODE = prjmdm.project_code_cd
+        )
+        OR (prjmdm.prj_phase NOT IN ('M0-M1', 'M1-M2','M0-M2')
+            AND indmdm.project_ind_status IN ('Ongoing', 'Completed')
+            AND last_milestone.MILESTONE_SCOPE_CODE = indmdm.project_ind_code_cd
+        )
+    )
+LEFT JOIN next_milestone
+    ON prjmdm.project_code_cd = next_milestone.PROJECT_CODE
+    AND (
+        ( prjmdm.prj_phase IN ('M0-M1', 'M1-M2','M0-M2')
+            AND next_milestone.MILESTONE_SCOPE_CODE = prjmdm.project_code_cd
+        )
+        OR ( prjmdm.prj_phase NOT IN ('M0-M1', 'M1-M2','M0-M2')
+            AND indmdm.project_ind_status IN ('Ongoing', 'Completed')
+            AND next_milestone.MILESTONE_SCOPE_CODE = indmdm.project_ind_code_cd
+        )
+    )
+  )
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_PROJECT_INDICATION_FLAT successfully created")
+                elif "already exists" in message:
+                    print("VW_PROJECT_INDICATION_FLAT view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_PROJECT_INDICATION_FLAT: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists  VW_PROJECT_INDICATION_MILESTONE_DATES(
+	PROJECT_CODE,
+	INDICATION_UNIQUE_CODE,
+	LAST_MILESTONE,
+	LAST_MILESTONE_PLANNED_FINISH_DT,
+	NEXT_MILESTONE,
+	NEXT_MILESTONE_PLANNED_FINISH_DT
+) COMMENT='The view contains records of project indication milestones, specifically milestone types and planned completion dates. Currently this data set only has the submission/approval milestones for the 4 major Sanofi regions of USA (US), Europe (EU), China (CN), and Japan (JP) as this is what is tracked in RDPM. Each record represents a single milestone type for a given project indication, including the First Submission and First Approval milestones (for which the associated region/country can be cound in the MILESTONE_COUNTRY_CODE column. The only exceptions to this are the \"Submission\" and \"Approval\" milestones. For the \"Submission\" and \"Approval\" milestones, there will be one record per Project Indication \"Submission\" or \"Approval\" for each of the remaining three region/countries that Sanofi plans to submit marketing authorization for. The milestone types present are Target Selection - M0, Lead Selection - M1, Proof of Mechanism, Pre Candidate Selection, Proof of Concept, Start Development - M2, Proof of Commercial Concept, Start Ph01, GNG Ph02, GNG Ph2A, Start Ph02, Start Ph2A, GNG Ph2B, Start Ph2B, GNG Ph03, Start Ph03,First Submission, First Approval, Submission, Approval'
+ as
+
+
+WITH base_data AS (
+    SELECT 
+        prjmdm.project_code_cd AS PROJECT_CODE, 
+        wbs.ind_functional_id AS INDICATION_UNIQUE_CODE, 
+        tsk.tsk_activity_type AS MILESTONE_NAME, 
+        tsk.tsk_planned_finish_dt AS MILESTONE_PLANNED_FINISH_DT, 
+        REGEXP_SUBSTR(tsk.TSK_COMMENT, '(US|EU|JP|CN)') AS MILESTONE_COUNTRY_CODE, 
+        tsk.tsk_comment AS MILESTONE_COMMENT
+    FROM srv_rnd_df.vw_task tsk
+    INNER JOIN srv_rnd_df.mvw_wbs_hierarchy wbs 
+        ON wbs.wbs_id = tsk.tsk_wbs_id AND wbs.time_id = tsk.time_id
+    INNER JOIN SRV_MDM_RNDMASTERDATA.vw_mdm_project_master prjmdm 
+        ON prjmdm.project_code_cd = wbs.prj_functional_id
+    INNER JOIN srv_rnd_df.vw_ref_baseline bas 
+        ON bas.time_id = wbs.time_id AND bas.bas_desc = 'Live'
+    WHERE tsk.is_last = TRUE
+        AND tsk.tsk_activity_type IN ('Target Selection - M0', 'Lead Selection - M1',  'Pre Candidate Selection', 'Start Development - M2', 'Proof of Commercial Concept','Start Ph01',  'Start Ph02', 'Start Ph2A','Start Ph2B','Start Ph03','First Submission', 'First Approval', 'Submission', 'Approval')
+        AND prjmdm.project_category IN ('R','D')
+        AND prjmdm.project_organization_type IN ('RESEARCH', 'DEVELOPMENT', 'VACCINE')
+        AND prjmdm.project_status IN ('Ongoing', 'Completed')
+        AND prjmdm.project_phase IN ('M0-M1','M1-M2','M0-M2','Preclinical','Phase 1','Phase 2','Phase 2A','Phase 2B','Phase 3','Regulatory submission','LCM')
+),
+
+-- Get the LAST milestone (most recent completed: date <= today)
+last_milestone AS (
+    SELECT 
+        PROJECT_CODE,
+        INDICATION_UNIQUE_CODE,
+        MILESTONE_NAME AS LAST_MILESTONE,
+        MILESTONE_PLANNED_FINISH_DT,
+    FROM (
+        SELECT *,
+            ROW_NUMBER() OVER (PARTITION BY PROJECT_CODE, INDICATION_UNIQUE_CODE 
+                               ORDER BY MILESTONE_PLANNED_FINISH_DT DESC) AS rn
+        FROM base_data
+        WHERE MILESTONE_PLANNED_FINISH_DT <= CURRENT_DATE()
+    )
+    WHERE rn = 1
+),
+
+-- Get the NEXT milestone (earliest upcoming: date > today)
+next_milestone AS (
+    SELECT 
+        PROJECT_CODE,
+        INDICATION_UNIQUE_CODE,
+        MILESTONE_NAME AS NEXT_MILESTONE,
+        MILESTONE_PLANNED_FINISH_DT,
+        MILESTONE_COUNTRY_CODE,
+        MILESTONE_COMMENT
+    FROM (
+        SELECT *,
+            ROW_NUMBER() OVER (PARTITION BY PROJECT_CODE, INDICATION_UNIQUE_CODE 
+                               ORDER BY MILESTONE_PLANNED_FINISH_DT ASC) AS rn
+        FROM base_data
+        WHERE MILESTONE_PLANNED_FINISH_DT > CURRENT_DATE()
+    )
+    WHERE rn = 1
+)
+
+-- Final output: Join last and next milestones into single row
+SELECT 
+    COALESCE(n.PROJECT_CODE, l.PROJECT_CODE) AS PROJECT_CODE,
+    COALESCE(n.INDICATION_UNIQUE_CODE, l.INDICATION_UNIQUE_CODE) AS INDICATION_UNIQUE_CODE,
+    --n.MILESTONE_PLANNED_FINISH_DT,
+    --n.MILESTONE_COUNTRY_CODE as MILESTONE_COUNTRY_CODE,
+    --n.MILESTONE_COMMENT,
+    l.LAST_MILESTONE,
+    l.MILESTONE_PLANNED_FINISH_DT as LAST_MILESTONE_FINISH_DT,
+    n.NEXT_MILESTONE,
+    n.MILESTONE_PLANNED_FINISH_DT as NEXT_MILESTONE_PLANNED_FINISH_DT
+FROM next_milestone n
+FULL OUTER JOIN last_milestone l 
+    ON n.PROJECT_CODE = l.PROJECT_CODE 
+    AND n.INDICATION_UNIQUE_CODE = l.INDICATION_UNIQUE_CODE
+ORDER BY PROJECT_CODE, INDICATION_UNIQUE_CODE
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_PROJECT_INDICATION_MILESTONE_DATES successfully created")
+                elif "already exists" in message:
+                    print("VW_PROJECT_INDICATION_MILESTONE_DATES view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_PROJECT_INDICATION_MILESTONE_DATES: {e}")
+        #Handle error
+
+    try: 
+        result=cur.execute("""create view if not exists  VW_PROJECT_INDICATION_READOUTS_MILESTONES(
+	PROJECT_CODE,
+	INDICATION_UNIQUE_CODE,
+	READOUT_NAME,
+	READOUT_PLANNED_DT
+) COMMENT='View containing upcoming project readout milestones for ongoing R&D projects. Includes readouts planned for the current year and next year only. Filters for active projects in research, development, and vaccine organizations across all clinical phases.'
+ as
+   (
+    SELECT 
+        PRJMDM.PROJECT_CODE_CD      AS PROJECT_CODE, 
+        WBS.IND_FUNCTIONAL_ID       AS INDICATION_UNIQUE_CODE, 
+        TSK.TSK_PFM_DESC            AS READOUT_NAME, 
+        TSK.TSK_PLANNED_FINISH_DT   AS READOUT_PLANNED_DT
+    FROM SRV_RND_DF.VW_TASK TSK
+    INNER JOIN SRV_RND_DF.MVW_WBS_HIERARCHY WBS 
+        ON WBS.WBS_ID             = TSK.TSK_WBS_ID 
+        AND WBS.TIME_ID           = TSK.TIME_ID
+    INNER JOIN SRV_MDM_RNDMASTERDATA.VW_MDM_PROJECT_MASTER PRJMDM 
+        ON PRJMDM.PROJECT_CODE_CD = WBS.PRJ_FUNCTIONAL_ID
+    INNER JOIN SRV_RND_DF.VW_REF_BASELINE BAS 
+        ON BAS.TIME_ID            = WBS.TIME_ID 
+        AND BAS.BAS_DESC          = 'Live'
+    WHERE TSK.IS_LAST = TRUE
+        AND PRJMDM.PROJECT_CATEGORY            IN ('R','D')
+        AND PRJMDM.PROJECT_ORGANIZATION_TYPE   IN ('RESEARCH', 'DEVELOPMENT', 'VACCINE')
+        AND PRJMDM.PROJECT_STATUS              = 'Ongoing'
+        AND PRJMDM.PROJECT_PHASE               IN  ('M0-M1','M1-M2','M0-M2','Preclinical','Phase 1','Phase 2','Phase 2A','Phase 2B','Phase 3','Regulatory submission','LCM')
+        AND (YEAR(TSK.TSK_PLANNED_FINISH_DT)   = YEAR(CURRENT_DATE) 
+		    OR YEAR(TSK.TSK_PLANNED_FINISH_DT) = YEAR(CURRENT_DATE) + 1)
+    ORDER BY  
+        READOUT_PLANNED_DT, 
+        PROJECT_CODE, 
+        INDICATION_UNIQUE_CODE
+    );
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_PROJECT_INDICATION_READOUTS_MILESTONES successfully created")
+                elif "already exists" in message:
+                    print("VW_PROJECT_INDICATION_READOUTS_MILESTONES view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_PROJECT_INDICATION_READOUTS_MILESTONES: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists  VW_PROJECT_INDICATION_TPP(
+	TPP_SYS_ID,
+	PROJECT_CODE,
+	INDICATION_UNIQUE_CODE,
+	TPP_SOC_CATEGORY,
+	TPP_SOC_SUBCATEGORY,
+	TPP_BASE_PROFILE_SOC_FOR_SUBCATEGORY,
+	TPP_UPSIDE_PROFILE_SOC_FOR_SUBCATEGORY,
+	TPP_MINIMALLY_MARKETABLE_PROFILE_SOC_FOR_SUBCATEGORY,
+	TPP_COMPARATOR_PRODUCT1_NAME,
+	TPP_COMPARATOR_PRODUCT1_SOC_FOR_SUBCATEGORY,
+	TPP_BASE_VS_COMPARATOR_PRODUCT1_SOC_FOR_SUBCATEGORY,
+	TPP_UPSIDE_VS_COMPARATOR_PRODUCT1_SOC_FOR_SUBCATEGORY,
+	TPP_MINIMALLY_MARKETABLE_VS_COMPARATOR_PRODUCT1_SOC_FOR_SUBCATEGORY,
+	TPP_COMPARATOR_PRODUCT2_NAME,
+	TPP_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY,
+	TPP_BASE_VS_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY,
+	TPP_UPSIDE_VS_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY,
+	TPP_MINIMALLY_MARKETABLE_VS_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY,
+	TPP_COMPARATOR_PRODUCT3_NAME,
+	TPP_COMPARATOR_PRODUCT3_SOC_FOR_SUBCATEGORY,
+	TPP_BASE_VS_COMPARATOR_PRODUCT3_SOC_FOR_SUBCATEGORY,
+	TPP_UPSIDE_VS_COMPARATOR_PRODUCT3_SOC_FOR_SUBCATEGORY,
+	TPP_MINIMALLY_MARKETABLE_VS_COMPARATOR_PRODUCT3_SOC_FOR_SUBCATEGORY,
+	TPP_STATUS,
+	TPP_CREATED_DATE,
+	TPP_MODIFIED_DATE
+) COMMENT='This view integrates TPP data from iPORT with Indication data from RDPM. It is a flattened out structure for the TPP with a workaround in place to account for the iPORT design that stores TPPs with Indication Shortnames instead of Indication Codes. A second workaround is that the query retrieves the Indication Unique Code from the RDPM data instead of the MDM data because in the current setup, the Indication history is not shared from the MDM system to the Asset Portfolio Data Fabric. That said, since Indications are authored in RDPM and then fed to the MDM, this should not cause an issue until a more robust solution using MDM as the source of truth can be put in place.'
+ as
+(
+WITH max_time_id AS (
+  SELECT
+    ind_unique_cd,
+    MAX(time_id) AS max_time_id
+  FROM
+    srv_rnd_df.vw_indication
+  WHERE
+    NOT ind_shortname IS NULL
+  GROUP BY
+    ind_unique_cd
+),
+latest_indication AS (
+  SELECT
+    indrdpm.ind_unique_cd,
+    indrdpm.ind_shortname,
+    indrdpm.time_id
+  FROM
+    srv_rnd_df.vw_indication AS indrdpm
+    JOIN max_time_id ON indrdpm.ind_unique_cd = max_time_id.ind_unique_cd
+    AND indrdpm.time_id = max_time_id.max_time_id
+)
+
+SELECT
+  tpp.tpp_prof_id as TPP_SYS_ID,
+  tpp."Project Code" as PROJECT_CODE,
+  case when latest_indication.ind_unique_cd is null then tpp.indication
+  else latest_indication.ind_unique_cd end as INDICATION_UNIQUE_CODE,
+  tpp.title as TPP_SOC_CATEGORY,
+  tpp."Attribute Name" as TPP_SOC_SUBCATEGORY,
+  tpp."Base Profile" as TPP_BASE_PROFILE_SOC_FOR_SUBCATEGORY,
+  tpp."Upside Profile" as TPP_UPSIDE_PROFILE_SOC_FOR_SUBCATEGORY,
+  tpp."Minimally Marketable Profile" as TPP_MINIMALLY_MARKETABLE_PROFILE_SOC_FOR_SUBCATEGORY,
+  tpp."SOC Launch Name" as TPP_COMPARATOR_PRODUCT1_NAME,
+  tpp."SOC Description" as TPP_COMPARATOR_PRODUCT1_SOC_FOR_SUBCATEGORY,
+  tpp."Comparative Position" as TPP_BASE_VS_COMPARATOR_PRODUCT1_SOC_FOR_SUBCATEGORY,
+  tpp."upside vs soc" as TPP_UPSIDE_VS_COMPARATOR_PRODUCT1_SOC_FOR_SUBCATEGORY,
+  tpp."minimally vs soc" as TPP_MINIMALLY_MARKETABLE_VS_COMPARATOR_PRODUCT1_SOC_FOR_SUBCATEGORY,
+  tpp."SOC Launch Name 2" as TPP_COMPARATOR_PRODUCT2_NAME,
+  tpp."SOC Description 2" as TPP_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY,
+  tpp."Comparative Position 2" as TPP_BASE_VS_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY,
+  tpp."Upside vs SOC 2" as TPP_UPSIDE_VS_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY,
+  tpp."Minimally vs SOC 2" as TPP_MINIMALLY_MARKETABLE_VS_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY,
+  tpp."SOC Launch Name 3" as TPP_COMPARATOR_PRODUCT3_NAME,
+  tpp."SOC Description 3" as TPP_COMPARATOR_PRODUCT3_SOC_FOR_SUBCATEGORY,
+  tpp."Comparative Position 3" as TPP_BASE_VS_COMPARATOR_PRODUCT3_SOC_FOR_SUBCATEGORY,
+  tpp."Upside vs SOC 3" as TPP_UPSIDE_VS_COMPARATOR_PRODUCT3_SOC_FOR_SUBCATEGORY,
+  tpp."Minimally vs SOC 3" as TPP_MINIMALLY_MARKETABLE_VS_COMPARATOR_PRODUCT3_SOC_FOR_SUBCATEGORY,
+  tpp.status as TPP_STATUS,
+  tpp.created as TPP_CREATED_DATE,
+  tpp.modified as TPP_MODIFIED_DATE
+  
+FROM
+  crdh_dea_iport_reporting.prtfl_tpp_profile AS tpp
+  LEFT JOIN latest_indication ON tpp.indication = latest_indication.ind_shortname
+  AND LEFT (
+    latest_indication.ind_unique_cd,
+    LENGTH (latest_indication.ind_unique_cd) - 7
+  ) = tpp."Project Code"
+where tpp.indication is not null  
+ORDER BY
+  tpp.tpp_prof_id)
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_PROJECT_INDICATION_TPP successfully created")
+                elif "already exists" in message:
+                    print("VW_PROJECT_INDICATION_TPP view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_PROJECT_INDICATION_TPP: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists  VW_PROJECT_TCP(
+	TCP_ID,
+	PROJECT_CODE,
+	PROJECT_NAME,
+	TCP_CHARACTERISTIC,
+	TCP_CHARACTERISTIC_VALUE,
+	TCP_STATUS,
+	TCP_CREATED_BY,
+	TCP_MODIFIED_BY,
+	TCP_CREATED_DATE,
+	TCP_MODIFIED_DATE
+) COMMENT='View containing TCP (Target Candidate Profile) data from the Portfolio TCP Profile table. Includes only records with status of Published or Draft.'
+ as
+   (
+    SELECT 
+		TCP_PROF_ID    AS TCP_ID,
+		"Project Code" AS PROJECT_CODE,
+		"Project Name" AS PROJECT_NAME,
+    CASE 
+        WHEN "Title" = 'Potential Indications & FIC / BIC Potential' 
+        THEN "Attribute Name"
+        ELSE "Title"
+        END            AS TCP_CHARACTERISTIC,
+		"Comments"     AS TCP_CHARACTERISTIC_VALUE,
+		"Status"       AS TCP_STATUS,
+		"Created By"   AS TCP_CREATED_BY,
+		"Modified By"  AS TCP_MODIFIED_BY,
+		"Created"      AS TCP_CREATED_DATE,
+		"Modified"     AS TCP_MODIFIED_DATE
+	FROM 
+		CRDH_DEA_IPORT_REPORTING.PRTFL_TCP_PROFILE
+	WHERE 
+		     ("Status"  LIKE 'Published%'
+			OR "Status" LIKE 'Draft%')
+	ORDER BY 
+		TCP_PROF_ID
+        );
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_PROJECT_TCP successfully created")
+                elif "already exists" in message:
+                    print("VW_PROJECT_TCP view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_PROJECT_TCP: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists  VW_PROJECT_TEAM_MEMBER(
+	PROJECT_CODE,
+	INDICATION_UNIQUE_CODE,
+	PROJECT_TEAM_MEMBER_TEAMS,
+	PROJECT_TEAM_MEMBER_PROJECT_ROLE_ORIG,
+	PROJECT_TEAM_MEMBER_DESC,
+	PROJECT_TEAM_MEMBER_EMAIL,
+	PROJECT_TEAM_MEMBER_SUB_TEAMS,
+	PROJECT_TEAM_MEMBER_DEPARTMENT_CODE,
+	PROJECT_TEAM_MEMBER_FUNCTION,
+	PROJECT_TEAM_MEMBER_SCOPE_DESC,
+	PROJECT_TEAM_MEMBER_PROJECT_ROLE
+) COMMENT='The view showing Live baseline data containsTeam member information from RDPM for projects and Indication across R&D(including pharma & Vaccine) for Iport Reporting'
+ as 
+select * from (
+SELECT TM.PRJ_CD as PROJECT_CODE, TM.IND_UNIQUE_CD as INDICATION_UNIQUE_CODE,TM.PTM_TEAMS as PROJECT_TEAM_MEMBER_TEAMS,TM.PTM_PRJ_ROLE AS PROJECT_TEAM_MEMBER_PROJECT_ROLE_ORIG,
+TM.PTM_MEMBER_DESC as PROJECT_TEAM_MEMBER_DESC,TM.PTM_EMAIL as PROJECT_TEAM_MEMBER_EMAIL,TM.PTM_SUB_TEAMS as PROJECT_TEAM_MEMBER_SUB_TEAMS,
+CASE when (TM.DEPARTMENT_CODE is null or TM.DEPARTMENT_CODE = '') and (lower(TM.PTM_PRJ_ROLE) = lower('Global Regulatory Leader')
+or lower(TM.PTM_PRJ_ROLE) = lower('Global Regulatory Team Leader') or lower(TM.PTM_PRJ_ROLE) = lower('GRA Team Leader'))
+then 'FA10' ELSE TM.DEPARTMENT_CODE END AS PROJECT_TEAM_MEMBER_DEPARTMENT_CODE,
+CASE when (TM.FUNCTION is null or TM.FUNCTION = '') and (lower(TM.PTM_PRJ_ROLE) = lower('Global Regulatory Leader')
+or lower(TM.PTM_PRJ_ROLE) = lower('Global Regulatory Team Leader') or lower(TM.PTM_PRJ_ROLE) = lower('GRA Team Leader'))
+then 'GRA' ELSE TM.FUNCTION END AS PROJECT_TEAM_MEMBER_FUNCTION,
+scope_desc as PROJECT_TEAM_MEMBER_SCOPE_DESC,
+CASE WHEN (ptm_prj_role = 'Global Project Manager' OR ptm_prj_role = 'Global Project Head' OR ptm_prj_role = 'PM' OR ptm_prj_role = 'PH' OR ptm_prj_role = 'GPM' OR ptm_prj_role = 'GPH'  )	
+THEN 'GPH/GPM'
+WHEN (ptm_prj_role in ('CMC Project Manager','CMC PM','CMC Leader','CMC Project Leader'))
+THEN 'Function Team Lead'
+WHEN (scope_desc='Research pharma' and TM.DEPARTMENT_CODE in('CL14','CA10','CL11','CL16'))
+THEN 'Function Team Lead'
+
+--AND 
+WHEN ((ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team'))
+--OR ((LEFT(DEPARTMENT_CODE,2) = 'JD' OR DEPARTMENT_CODE = 'YC15' OR DEPARTMENT_CODE = 'YC10'))
+--OR DEPARTMENT_CODE = 'YC11' OR DEPARTMENT_CODE = 'YC16' OR DEPARTMENT_CODE = 'YE13' OR DEPARTMENT_CODE = 'YE10' ) AND (ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team'))
+THEN 'Function Team Lead'
+--WHEN ((ptm_teams = 'GPT - Extended Team' OR ptm_teams = 'Extended team')) 
+--(LEFT(DEPARTMENT_CODE,2) = 'JD' OR DEPARTMENT_CODE = 'YC15' OR DEPARTMENT_CODE = 'YC10'
+--OR DEPARTMENT_CODE = 'YC11' OR DEPARTMENT_CODE = 'YC16' OR DEPARTMENT_CODE = 'YE13' OR DEPARTMENT_CODE = 'YE10' OR ptm_prj_role = 'CMC OPCM')
+--THEN 'Function Reader' 
+--WHEN (ptm_teams = 'GPT - Core Team') AND (DEPARTMENT_CODE = 'CL10' OR DEPARTMENT_CODE = 'CL18' OR DEPARTMENT_CODE = 'CL20')
+--THEN 'Function Team Lead'
+--WHEN (DEPARTMENT_CODE = 'CL10' OR DEPARTMENT_CODE = 'CL18' OR DEPARTMENT_CODE = 'CL20')
+--THEN 'Function Reader'
+--WHEN (ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team' ) AND (DEPARTMENT_CODE = 'FA10')
+--THEN 'Function Team Lead'
+--WHEN (DEPARTMENT_CODE = 'FA10')
+--THEN 'Function Reader'
+--WHEN (ptm_teams = 'GPT - Core Team') AND (DEPARTMENT_CODE = 'CL12')
+--THEN 'Function Team Lead'
+--WHEN (DEPARTMENT_CODE = 'CL12')
+--THEN 'Function Reader'
+--WHEN (ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team') AND (LEFT(DEPARTMENT_CODE,2) = 'DB' OR DEPARTMENT_CODE ='YA10' 
+--OR DEPARTMENT_CODE ='YJ14' OR DEPARTMENT_CODE ='YC12' OR DEPARTMENT_CODE ='YA20' )
+--THEN 'Function Team Lead'
+--WHEN (LEFT(DEPARTMENT_CODE,2) = 'DB' OR DEPARTMENT_CODE ='YA10' 
+--OR DEPARTMENT_CODE ='YJ14' OR DEPARTMENT_CODE ='YC12' OR DEPARTMENT_CODE ='YA20'
+--OR PTM_SUB_TEAMS='CSO Subteam'
+--)
+--THEN 'Function Reader'
+/*WHEN (ptm_teams = 'Core team') AND ( DEPARTMENT_CODE ='YD13' OR DEPARTMENT_CODE ='YJ10' OR DEPARTMENT_CODE ='YJ15' OR DEPARTMENT_CODE ='YD12' OR DEPARTMENT_CODE ='YD14'  )
+THEN 'Function Team Lead'
+WHEN  ( DEPARTMENT_CODE ='YD13' OR DEPARTMENT_CODE ='YJ10' OR DEPARTMENT_CODE ='YJ15' OR DEPARTMENT_CODE ='YD12'  OR DEPARTMENT_CODE ='YD14')
+THEN 'Function Reader'
+WHEN (ptm_teams = 'Core team') AND ( DEPARTMENT_CODE ='YE18')
+THEN 'Function Team Lead'
+WHEN (DEPARTMENT_CODE ='YE18')
+THEN 'Function Reader'
+WHEN (PRJ_CATEGORIE || ' ' || PRJ_VACCIN_PHARMA = 'Research pharma') AND ( DEPARTMENT_CODE ='CL14')
+THEN 'Function Team Lead'
+WHEN (DEPARTMENT_CODE ='CL14')
+THEN 'Function Reader'
+WHEN (PRJ_CATEGORIE || ' ' || PRJ_VACCIN_PHARMA = 'Research pharma') AND ( DEPARTMENT_CODE ='CA10')
+THEN 'Function Team Lead'
+WHEN (DEPARTMENT_CODE ='CA10')
+THEN 'Function Reader'
+WHEN (PRJ_CATEGORIE || ' ' || PRJ_VACCIN_PHARMA = 'Research pharma') AND ( DEPARTMENT_CODE ='CL11')
+THEN 'Function Team Lead'
+WHEN (DEPARTMENT_CODE ='CL11')
+THEN 'Function Reader'
+WHEN (PRJ_CATEGORIE || ' ' || PRJ_VACCIN_PHARMA = 'Research pharma') AND ( DEPARTMENT_CODE ='CL16')
+THEN 'Function Team Lead'
+WHEN (DEPARTMENT_CODE ='CL16')
+THEN 'Function Reader'
+WHEN (ptm_teams = 'GPT - Core Team') AND ( left(DEPARTMENT_CODE,2) ='BK')
+THEN 'Function Team Lead'
+WHEN (left(DEPARTMENT_CODE,2) ='BK' OR PTM_SUB_TEAMS='Translational subteam' )
+THEN 'Function Reader'
+ 
+WHEN (ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team')	
+THEN 'Other'
+*/
+ELSE 'Other'
+END AS PROJECT_TEAM_MEMBER_PROJECT_ROLE	
+FROM
+(
+select distinct prj_cd 
+    ,null as ind_unique_cd  
+    ,tmb.ptm_teams
+    ,tmb.ptm_prj_role
+    ,tmb.ptm_member_desc
+    ,tmb.ptm_email
+    ,tmb.ptm_sub_teams
+	,case when  UPPER(prj_tpr_category) = UPPER('R') then  'Research'
+     when UPPER(prj_tpr_category) = UPPER('D') then  'Development'
+     when UPPER(tpr.tpr_desc) =  UPPER('Others')  then 'Other' else tpr.tpr_desc end||' '|| case when prj_vaccin_flag= TRUE then 'vaccin' 
+	else 'pharma'end as scope_desc
+	,substr(res.RES_SERVICE_FOU_FK,1,4) as Department_code,
+case when (substr(res.RES_SERVICE_FOU_FK,1,4) in ('YC15', 'YC10' , 'YC11' ,'YC16' , 'YE13', 'YE10') or substr(res.RES_SERVICE_FOU_FK,1,2) = 'JD' or tmb.ptm_prj_role in ('CMC Project Manager','CMC PM','CMC Leader','CMC Project Leader')) then 'CMC'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) in ('CL10','CL18','CL20') then 'LMR'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'FA10' then 'GRA'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CL12' then 'IDD'
+    when (substr(res.RES_SERVICE_FOU_FK,1,4) in ('YA10', 'YA20' , 'YC12' ,'YJ14','YJ11') or substr(res.RES_SERVICE_FOU_FK,1,2) = 'DB') then 'CSO'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) in ('YD13','YJ10','YJ15' ,'YD12' ,'YD14','YJ13','YD11')  then 'Res Vx'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'YE18' then 'mRNA CoE'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CL14' then 'PCS'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CA10' then 'PMCB'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CL11' then 'DMPK'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CL16' then 'TIM'
+    when substr(res.RES_SERVICE_FOU_FK,1,2)= 'BK' or 
+	substr(res.RES_SERVICE_FOU_FK,1,4) in ('LA10','LA11','LA12','LA13','LA14','LA15','LA16','LA17')
+	then 'TMU'
+    else NULL end as Function,
+    case when prj_pharma_flag = true and prj_vaccin_flag = false then 'pharma' else 'vaccin' end as prj_vaccin_pharma,
+    case when  UPPER(prj_tpr_category) = UPPER('R') then  'Research'
+     when UPPER(prj_tpr_category) = UPPER('D') then  'Development'
+     when UPPER(tpr_desc) =  UPPER('Others')  then 'Other' else tpr.tpr_desc end AS prj_categorie
+    from SRV_RND_DF.mvw_wbs_hierarchy wbs
+    join SRV_RND_DF.vw_ref_baseline bas
+      on wbs.time_id = bas.time_id
+    left join SRV_RND_DF.vw_project prj
+      on prj.prj_wbs_id = wbs.project_id
+      and prj.time_id = wbs.time_id 
+      and prj_status_detailed in ('Ongoing','Completed inactive','Completed active','Stopped inactive','Stopped active')
+    left join SRV_RND_DF.vw_indication ind
+      on ind.ind_wbs_id = wbs.indication_id
+      and ind.time_id = wbs.time_id 
+	left join SRV_RND_DF.vw_team_member tmb
+      on tmb.wbs_id = wbs.wbs_id
+     and tmb.time_id = wbs.time_id
+     left join STG_MANUAL_INPUTS.project_type tpr
+    on tpr.tpr_id = prj.prj_tpr_fk
+	left join srv_rnd_df.vw_resource res
+      ON UPPER(res.res_network_id)=UPPER(tmb.ptm_sanofi_id)
+      and res.time_id=wbs.time_id
+      and res_inactive_flag=FALSE
+      and res.res_network_id is not null
+    where bas.bas_desc in ('Live') -- Live Data
+    and ptm_member_desc is not null
+    and ptm_teams is not null
+	and UPPER(prj.CREATED_BY)='RDPM'  --Filtering FIRST data
+    and  ( prj_cd not like ('OC%') and  prj_cd not like ('RC%') and prj_cd not like ('DC%') and prj_cd not like ('POLY_%') and prj_cd not like ('RC%') )
+) TM
+) where PROJECT_TEAM_MEMBER_PROJECT_ROLE!='Other'
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_PROJECT_TEAM_MEMBER successfully created")
+                elif "already exists" in message:
+                    print("VW_PROJECT_TEAM_MEMBER view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_PROJECT_TEAM_MEMBER: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists  VW_PROJECT_TCP(
+	TCP_ID,
+	PROJECT_CODE,
+	PROJECT_NAME,
+	TCP_CHARACTERISTIC,
+	TCP_CHARACTERISTIC_VALUE,
+	TCP_STATUS,
+	TCP_CREATED_BY,
+	TCP_MODIFIED_BY,
+	TCP_CREATED_DATE,
+	TCP_MODIFIED_DATE
+) COMMENT='View containing TCP (Target Candidate Profile) data from the Portfolio TCP Profile table. Includes only records with status of Published or Draft.'
+ as
+   (
+    SELECT 
+		TCP_PROF_ID    AS TCP_ID,
+		"Project Code" AS PROJECT_CODE,
+		"Project Name" AS PROJECT_NAME,
+    CASE 
+        WHEN "Title" = 'Potential Indications & FIC / BIC Potential' 
+        THEN "Attribute Name"
+        ELSE "Title"
+        END            AS TCP_CHARACTERISTIC,
+		"Comments"     AS TCP_CHARACTERISTIC_VALUE,
+		"Status"       AS TCP_STATUS,
+		"Created By"   AS TCP_CREATED_BY,
+		"Modified By"  AS TCP_MODIFIED_BY,
+		"Created"      AS TCP_CREATED_DATE,
+		"Modified"     AS TCP_MODIFIED_DATE
+	FROM 
+		CRDH_DEA_IPORT_REPORTING.PRTFL_TCP_PROFILE
+	WHERE 
+		     ("Status"  LIKE 'Published%'
+			OR "Status" LIKE 'Draft%')
+	ORDER BY 
+		TCP_PROF_ID
+        );
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_PROJECT_TCP successfully created")
+                elif "already exists" in message:
+                    print("VW_PROJECT_TCP view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_PROJECT_TCP: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists  VW_PROJECT_TEAM_MEMBER(
+	PROJECT_CODE,
+	INDICATION_UNIQUE_CODE,
+	PROJECT_TEAM_MEMBER_TEAMS,
+	PROJECT_TEAM_MEMBER_PROJECT_ROLE_ORIG,
+	PROJECT_TEAM_MEMBER_DESC,
+	PROJECT_TEAM_MEMBER_EMAIL,
+	PROJECT_TEAM_MEMBER_SUB_TEAMS,
+	PROJECT_TEAM_MEMBER_DEPARTMENT_CODE,
+	PROJECT_TEAM_MEMBER_FUNCTION,
+	PROJECT_TEAM_MEMBER_SCOPE_DESC,
+	PROJECT_TEAM_MEMBER_PROJECT_ROLE
+) COMMENT='The view showing Live baseline data containsTeam member information from RDPM for projects and Indication across R&D(including pharma & Vaccine) for Iport Reporting'
+ as 
+select * from (
+SELECT TM.PRJ_CD as PROJECT_CODE, TM.IND_UNIQUE_CD as INDICATION_UNIQUE_CODE,TM.PTM_TEAMS as PROJECT_TEAM_MEMBER_TEAMS,TM.PTM_PRJ_ROLE AS PROJECT_TEAM_MEMBER_PROJECT_ROLE_ORIG,
+TM.PTM_MEMBER_DESC as PROJECT_TEAM_MEMBER_DESC,TM.PTM_EMAIL as PROJECT_TEAM_MEMBER_EMAIL,TM.PTM_SUB_TEAMS as PROJECT_TEAM_MEMBER_SUB_TEAMS,
+CASE when (TM.DEPARTMENT_CODE is null or TM.DEPARTMENT_CODE = '') and (lower(TM.PTM_PRJ_ROLE) = lower('Global Regulatory Leader')
+or lower(TM.PTM_PRJ_ROLE) = lower('Global Regulatory Team Leader') or lower(TM.PTM_PRJ_ROLE) = lower('GRA Team Leader'))
+then 'FA10' ELSE TM.DEPARTMENT_CODE END AS PROJECT_TEAM_MEMBER_DEPARTMENT_CODE,
+CASE when (TM.FUNCTION is null or TM.FUNCTION = '') and (lower(TM.PTM_PRJ_ROLE) = lower('Global Regulatory Leader')
+or lower(TM.PTM_PRJ_ROLE) = lower('Global Regulatory Team Leader') or lower(TM.PTM_PRJ_ROLE) = lower('GRA Team Leader'))
+then 'GRA' ELSE TM.FUNCTION END AS PROJECT_TEAM_MEMBER_FUNCTION,
+scope_desc as PROJECT_TEAM_MEMBER_SCOPE_DESC,
+CASE WHEN (ptm_prj_role = 'Global Project Manager' OR ptm_prj_role = 'Global Project Head' OR ptm_prj_role = 'PM' OR ptm_prj_role = 'PH' OR ptm_prj_role = 'GPM' OR ptm_prj_role = 'GPH'  )	
+THEN 'GPH/GPM'
+WHEN (ptm_prj_role in ('CMC Project Manager','CMC PM','CMC Leader','CMC Project Leader'))
+THEN 'Function Team Lead'
+WHEN (scope_desc='Research pharma' and TM.DEPARTMENT_CODE in('CL14','CA10','CL11','CL16'))
+THEN 'Function Team Lead'
+
+--AND 
+WHEN ((ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team'))
+--OR ((LEFT(DEPARTMENT_CODE,2) = 'JD' OR DEPARTMENT_CODE = 'YC15' OR DEPARTMENT_CODE = 'YC10'))
+--OR DEPARTMENT_CODE = 'YC11' OR DEPARTMENT_CODE = 'YC16' OR DEPARTMENT_CODE = 'YE13' OR DEPARTMENT_CODE = 'YE10' ) AND (ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team'))
+THEN 'Function Team Lead'
+--WHEN ((ptm_teams = 'GPT - Extended Team' OR ptm_teams = 'Extended team')) 
+--(LEFT(DEPARTMENT_CODE,2) = 'JD' OR DEPARTMENT_CODE = 'YC15' OR DEPARTMENT_CODE = 'YC10'
+--OR DEPARTMENT_CODE = 'YC11' OR DEPARTMENT_CODE = 'YC16' OR DEPARTMENT_CODE = 'YE13' OR DEPARTMENT_CODE = 'YE10' OR ptm_prj_role = 'CMC OPCM')
+--THEN 'Function Reader' 
+--WHEN (ptm_teams = 'GPT - Core Team') AND (DEPARTMENT_CODE = 'CL10' OR DEPARTMENT_CODE = 'CL18' OR DEPARTMENT_CODE = 'CL20')
+--THEN 'Function Team Lead'
+--WHEN (DEPARTMENT_CODE = 'CL10' OR DEPARTMENT_CODE = 'CL18' OR DEPARTMENT_CODE = 'CL20')
+--THEN 'Function Reader'
+--WHEN (ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team' ) AND (DEPARTMENT_CODE = 'FA10')
+--THEN 'Function Team Lead'
+--WHEN (DEPARTMENT_CODE = 'FA10')
+--THEN 'Function Reader'
+--WHEN (ptm_teams = 'GPT - Core Team') AND (DEPARTMENT_CODE = 'CL12')
+--THEN 'Function Team Lead'
+--WHEN (DEPARTMENT_CODE = 'CL12')
+--THEN 'Function Reader'
+--WHEN (ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team') AND (LEFT(DEPARTMENT_CODE,2) = 'DB' OR DEPARTMENT_CODE ='YA10' 
+--OR DEPARTMENT_CODE ='YJ14' OR DEPARTMENT_CODE ='YC12' OR DEPARTMENT_CODE ='YA20' )
+--THEN 'Function Team Lead'
+--WHEN (LEFT(DEPARTMENT_CODE,2) = 'DB' OR DEPARTMENT_CODE ='YA10' 
+--OR DEPARTMENT_CODE ='YJ14' OR DEPARTMENT_CODE ='YC12' OR DEPARTMENT_CODE ='YA20'
+--OR PTM_SUB_TEAMS='CSO Subteam'
+--)
+--THEN 'Function Reader'
+/*WHEN (ptm_teams = 'Core team') AND ( DEPARTMENT_CODE ='YD13' OR DEPARTMENT_CODE ='YJ10' OR DEPARTMENT_CODE ='YJ15' OR DEPARTMENT_CODE ='YD12' OR DEPARTMENT_CODE ='YD14'  )
+THEN 'Function Team Lead'
+WHEN  ( DEPARTMENT_CODE ='YD13' OR DEPARTMENT_CODE ='YJ10' OR DEPARTMENT_CODE ='YJ15' OR DEPARTMENT_CODE ='YD12'  OR DEPARTMENT_CODE ='YD14')
+THEN 'Function Reader'
+WHEN (ptm_teams = 'Core team') AND ( DEPARTMENT_CODE ='YE18')
+THEN 'Function Team Lead'
+WHEN (DEPARTMENT_CODE ='YE18')
+THEN 'Function Reader'
+WHEN (PRJ_CATEGORIE || ' ' || PRJ_VACCIN_PHARMA = 'Research pharma') AND ( DEPARTMENT_CODE ='CL14')
+THEN 'Function Team Lead'
+WHEN (DEPARTMENT_CODE ='CL14')
+THEN 'Function Reader'
+WHEN (PRJ_CATEGORIE || ' ' || PRJ_VACCIN_PHARMA = 'Research pharma') AND ( DEPARTMENT_CODE ='CA10')
+THEN 'Function Team Lead'
+WHEN (DEPARTMENT_CODE ='CA10')
+THEN 'Function Reader'
+WHEN (PRJ_CATEGORIE || ' ' || PRJ_VACCIN_PHARMA = 'Research pharma') AND ( DEPARTMENT_CODE ='CL11')
+THEN 'Function Team Lead'
+WHEN (DEPARTMENT_CODE ='CL11')
+THEN 'Function Reader'
+WHEN (PRJ_CATEGORIE || ' ' || PRJ_VACCIN_PHARMA = 'Research pharma') AND ( DEPARTMENT_CODE ='CL16')
+THEN 'Function Team Lead'
+WHEN (DEPARTMENT_CODE ='CL16')
+THEN 'Function Reader'
+WHEN (ptm_teams = 'GPT - Core Team') AND ( left(DEPARTMENT_CODE,2) ='BK')
+THEN 'Function Team Lead'
+WHEN (left(DEPARTMENT_CODE,2) ='BK' OR PTM_SUB_TEAMS='Translational subteam' )
+THEN 'Function Reader'
+ 
+WHEN (ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team')	
+THEN 'Other'
+*/
+ELSE 'Other'
+END AS PROJECT_TEAM_MEMBER_PROJECT_ROLE	
+FROM
+(
+select distinct prj_cd 
+    ,null as ind_unique_cd  
+    ,tmb.ptm_teams
+    ,tmb.ptm_prj_role
+    ,tmb.ptm_member_desc
+    ,tmb.ptm_email
+    ,tmb.ptm_sub_teams
+	,case when  UPPER(prj_tpr_category) = UPPER('R') then  'Research'
+     when UPPER(prj_tpr_category) = UPPER('D') then  'Development'
+     when UPPER(tpr.tpr_desc) =  UPPER('Others')  then 'Other' else tpr.tpr_desc end||' '|| case when prj_vaccin_flag= TRUE then 'vaccin' 
+	else 'pharma'end as scope_desc
+	,substr(res.RES_SERVICE_FOU_FK,1,4) as Department_code,
+case when (substr(res.RES_SERVICE_FOU_FK,1,4) in ('YC15', 'YC10' , 'YC11' ,'YC16' , 'YE13', 'YE10') or substr(res.RES_SERVICE_FOU_FK,1,2) = 'JD' or tmb.ptm_prj_role in ('CMC Project Manager','CMC PM','CMC Leader','CMC Project Leader')) then 'CMC'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) in ('CL10','CL18','CL20') then 'LMR'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'FA10' then 'GRA'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CL12' then 'IDD'
+    when (substr(res.RES_SERVICE_FOU_FK,1,4) in ('YA10', 'YA20' , 'YC12' ,'YJ14','YJ11') or substr(res.RES_SERVICE_FOU_FK,1,2) = 'DB') then 'CSO'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) in ('YD13','YJ10','YJ15' ,'YD12' ,'YD14','YJ13','YD11')  then 'Res Vx'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'YE18' then 'mRNA CoE'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CL14' then 'PCS'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CA10' then 'PMCB'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CL11' then 'DMPK'
+    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CL16' then 'TIM'
+    when substr(res.RES_SERVICE_FOU_FK,1,2)= 'BK' or 
+	substr(res.RES_SERVICE_FOU_FK,1,4) in ('LA10','LA11','LA12','LA13','LA14','LA15','LA16','LA17')
+	then 'TMU'
+    else NULL end as Function,
+    case when prj_pharma_flag = true and prj_vaccin_flag = false then 'pharma' else 'vaccin' end as prj_vaccin_pharma,
+    case when  UPPER(prj_tpr_category) = UPPER('R') then  'Research'
+     when UPPER(prj_tpr_category) = UPPER('D') then  'Development'
+     when UPPER(tpr_desc) =  UPPER('Others')  then 'Other' else tpr.tpr_desc end AS prj_categorie
+    from SRV_RND_DF.mvw_wbs_hierarchy wbs
+    join SRV_RND_DF.vw_ref_baseline bas
+      on wbs.time_id = bas.time_id
+    left join SRV_RND_DF.vw_project prj
+      on prj.prj_wbs_id = wbs.project_id
+      and prj.time_id = wbs.time_id 
+      and prj_status_detailed in ('Ongoing','Completed inactive','Completed active','Stopped inactive','Stopped active')
+    left join SRV_RND_DF.vw_indication ind
+      on ind.ind_wbs_id = wbs.indication_id
+      and ind.time_id = wbs.time_id 
+	left join SRV_RND_DF.vw_team_member tmb
+      on tmb.wbs_id = wbs.wbs_id
+     and tmb.time_id = wbs.time_id
+     left join STG_MANUAL_INPUTS.project_type tpr
+    on tpr.tpr_id = prj.prj_tpr_fk
+	left join srv_rnd_df.vw_resource res
+      ON UPPER(res.res_network_id)=UPPER(tmb.ptm_sanofi_id)
+      and res.time_id=wbs.time_id
+      and res_inactive_flag=FALSE
+      and res.res_network_id is not null
+    where bas.bas_desc in ('Live') -- Live Data
+    and ptm_member_desc is not null
+    and ptm_teams is not null
+	and UPPER(prj.CREATED_BY)='RDPM'  --Filtering FIRST data
+    and  ( prj_cd not like ('OC%') and  prj_cd not like ('RC%') and prj_cd not like ('DC%') and prj_cd not like ('POLY_%') and prj_cd not like ('RC%') )
+) TM
+) where PROJECT_TEAM_MEMBER_PROJECT_ROLE!='Other'
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_PROJECT_TEAM_MEMBER successfully created")
+                elif "already exists" in message:
+                    print("VW_PROJECT_TEAM_MEMBER view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_PROJECT_TEAM_MEMBER: {e}")
+        #Handle error
+        
+    try: 
+        result=cur.execute("""create view if not exists VW_PROJECT_TVP(
+	PROJECT_CODE,
+	INDICATION_UNIQUE_CODE,
+	TVP_POPULATIONS_OF_INTEREST,
+	TVP_NEED,
+	TVP_COMPETITIVE_POSITIONING_CURRENT_SOC,
+	TVP_COMPETITIVE_POSITIONING_FUTURE_SOC_COMPETITORS,
+	TVP_VALUE_TO_PRESCRIBERS,
+	TVP_VALUE_TO_PATIENTS,
+	TVP_VALUE_TO_PAYERS,
+	TVP_STATUS,
+	TVP_SOURCE_RECORD_IDS,
+	CREATED_BY,
+	MODIFIED_BY,
+	CREATED_DATE,
+	MODIFIED_DATE
+) COMMENT='View containing aggregated TVP (Target Value Proposition) data from the Portfolio TVP Profile table. Aggregates multiple TVP attributes by Project Code and Indication, including populations of interest, needs, competitive positioning, and value propositions for prescribers, patients, and payers. Includes only records with status of Published, Draft, or Publish.'
+ as
+(
+    WITH AGGREGATED_TVP AS (
+        SELECT
+            "Project Code",
+            INDICATION,
+            LISTAGG(DISTINCT CASE WHEN TITLE = 'For' THEN "Comments" END, '; ') 
+			                          AS TVP_POPULATIONS_OF_INTEREST,
+            LISTAGG(DISTINCT CASE WHEN TITLE = 'Who' THEN "Comments" END, '; ') 
+			                          AS TVP_NEED,
+            LISTAGG(DISTINCT CASE WHEN TITLE = 'Our product is' AND "Attribute Name" = 'Versus current SoC' THEN "Comments" END, '; ') 
+			                          AS TVP_COMPETITIVE_POSITIONING_CURRENT_SOC,
+            LISTAGG(DISTINCT CASE WHEN TITLE = 'Our product is' AND "Attribute Name" = 'Versus future SoC/Main Competitors' THEN "Comments" END, '; ') 
+			                          AS TVP_COMPETITIVE_POSITIONING_FUTURE_SOC_COMPETITORS,
+            LISTAGG(DISTINCT CASE WHEN TITLE = 'That will' AND "Attribute Name" = 'Prescribers' THEN "Comments" END, '; ') 
+			                          AS TVP_VALUE_TO_PRESCRIBERS,
+            LISTAGG(DISTINCT CASE WHEN TITLE = 'That will' AND "Attribute Name" = 'Patients' THEN "Comments" END, '; ') 
+			                          AS TVP_VALUE_TO_PATIENTS,
+            LISTAGG(DISTINCT CASE WHEN TITLE = 'That will' AND "Attribute Name" = 'Payers' THEN "Comments" END, '; ') 
+			                          AS TVP_VALUE_TO_PAYERS,
+            LISTAGG(DISTINCT STATUS, ', ') WITHIN GROUP (ORDER BY STATUS) 
+			                          AS TVP_STATUS,
+            LISTAGG(DISTINCT TVP_PROF_ID, ',') WITHIN GROUP (ORDER BY TVP_PROF_ID) 
+			                          AS TVP_SOURCE_RECORD_IDS,
+            CASE 
+                WHEN COUNT(DISTINCT "Created By") > 1 
+                    THEN LISTAGG(DISTINCT CONCAT("Created By", ' (', TO_VARCHAR(CREATED, 'YYYY-MM-DD'), ')'), ', ')
+                ELSE MAX("Created By")
+            END                       AS CREATED_BY,
+            CASE
+                WHEN COUNT(DISTINCT "Modified By") > 1 
+                    THEN LISTAGG(DISTINCT CONCAT("Modified By", ' (', TO_VARCHAR(MODIFIED, 'YYYY-MM-DD'), ')'), ', ')
+                ELSE MAX("Modified By")
+            END                        AS MODIFIED_BY,
+            MIN(CREATED)               AS CREATED_DATE,
+            MAX(MODIFIED)              AS MODIFIED_DATE
+        FROM SALES.CRDH_DEA_IPORT_REPORTING.PRTFL_TVP_PROFILE
+        WHERE STATUS IN ('Published', 'Draft', 'Publish') 
+        GROUP BY "Project Code",
+        		INDICATION
+    )
+    SELECT
+        "Project Code"                 AS PROJECT_CODE,
+        INDICATION                     AS INDICATION_UNIQUE_CODE,
+        TVP_POPULATIONS_OF_INTEREST,
+        TVP_NEED,
+        TVP_COMPETITIVE_POSITIONING_CURRENT_SOC,
+        TVP_COMPETITIVE_POSITIONING_FUTURE_SOC_COMPETITORS,
+        TVP_VALUE_TO_PRESCRIBERS,
+        TVP_VALUE_TO_PATIENTS,
+        TVP_VALUE_TO_PAYERS,
+        TVP_STATUS,
+        TVP_SOURCE_RECORD_IDS,
+        CREATED_BY,
+        MODIFIED_BY,
+        CREATED_DATE,
+        MODIFIED_DATE
+    FROM AGGREGATED_TVP
+    ORDER BY 
+        INDICATION_UNIQUE_CODE,
+        PROJECT_CODE
+)
+    """)
+        status=result.fetchone()
+        if status:
+                message=status[0]
+                message=message.lower()
+                if "successfully created" in message:
+                    print("view VW_PROJECT_TVP successfully created")
+                elif "already exists" in message:
+                    print("VW_PROJECT_TVP view already exists, skipped creation")
+    except Exception as e:
+        print(f"Error creating view VW_PROJECT_TVP: {e}")
+        #Handle error
+        
+accountadmin_task()       
+create_db_schemas()
+create_tables()
+create_file_format()
+create_local_stage()
 create_srv_rnd_df_views()
+create_srv_mdm_rndmasterdata_views()
+create_stg_manual_inputs_views()
+create_crdh_dea_iport_reporting_views()
+create_dp_rdportfolio360_views()
 
