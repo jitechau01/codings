@@ -1,18 +1,18 @@
 import snowflake.connector as sf
 import os
 
-def _conn_adam():
+def _conn(user):
     conn=sf.connect(
         account=os.getenv('account'),
-        user='adam',
+        user=user,
         private_key_file=os.getenv('private_key_file_path'),
         private_key_file_pwd=os.getenv('privatekey'),
-        role='lead',
-        warehouse='compute_wh'
+        role='data_consumer',
+        warehouse='compute_wh',
+        database='rndcontrolling',
+        schema='DP_RDPORTFOLIO360'
         )
     return conn.cursor()
 
-# cur=_conn_adam()
-
-
+# cur=_c_conn('bbt_user')
 # print(cur.execute("select current_version()").fetchall())

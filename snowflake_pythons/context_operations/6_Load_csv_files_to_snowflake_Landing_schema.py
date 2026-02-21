@@ -1,10 +1,11 @@
-from __con_adam import _conn_adam
-cur=_conn_adam()
+from snowflake_pythons.__connections.__con_lead import _conn_lead
+cur=_conn_lead()
 
 local_csv_stage='@local_csv_stage/'
+database='rndcontrolling'
 
 def load_csv_files_to_snowflake_landing_schema():
-    cur.execute("use schema sales.landing")
+    cur.execute(f"use schema {database}.landing")
     print("\n//Loading csv files from local_csv_stage to landing tables...")
     table_list=['ICD10_MEDDRA_MAPPING', 'INDICATION', 'MDM_CLINICAL_INDICATION', 
                 'MDM_FINANCIAL_ORGANIZATION_UNIT', 'MDM_PROJECT_IND_MASTER', 'MDM_PROJECT_MASTER', 
@@ -19,6 +20,11 @@ def load_csv_files_to_snowflake_landing_schema():
             result=cur.fetchall()
             load_failed = False
             for row in result:
-        print(f"Data loaded successfully into '{table}' from local_csv_stage.")
+                print(f"Data loaded successfully into '{table}' from local_csv_stage.")
+        
+        except Exception as e:
+            print("Error:{e}")
+            
+        
         
 load_csv_files_to_snowflake_landing_schema()

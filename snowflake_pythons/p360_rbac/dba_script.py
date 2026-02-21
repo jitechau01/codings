@@ -1,5 +1,5 @@
-from __con import _conn
-from __con_adam import _conn_adam
+from snowflake_pythons.__connections.__con import _conn
+from snowflake_pythons.__connections.__con_lead import _conn_lead
 
 schema_list=['landing','crdh_dea_iport_reporting', 'dp_rdportfolio360', 'semantic', 'srv_mdm_rndmasterdata', 'srv_rnd_df', 'stg_manual_inputs']
 
@@ -27,27 +27,27 @@ def accountadmin_task():
         #Handle error  
          
     try:        
-        result=cur.execute("create user if not exists adam")
+        result=cur.execute("create user if not exists lead_user")
         status=result.fetchone()
         if status:
             message=status[0]
             message=message.lower()
             if "successfully created" in message:
-                print("user adam successfully created")
-                cur.execute("grant role lead to user adam")
+                print("user lead_user successfully created")
+                cur.execute("grant role lead to user lead_user")
             elif "already exists" in message:
-                print("user adam already exists, skipped creation")
+                print("user lead_user already exists, skipped creation")
     except Exception as e:
         print("Error:{e}")
         #Handle error    
 def create_db_schemas():
-    cur=_conn_adam()
+    cur=_conn_lead()
     cur.execute("use role lead")
     #print(cur.execute("select current_role()").fetchall())
-    # cur.execute("drop database if exists sales")
+    # cur.execute("drop database if exists rndcontrolling")
     try:
         print("\n-------------database & schema Creation Starts-------------------")
-        result = cur.execute("CREATE DATABASE IF NOT EXISTS sales")
+        result = cur.execute("CREATE DATABASE IF NOT EXISTS RNDCONTROLLING")
         
         status = result.fetchone()
         
@@ -55,35 +55,37 @@ def create_db_schemas():
             message = status[0]
             
             if "successfully created" in message.lower():
-                print("Database Sales created successfully, proceeding for schema Creations")
+                print("Database RNDCONTROLLING created successfully, proceeding for schema Creations")
                 for schema in schema_list:
-                    cur.execute(f"create schema if not exists sales.{schema} ")
+                    cur.execute(f"create schema if not exists rndcontrolling.{schema} ")
                     status = cur.fetchone()
                     if status:
                         message = status[0]
                         if "successfully created" in message.lower():
-                            print(f"Schema sales.{schema} created successfully")
+                            print(f"Schema rndcontrolling.{schema} created successfully")
                         elif "already exists" in message.lower():
-                            print(f"Schema sales.{schema} already exists, skipped creation")
+                            print(f"Schema rndcontrolling.{schema} already exists, skipped creation")
 
             elif "already exists" in message.lower():
-                print("Database Sales already exists, skipped creation, proceeding for Schema Creations")
+                print("Database rndcontrolling already exists, skipped creation, proceeding for Schema Creations")
                 for schema in schema_list:
-                    cur.execute(f"create schema if not exists sales.{schema} ")
+                    cur.execute(f"create schema if not exists rndcontrolling.{schema} ")
                     status = cur.fetchone()
                     if status:
                         message = status[0]
                         if "successfully created" in message.lower():
-                            print(f"Schema sales.{schema} created successfully")
+                            print(f"Schema rndcontrolling.{schema} created successfully")
                         elif "already exists" in message.lower():
-                            print(f"Schema sales.{schema} already exists, skipped creation")
+                            print(f"Schema rndcontrolling.{schema} already exists, skipped creation")
         
     except Exception as e:
         print(f"Error: {e}")
         # Handle error
 def create_tables():
-    cur=_conn_adam()
-    cur.execute("""use schema sales.landing""")
+    cur=_conn_lead()
+    
+    
+    cur.execute("""use schema rndcontrolling.landing""")
     print("\n-----------Table Creation Starts-------------------")
     try: 
         result=cur.execute("""create table if not exists ICD10_MEDDRA_MAPPING (
@@ -153,7 +155,7 @@ def create_tables():
             IND_V_COST_LAUNCH NUMBER(28,0),
             IND_V_CUSTO_PRJ_FLAG BOOLEAN,
             IND_V_INC_YEAR_CUMUL FLOAT,
-            IND_V_PEAK_SALES NUMBER(28,0),
+            IND_V_PEAK_rndcontrolling NUMBER(28,0),
             IND_V_IND_DRIVER VARCHAR(255),
             IND_V_IND_OBJ VARCHAR(5000),
             IND_V_NPV NUMBER(28,0),
@@ -1126,8 +1128,8 @@ def create_tables():
         print("Error:{e}")
         #Handle error    
 def create_file_format():
-    cur=_conn_adam()
-    cur.execute("""use schema sales.landing""")
+    cur=_conn_lead()
+    cur.execute("""use schema rndcontrolling.landing""")
     print("\n//Creating file formats...")
     sql = """
     create file format if not exists ff_csv
@@ -1189,8 +1191,8 @@ def create_file_format():
         
     cur.close()  
 def create_local_stage():
-    cur=_conn_adam()
-    cur.execute("use schema sales.landing")
+    cur=_conn_lead()
+    cur.execute("use schema rndcontrolling.landing")
     print("\n//Creating local stages...")
     sql = f"""
     create stage if not exists local_csv_stage
@@ -1243,8 +1245,8 @@ def create_local_stage():
     except Exception as e:
         print(f"Error creating stage 'local_json_stage': {e}")      
 def create_srv_rnd_df_views():
-    cur=_conn_adam()    
-    cur.execute("""use schema sales.srv_rnd_df""")
+    cur=_conn_lead()    
+    cur.execute("""use schema rndcontrolling.srv_rnd_df""")
     print("\n-----------view Creation Starts-------------------")
     try: 
         result=cur.execute("""create view if not exists MVW_WBS_HIERARCHY(
@@ -1324,7 +1326,7 @@ def create_srv_rnd_df_views():
 	IND_V_COST_LAUNCH,
 	IND_V_CUSTO_PRJ_FLAG,
 	IND_V_INC_YEAR_CUMUL,
-	IND_V_PEAK_SALES,
+	IND_V_PEAK_rndcontrolling,
 	IND_V_IND_DRIVER,
 	IND_V_IND_OBJ,
 	IND_V_NPV,
@@ -1987,8 +1989,8 @@ def create_srv_rnd_df_views():
         print(f"Error creating view VW_TEAM_MEMBER: {e}")
         #Handle error   
 def create_srv_mdm_rndmasterdata_views():
-    cur=_conn_adam()    
-    cur.execute("""use schema sales.srv_mdm_rndmasterdata""")
+    cur=_conn_lead()    
+    cur.execute("""use schema rndcontrolling.srv_mdm_rndmasterdata""")
     print("\n-----------view Creation Starts for schema srv_mdm_rndmasterdata-------------------")
     try: 
         result=cur.execute("""create view if not exists VW_MDM_CLINICAL_INDICATION(
@@ -2132,8 +2134,8 @@ def create_srv_mdm_rndmasterdata_views():
         print(f"Error creating view VW_MDM_PROJECT_MASTER: {e}")
         #Handle error  
 def create_stg_manual_inputs_views():
-    cur=_conn_adam()    
-    cur.execute("""use schema sales.stg_manual_inputs""")
+    cur=_conn_lead()    
+    cur.execute("""use schema rndcontrolling.stg_manual_inputs""")
     print("\n-----------view Creation Starts for schema stg_manual_inputs-------------------")
     try: 
         result=cur.execute("""create view if not exists ICD10_MEDDRA_MAPPING(
@@ -2208,8 +2210,8 @@ def create_stg_manual_inputs_views():
         print(f"Error creating view PROJECT_TYPE: {e}")
         #Handle error     
 def create_crdh_dea_iport_reporting_views():
-    cur=_conn_adam()    
-    cur.execute("""use schema sales.crdh_dea_iport_reporting""")
+    cur=_conn_lead()    
+    cur.execute("""use schema rndcontrolling.crdh_dea_iport_reporting""")
     print("\n-----------view Creation Starts for schema crdh_dea_iport_reporting-------------------")
     try: 
         result=cur.execute("""create view if not exists PRTFL_TCP_PROFILE(
@@ -2319,8 +2321,8 @@ def create_crdh_dea_iport_reporting_views():
         print(f"Error creating view PRTFL_TVP_PROFILE: {e}")
         #Handle error
 def create_dp_rdportfolio360_views():
-    cur=_conn_adam()    
-    cur.execute("""use schema sales.dp_rdportfolio360""")
+    cur=_conn_lead()    
+    cur.execute("""use schema rndcontrolling.dp_rdportfolio360""")
     print("\n-----------view Creation Starts for schema dp_rdportfolio360-------------------")
     try: 
         result=cur.execute("""create view if not exists  VW_MEDDRA_ICD10_MAPPING(
@@ -3263,174 +3265,6 @@ case when (substr(res.RES_SERVICE_FOU_FK,1,4) in ('YC15', 'YC10' , 'YC11' ,'YC16
         #Handle error
         
     try: 
-        result=cur.execute("""create view if not exists  VW_PROJECT_TEAM_MEMBER(
-	PROJECT_CODE,
-	INDICATION_UNIQUE_CODE,
-	PROJECT_TEAM_MEMBER_TEAMS,
-	PROJECT_TEAM_MEMBER_PROJECT_ROLE_ORIG,
-	PROJECT_TEAM_MEMBER_DESC,
-	PROJECT_TEAM_MEMBER_EMAIL,
-	PROJECT_TEAM_MEMBER_SUB_TEAMS,
-	PROJECT_TEAM_MEMBER_DEPARTMENT_CODE,
-	PROJECT_TEAM_MEMBER_FUNCTION,
-	PROJECT_TEAM_MEMBER_SCOPE_DESC,
-	PROJECT_TEAM_MEMBER_PROJECT_ROLE
-) COMMENT='The view showing Live baseline data containsTeam member information from RDPM for projects and Indication across R&D(including pharma & Vaccine) for Iport Reporting'
- as 
-select * from (
-SELECT TM.PRJ_CD as PROJECT_CODE, TM.IND_UNIQUE_CD as INDICATION_UNIQUE_CODE,TM.PTM_TEAMS as PROJECT_TEAM_MEMBER_TEAMS,TM.PTM_PRJ_ROLE AS PROJECT_TEAM_MEMBER_PROJECT_ROLE_ORIG,
-TM.PTM_MEMBER_DESC as PROJECT_TEAM_MEMBER_DESC,TM.PTM_EMAIL as PROJECT_TEAM_MEMBER_EMAIL,TM.PTM_SUB_TEAMS as PROJECT_TEAM_MEMBER_SUB_TEAMS,
-CASE when (TM.DEPARTMENT_CODE is null or TM.DEPARTMENT_CODE = '') and (lower(TM.PTM_PRJ_ROLE) = lower('Global Regulatory Leader')
-or lower(TM.PTM_PRJ_ROLE) = lower('Global Regulatory Team Leader') or lower(TM.PTM_PRJ_ROLE) = lower('GRA Team Leader'))
-then 'FA10' ELSE TM.DEPARTMENT_CODE END AS PROJECT_TEAM_MEMBER_DEPARTMENT_CODE,
-CASE when (TM.FUNCTION is null or TM.FUNCTION = '') and (lower(TM.PTM_PRJ_ROLE) = lower('Global Regulatory Leader')
-or lower(TM.PTM_PRJ_ROLE) = lower('Global Regulatory Team Leader') or lower(TM.PTM_PRJ_ROLE) = lower('GRA Team Leader'))
-then 'GRA' ELSE TM.FUNCTION END AS PROJECT_TEAM_MEMBER_FUNCTION,
-scope_desc as PROJECT_TEAM_MEMBER_SCOPE_DESC,
-CASE WHEN (ptm_prj_role = 'Global Project Manager' OR ptm_prj_role = 'Global Project Head' OR ptm_prj_role = 'PM' OR ptm_prj_role = 'PH' OR ptm_prj_role = 'GPM' OR ptm_prj_role = 'GPH'  )	
-THEN 'GPH/GPM'
-WHEN (ptm_prj_role in ('CMC Project Manager','CMC PM','CMC Leader','CMC Project Leader'))
-THEN 'Function Team Lead'
-WHEN (scope_desc='Research pharma' and TM.DEPARTMENT_CODE in('CL14','CA10','CL11','CL16'))
-THEN 'Function Team Lead'
-
---AND 
-WHEN ((ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team'))
---OR ((LEFT(DEPARTMENT_CODE,2) = 'JD' OR DEPARTMENT_CODE = 'YC15' OR DEPARTMENT_CODE = 'YC10'))
---OR DEPARTMENT_CODE = 'YC11' OR DEPARTMENT_CODE = 'YC16' OR DEPARTMENT_CODE = 'YE13' OR DEPARTMENT_CODE = 'YE10' ) AND (ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team'))
-THEN 'Function Team Lead'
---WHEN ((ptm_teams = 'GPT - Extended Team' OR ptm_teams = 'Extended team')) 
---(LEFT(DEPARTMENT_CODE,2) = 'JD' OR DEPARTMENT_CODE = 'YC15' OR DEPARTMENT_CODE = 'YC10'
---OR DEPARTMENT_CODE = 'YC11' OR DEPARTMENT_CODE = 'YC16' OR DEPARTMENT_CODE = 'YE13' OR DEPARTMENT_CODE = 'YE10' OR ptm_prj_role = 'CMC OPCM')
---THEN 'Function Reader' 
---WHEN (ptm_teams = 'GPT - Core Team') AND (DEPARTMENT_CODE = 'CL10' OR DEPARTMENT_CODE = 'CL18' OR DEPARTMENT_CODE = 'CL20')
---THEN 'Function Team Lead'
---WHEN (DEPARTMENT_CODE = 'CL10' OR DEPARTMENT_CODE = 'CL18' OR DEPARTMENT_CODE = 'CL20')
---THEN 'Function Reader'
---WHEN (ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team' ) AND (DEPARTMENT_CODE = 'FA10')
---THEN 'Function Team Lead'
---WHEN (DEPARTMENT_CODE = 'FA10')
---THEN 'Function Reader'
---WHEN (ptm_teams = 'GPT - Core Team') AND (DEPARTMENT_CODE = 'CL12')
---THEN 'Function Team Lead'
---WHEN (DEPARTMENT_CODE = 'CL12')
---THEN 'Function Reader'
---WHEN (ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team') AND (LEFT(DEPARTMENT_CODE,2) = 'DB' OR DEPARTMENT_CODE ='YA10' 
---OR DEPARTMENT_CODE ='YJ14' OR DEPARTMENT_CODE ='YC12' OR DEPARTMENT_CODE ='YA20' )
---THEN 'Function Team Lead'
---WHEN (LEFT(DEPARTMENT_CODE,2) = 'DB' OR DEPARTMENT_CODE ='YA10' 
---OR DEPARTMENT_CODE ='YJ14' OR DEPARTMENT_CODE ='YC12' OR DEPARTMENT_CODE ='YA20'
---OR PTM_SUB_TEAMS='CSO Subteam'
---)
---THEN 'Function Reader'
-/*WHEN (ptm_teams = 'Core team') AND ( DEPARTMENT_CODE ='YD13' OR DEPARTMENT_CODE ='YJ10' OR DEPARTMENT_CODE ='YJ15' OR DEPARTMENT_CODE ='YD12' OR DEPARTMENT_CODE ='YD14'  )
-THEN 'Function Team Lead'
-WHEN  ( DEPARTMENT_CODE ='YD13' OR DEPARTMENT_CODE ='YJ10' OR DEPARTMENT_CODE ='YJ15' OR DEPARTMENT_CODE ='YD12'  OR DEPARTMENT_CODE ='YD14')
-THEN 'Function Reader'
-WHEN (ptm_teams = 'Core team') AND ( DEPARTMENT_CODE ='YE18')
-THEN 'Function Team Lead'
-WHEN (DEPARTMENT_CODE ='YE18')
-THEN 'Function Reader'
-WHEN (PRJ_CATEGORIE || ' ' || PRJ_VACCIN_PHARMA = 'Research pharma') AND ( DEPARTMENT_CODE ='CL14')
-THEN 'Function Team Lead'
-WHEN (DEPARTMENT_CODE ='CL14')
-THEN 'Function Reader'
-WHEN (PRJ_CATEGORIE || ' ' || PRJ_VACCIN_PHARMA = 'Research pharma') AND ( DEPARTMENT_CODE ='CA10')
-THEN 'Function Team Lead'
-WHEN (DEPARTMENT_CODE ='CA10')
-THEN 'Function Reader'
-WHEN (PRJ_CATEGORIE || ' ' || PRJ_VACCIN_PHARMA = 'Research pharma') AND ( DEPARTMENT_CODE ='CL11')
-THEN 'Function Team Lead'
-WHEN (DEPARTMENT_CODE ='CL11')
-THEN 'Function Reader'
-WHEN (PRJ_CATEGORIE || ' ' || PRJ_VACCIN_PHARMA = 'Research pharma') AND ( DEPARTMENT_CODE ='CL16')
-THEN 'Function Team Lead'
-WHEN (DEPARTMENT_CODE ='CL16')
-THEN 'Function Reader'
-WHEN (ptm_teams = 'GPT - Core Team') AND ( left(DEPARTMENT_CODE,2) ='BK')
-THEN 'Function Team Lead'
-WHEN (left(DEPARTMENT_CODE,2) ='BK' OR PTM_SUB_TEAMS='Translational subteam' )
-THEN 'Function Reader'
- 
-WHEN (ptm_teams = 'GPT - Core Team' OR ptm_teams = 'Core team')	
-THEN 'Other'
-*/
-ELSE 'Other'
-END AS PROJECT_TEAM_MEMBER_PROJECT_ROLE	
-FROM
-(
-select distinct prj_cd 
-    ,null as ind_unique_cd  
-    ,tmb.ptm_teams
-    ,tmb.ptm_prj_role
-    ,tmb.ptm_member_desc
-    ,tmb.ptm_email
-    ,tmb.ptm_sub_teams
-	,case when  UPPER(prj_tpr_category) = UPPER('R') then  'Research'
-     when UPPER(prj_tpr_category) = UPPER('D') then  'Development'
-     when UPPER(tpr.tpr_desc) =  UPPER('Others')  then 'Other' else tpr.tpr_desc end||' '|| case when prj_vaccin_flag= TRUE then 'vaccin' 
-	else 'pharma'end as scope_desc
-	,substr(res.RES_SERVICE_FOU_FK,1,4) as Department_code,
-case when (substr(res.RES_SERVICE_FOU_FK,1,4) in ('YC15', 'YC10' , 'YC11' ,'YC16' , 'YE13', 'YE10') or substr(res.RES_SERVICE_FOU_FK,1,2) = 'JD' or tmb.ptm_prj_role in ('CMC Project Manager','CMC PM','CMC Leader','CMC Project Leader')) then 'CMC'
-    when substr(res.RES_SERVICE_FOU_FK,1,4) in ('CL10','CL18','CL20') then 'LMR'
-    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'FA10' then 'GRA'
-    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CL12' then 'IDD'
-    when (substr(res.RES_SERVICE_FOU_FK,1,4) in ('YA10', 'YA20' , 'YC12' ,'YJ14','YJ11') or substr(res.RES_SERVICE_FOU_FK,1,2) = 'DB') then 'CSO'
-    when substr(res.RES_SERVICE_FOU_FK,1,4) in ('YD13','YJ10','YJ15' ,'YD12' ,'YD14','YJ13','YD11')  then 'Res Vx'
-    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'YE18' then 'mRNA CoE'
-    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CL14' then 'PCS'
-    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CA10' then 'PMCB'
-    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CL11' then 'DMPK'
-    when substr(res.RES_SERVICE_FOU_FK,1,4) = 'CL16' then 'TIM'
-    when substr(res.RES_SERVICE_FOU_FK,1,2)= 'BK' or 
-	substr(res.RES_SERVICE_FOU_FK,1,4) in ('LA10','LA11','LA12','LA13','LA14','LA15','LA16','LA17')
-	then 'TMU'
-    else NULL end as Function,
-    case when prj_pharma_flag = true and prj_vaccin_flag = false then 'pharma' else 'vaccin' end as prj_vaccin_pharma,
-    case when  UPPER(prj_tpr_category) = UPPER('R') then  'Research'
-     when UPPER(prj_tpr_category) = UPPER('D') then  'Development'
-     when UPPER(tpr_desc) =  UPPER('Others')  then 'Other' else tpr.tpr_desc end AS prj_categorie
-    from SRV_RND_DF.mvw_wbs_hierarchy wbs
-    join SRV_RND_DF.vw_ref_baseline bas
-      on wbs.time_id = bas.time_id
-    left join SRV_RND_DF.vw_project prj
-      on prj.prj_wbs_id = wbs.project_id
-      and prj.time_id = wbs.time_id 
-      and prj_status_detailed in ('Ongoing','Completed inactive','Completed active','Stopped inactive','Stopped active')
-    left join SRV_RND_DF.vw_indication ind
-      on ind.ind_wbs_id = wbs.indication_id
-      and ind.time_id = wbs.time_id 
-	left join SRV_RND_DF.vw_team_member tmb
-      on tmb.wbs_id = wbs.wbs_id
-     and tmb.time_id = wbs.time_id
-     left join STG_MANUAL_INPUTS.project_type tpr
-    on tpr.tpr_id = prj.prj_tpr_fk
-	left join srv_rnd_df.vw_resource res
-      ON UPPER(res.res_network_id)=UPPER(tmb.ptm_sanofi_id)
-      and res.time_id=wbs.time_id
-      and res_inactive_flag=FALSE
-      and res.res_network_id is not null
-    where bas.bas_desc in ('Live') -- Live Data
-    and ptm_member_desc is not null
-    and ptm_teams is not null
-	and UPPER(prj.CREATED_BY)='RDPM'  --Filtering FIRST data
-    and  ( prj_cd not like ('OC%') and  prj_cd not like ('RC%') and prj_cd not like ('DC%') and prj_cd not like ('POLY_%') and prj_cd not like ('RC%') )
-) TM
-) where PROJECT_TEAM_MEMBER_PROJECT_ROLE!='Other'
-    """)
-        status=result.fetchone()
-        if status:
-                message=status[0]
-                message=message.lower()
-                if "successfully created" in message:
-                    print("view VW_PROJECT_TEAM_MEMBER successfully created")
-                elif "already exists" in message:
-                    print("VW_PROJECT_TEAM_MEMBER view already exists, skipped creation")
-    except Exception as e:
-        print(f"Error creating view VW_PROJECT_TEAM_MEMBER: {e}")
-        #Handle error
-        
-    try: 
         result=cur.execute("""create view if not exists VW_PROJECT_TVP(
 	PROJECT_CODE,
 	INDICATION_UNIQUE_CODE,
@@ -3484,7 +3318,7 @@ case when (substr(res.RES_SERVICE_FOU_FK,1,4) in ('YC15', 'YC10' , 'YC11' ,'YC16
             END                        AS MODIFIED_BY,
             MIN(CREATED)               AS CREATED_DATE,
             MAX(MODIFIED)              AS MODIFIED_DATE
-        FROM SALES.CRDH_DEA_IPORT_REPORTING.PRTFL_TVP_PROFILE
+        FROM rndcontrolling.CRDH_DEA_IPORT_REPORTING.PRTFL_TVP_PROFILE
         WHERE STATUS IN ('Published', 'Draft', 'Publish') 
         GROUP BY "Project Code",
         		INDICATION
@@ -3521,9 +3355,9 @@ case when (substr(res.RES_SERVICE_FOU_FK,1,4) in ('YC15', 'YC10' , 'YC11' ,'YC16
                     print("VW_PROJECT_TVP view already exists, skipped creation")
     except Exception as e:
         print(f"Error creating view VW_PROJECT_TVP: {e}")
-        #Handle error
+        # Handle error
         
-accountadmin_task()       
+#accountadmin_task()       
 create_db_schemas()
 create_tables()
 create_file_format()

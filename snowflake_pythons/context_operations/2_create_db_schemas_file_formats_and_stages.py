@@ -1,4 +1,4 @@
-from __con import _conn
+from snowflake_pythons.__connections.__con import _conn
 
 cur=_conn()
 csv_file_format_name='ff_csv'
