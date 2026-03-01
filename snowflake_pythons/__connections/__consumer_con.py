@@ -9,8 +9,8 @@ def _conn(user):
         private_key_file_pwd=os.getenv('privatekey'),
         role='data_consumer',
         warehouse='compute_wh',
-        database='rndcontrolling',
-        schema='DP_RDPORTFOLIO360'
+        database='access_control',
+        schema='governance'
         )
     return conn.cursor()
 

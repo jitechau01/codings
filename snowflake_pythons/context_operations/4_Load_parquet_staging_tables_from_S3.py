@@ -1,4 +1,4 @@
-from snowflake_pythons.__connections.__con import _conn
+from snowflake_pythons.__connections.__con_admin import _conn
 cur=_conn()
 
 stage_name='@s3_parquet'
@@ -22,7 +22,6 @@ def parquet_select_query_procedure():
                     return record_value;
                     end """
     cur.execute(sql)
-
 def load_parquet_staging_tables_from_s3():
     for table in table_list:
         cur.execute(f""" truncate table {table} """)

@@ -1,5 +1,5 @@
 import snowflake.connector
-from snowflake_pythons.__connections.__con import _conn
+from snowflake_pythons.__connections.__con_admin import _conn
 import re
 
 cur = _conn()

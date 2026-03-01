@@ -1,4 +1,4 @@
-from snowflake_pythons.__connections.__con import _conn
+from snowflake_pythons.__connections.__con_admin import _conn
 
 cur=_conn()
 infer_schema_file_format_name='ff_infer'
@@ -13,8 +13,7 @@ def infer_schema_file_format(infer_schema_file_format_name):
     type = 'parquet'
     """
     cur.execute(sql)
-    print(f"File format '{infer_schema_file_format_name}' created successfully.")
-    
+    print(f"File format '{infer_schema_file_format_name}' created successfully.")  
 def create_table_through_infer_schema():
     for table in table_list:
         sql = f"""
