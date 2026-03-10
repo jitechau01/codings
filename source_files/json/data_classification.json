@@ -1,0 +1,109 @@
+{
+  "data_classification": [
+    {
+      "sensitivity_level": "HIGH_SENSITIVE",
+      "database": "RNDCONTROLLING",
+      "schema": "dp_rdportfolio360",
+      "views": [
+        {
+          "view_name": "VW_PROJECT_INDICATION_FLAT",
+          "attributes": [
+            "GOV_APPROVED_PHASE_1_POS",
+            "GOV_APPROVED_PHASE_2A_POS",
+            "GOV_APPROVED_PHASE_2B_POS",
+            "GOV_APPROVED_PHASE_2_POS",
+            "GOV_APPROVED_PHASE_3_POS"
+          ]
+        }
+      ],
+      "consumers": [
+        "SILC",
+        "iport"
+      ]
+    },
+    {
+      "sensitivity_level": "MEDIUM_SENSITIVE",
+      "database": "RNDCONTROLLING",
+      "schema": "dp_rdportfolio360",
+      "views": [
+        {
+          "view_name": "VW_PROJECT_INDICATION_FLAT",
+          "attributes": [
+            "PROJECT_STATUS",
+            "PROJECT_PHASE",
+            "PROJECT_PRIORITY"
+          ]
+        },
+        {
+          "view_name": "VW_PROJECT_TEAM_MEMBER",
+          "attributes": [
+            "PROJECT_TEAM_MEMBER_EMAIL"
+          ]
+        }
+      ],
+      "consumers": [
+        "CMC"
+      ]
+    },
+    {
+      "sensitivity_level": "LOW_SENSITIVE",
+      "database": "RNDCONTROLLING",
+      "schema": "dp_rdportfolio360",
+      "views": [
+        {
+          "view_name": "VW_MEDDRA_ICD10_MAPPING",
+          "attributes": [
+            "MEDDRA_PT_CODE",
+            "MEDDRA_LLT_CODE"
+          ]
+        },
+        {
+          "view_name": "VW_PROJECT_INDICATION_FLAT",
+          "attributes": [
+            "INDICATION_PHASE"
+          ]
+        }
+      ],
+      "consumers": [
+        "RADAR"
+      ]
+    },
+    {
+      "sensitivity_level": "LIMITED",
+      "database": "RNDCONTROLLING",
+      "schema": "dp_rdportfolio360",
+      "views": [
+        {
+          "view_name": "VW_PROJECT_TCP",
+          "attributes": [
+            "TCP_CHARACTERISTIC_VALUE",
+            "TCP_STATUS"
+          ]
+        },
+        {
+          "view_name": "VW_PROJECT_TVP",
+          "attributes": [
+            "TVP_STATUS"
+          ]
+        }
+      ],
+      "consumers": [
+        "BBT"
+      ]
+    }
+  ],
+
+  "consumer_overrides": [
+    {
+      "consumer": "iport",
+      "sensitivity_level": "LIMITED",
+      "database": "RNDCONTROLLING",
+      "schema": "dp_rdportfolio360",
+      "view": "VW_PROJECT_INDICATION_FLAT",
+      "attributes": [
+        "GOV_APPROVED_PHASE_2_POS",
+        "GOV_APPROVED_PHASE_3_POS"
+      ]
+    }
+  ]
+}

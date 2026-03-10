@@ -1,0 +1,25 @@
+[2026-03-10T08:05:20.463+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-03-10T08:05:20.593+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 1_dag_Generate_Semantic_Model.Generating_Model manual__2026-03-10T08:05:16.717379+00:00 [queued]>
+[2026-03-10T08:05:20.604+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 1_dag_Generate_Semantic_Model.Generating_Model manual__2026-03-10T08:05:16.717379+00:00 [queued]>
+[2026-03-10T08:05:20.604+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-03-10T08:05:20.649+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Generating_Model> on 2026-03-10 08:05:16.717379+00:00
+[2026-03-10T08:05:20.654+0000] {standard_task_runner.py:64} INFO - Started process 370617 to run task
+[2026-03-10T08:05:20.662+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', '1_dag_Generate_Semantic_Model', 'Generating_Model', 'manual__2026-03-10T08:05:16.717379+00:00', '--job-id', '61', '--raw', '--subdir', 'DAGS_FOLDER/1_dag_Generate_Semantic_Model.py', '--cfg-path', '/tmp/tmpdmnv6c21']
+[2026-03-10T08:05:20.666+0000] {standard_task_runner.py:91} INFO - Job 61: Subtask Generating_Model
+[2026-03-10T08:05:20.749+0000] {task_command.py:426} INFO - Running <TaskInstance: 1_dag_Generate_Semantic_Model.Generating_Model manual__2026-03-10T08:05:16.717379+00:00 [running]> on host DESKTOP-OGBECNS.localdomain
+[2026-03-10T08:05:20.858+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='1_dag_Generate_Semantic_Model' AIRFLOW_CTX_TASK_ID='Generating_Model' AIRFLOW_CTX_EXECUTION_DATE='2026-03-10T08:05:16.717379+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-10T08:05:16.717379+00:00'
+[2026-03-10T08:05:20.860+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-03-10T08:05:21.874+0000] {connection.py:611} INFO - Snowflake Connector for Python Version: 4.2.0, Python Version: 3.12.3, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[2026-03-10T08:05:21.875+0000] {connection.py:1695} INFO - Connecting to GLOBAL Snowflake domain
+[2026-03-10T08:05:22.054+0000] {credentials.py:1278} INFO - Found credentials in shared credentials file: ~/.aws/credentials
+[2026-03-10T08:05:35.722+0000] {logging_mixin.py:188} INFO - Semantic model generated successfully
+[2026-03-10T08:05:35.722+0000] {logging_mixin.py:188} INFO - Views processed: 7
+[2026-03-10T08:05:35.723+0000] {logging_mixin.py:188} INFO - 
+//Staging Semantic YML file RNDCONTROLLING.semantic.istage...
+[2026-03-10T08:05:38.203+0000] {logging_mixin.py:188} INFO -     Semantic Model File staged successfully to @RNDCONTROLLING.semantic.istage
+[2026-03-10T08:05:38.204+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-03-10T08:05:38.205+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-03-10T08:05:38.216+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=1_dag_Generate_Semantic_Model, task_id=Generating_Model, run_id=manual__2026-03-10T08:05:16.717379+00:00, execution_date=20260310T080516, start_date=20260310T080520, end_date=20260310T080538
+[2026-03-10T08:05:38.303+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-03-10T08:05:38.319+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-10T08:05:38.320+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

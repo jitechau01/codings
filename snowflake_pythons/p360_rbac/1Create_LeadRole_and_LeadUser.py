@@ -8,7 +8,8 @@ schema_list=['landing','crdh_dea_iport_reporting', 'dp_rdportfolio360', 'semanti
 
 def create_Leaduser_with_LeadAccess(leadRoleName,leadUserName):
     cur=_conn()
-    cur.execute("use role accountadmin")
+    cur.execute("drop database if exists rndcontrolling")
+    cur.execute("use role securityadmin")
     
     print("\n---------->Lead Role Creation Starts-----------------------")
     try:
@@ -35,8 +36,24 @@ def create_Leaduser_with_LeadAccess(leadRoleName,leadUserName):
                 print(f"user {leadUserName} already exists, skipped creation")
             elif "successfully created" in message:
                 print(f"user {leadUserName} successfully created")
+                cur.execute(f" alter user {leadUserName} set password='guest' ")
+                print(f"Password set for user {leadUserName}")
     except Exception as e:
-        print(f"Error: {e}")       
+        print(f"Error: {e}")   
+        
+    cur.execute(f"alter user {leadUserName} set default_role={leadRoleName} ")
+    print(f"Default role for user {leadUserName} set to {leadRoleName}")
+    cur.execute(f"alter user {leadUserName} set default_warehouse='compute_wh' ")
+    print(f"Default warehouse for user {leadUserName} set to 'compute_wh'")
+    cur.execute(f"""alter user {leadUserName} set rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo8TAWiz1Efg1HUJHqUSr
+                    39UfvX2uebf3Z9vDpHhY/xwzgLYmgeDAwYIzZrSsDSRFDoPszlsgMOnrIqaI2222
+                    /1XBi51+TlEqzVy43re+p62pVtBrZEISG/urjUeACto6TLqjKCzCFSetZz1y7Elj
+                    fteEsDyx2+9caoRKAlSjSHBrm2S4OUO2nihdnIBz9sG1J96uuz99Si5g1QtZGAqR
+                    oq1I3P290x2IriCiykKMLRI2KptYH6gkOEustEgIvDzYCBl1bXGmuw3ZG6gymlBv
+                    KReLJyobBf/B8qgNJ1zKAusacNBrbMICw1OrSrLXdUT/ZRYCb5HZKdBf1cjaS/Nd
+                    qQIDAQAB' """)
+    print(f"RSA public key set for user {leadUserName}")
+    
 def grant_accesses_to_leadrole_and_leaduser(leadRoleName):
     cur=_conn()
     print("---------->Granting required privilages to Lead role")
@@ -52,8 +69,17 @@ def grant_accesses_to_leadrole_and_leaduser(leadRoleName):
         print(f"Grant CREATE ROLE successfully granted to role {leadRoleName}")
         cur.execute(f"""GRANT CREATE USER      ON ACCOUNT TO ROLE {leadRoleName}""")
         print(f"Grant CREATE USER successfully granted to role {leadRoleName}")
-        cur.execute(f"""GRANT MANAGE GRANTS    ON ACCOUNT TO ROLE {leadRoleName}""")
+        cur.execute(f"""GRANT MANAGE GRANTS  ON ACCOUNT TO ROLE {leadRoleName}""")
         print(f"Grant MANAGE GRANTS successfully granted to role {leadRoleName}")
+        
+        cur.execute(f"""GRANT APPLY MASKING POLICY ON ACCOUNT TO ROLE {leadRoleName}  WITH GRANT OPTION""")
+        print(f"Grant APPLY MASKING POLICY successfully granted to role {leadRoleName}")
+        
+        cur.execute(f"""GRANT APPLY TAG ON ACCOUNT TO ROLE {leadRoleName}  WITH GRANT OPTION""")
+        print(f"Grant APPLY TAG successfully granted to role {leadRoleName}")
+        
+        
+        
         cur.execute(f"""GRANT MONITOR USAGE    ON ACCOUNT TO ROLE {leadRoleName}""")
         print(f"Grant MONITOR USAGE successfully granted to role {leadRoleName}")
         cur.execute(f"""GRANT EXECUTE TASK     ON ACCOUNT TO ROLE {leadRoleName}""")

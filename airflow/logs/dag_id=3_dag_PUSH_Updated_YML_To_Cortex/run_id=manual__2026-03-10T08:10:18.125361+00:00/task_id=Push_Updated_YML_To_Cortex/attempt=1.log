@@ -1,0 +1,23 @@
+[2026-03-10T08:10:21.954+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-03-10T08:10:22.061+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 3_dag_PUSH_Updated_YML_To_Cortex.Push_Updated_YML_To_Cortex manual__2026-03-10T08:10:18.125361+00:00 [queued]>
+[2026-03-10T08:10:22.076+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 3_dag_PUSH_Updated_YML_To_Cortex.Push_Updated_YML_To_Cortex manual__2026-03-10T08:10:18.125361+00:00 [queued]>
+[2026-03-10T08:10:22.077+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-03-10T08:10:22.138+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Push_Updated_YML_To_Cortex> on 2026-03-10 08:10:18.125361+00:00
+[2026-03-10T08:10:22.145+0000] {standard_task_runner.py:64} INFO - Started process 373206 to run task
+[2026-03-10T08:10:22.155+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', '3_dag_PUSH_Updated_YML_To_Cortex', 'Push_Updated_YML_To_Cortex', 'manual__2026-03-10T08:10:18.125361+00:00', '--job-id', '63', '--raw', '--subdir', 'DAGS_FOLDER/3_dag_PUSH_Updated_YML_To_Cortex.py', '--cfg-path', '/tmp/tmp19prfxfx']
+[2026-03-10T08:10:22.162+0000] {standard_task_runner.py:91} INFO - Job 63: Subtask Push_Updated_YML_To_Cortex
+[2026-03-10T08:10:22.282+0000] {task_command.py:426} INFO - Running <TaskInstance: 3_dag_PUSH_Updated_YML_To_Cortex.Push_Updated_YML_To_Cortex manual__2026-03-10T08:10:18.125361+00:00 [running]> on host DESKTOP-OGBECNS.localdomain
+[2026-03-10T08:10:22.427+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='3_dag_PUSH_Updated_YML_To_Cortex' AIRFLOW_CTX_TASK_ID='Push_Updated_YML_To_Cortex' AIRFLOW_CTX_EXECUTION_DATE='2026-03-10T08:10:18.125361+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-10T08:10:18.125361+00:00'
+[2026-03-10T08:10:22.428+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-03-10T08:10:23.586+0000] {connection.py:611} INFO - Snowflake Connector for Python Version: 4.2.0, Python Version: 3.12.3, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[2026-03-10T08:10:23.587+0000] {connection.py:1695} INFO - Connecting to GLOBAL Snowflake domain
+[2026-03-10T08:10:23.740+0000] {credentials.py:1278} INFO - Found credentials in shared credentials file: ~/.aws/credentials
+[2026-03-10T08:10:25.957+0000] {logging_mixin.py:188} INFO - 
+//Staging Semantic YML file RNDCONTROLLING.semantic.istage...
+[2026-03-10T08:10:28.404+0000] {logging_mixin.py:188} INFO -     Semantic Model File staged successfully to @RNDCONTROLLING.semantic.istage
+[2026-03-10T08:10:28.405+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-03-10T08:10:28.406+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-03-10T08:10:28.412+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=3_dag_PUSH_Updated_YML_To_Cortex, task_id=Push_Updated_YML_To_Cortex, run_id=manual__2026-03-10T08:10:18.125361+00:00, execution_date=20260310T081018, start_date=20260310T081022, end_date=20260310T081028
+[2026-03-10T08:10:28.489+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-03-10T08:10:28.507+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-10T08:10:28.508+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

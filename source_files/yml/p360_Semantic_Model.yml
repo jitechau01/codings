@@ -1,0 +1,465 @@
+name: portfolio360_semantic_model
+description: This semantic data model contains comprehensive information about pharmaceutical  research
+  and development projects, including their therapeutic indications, team members,
+  and value propositions.  It allows analysis of medical coding mappings between different
+  classification systems (like MedDRA and  ICD-10), project characteristics, therapeutic
+  profiles, and team compositions. You can analyze project  statuses, therapeutic
+  areas, mechanisms of action, and value assessments across different stakeholder  perspectives.
+  The data enables tracking of project phases, priorities, and approved positions
+  across  clinical development stages. You can also examine competitive positioning,
+  patient populations of interest,  and value propositions for patients, payers, and
+  prescribers
+tables:
+- name: vw_meddra_icd10_mapping
+  base_table:
+    database: RNDCONTROLLING
+    schema: DP_RDPORTFOLIO360
+    table: VW_MEDDRA_ICD10_MAPPING
+  dimensions:
+  - name: icd10_code_2019_intl_core_ver
+    expr: ICD10_CODE_2019_INTL_CORE_VER
+    data_type: text
+  - name: sanofi_meddra_indication_code
+    expr: SANOFI_MEDDRA_INDICATION_CODE
+    data_type: text
+  measures:
+  - name: sum_meddra_pt_code
+    expr: SUM(MEDDRA_PT_CODE)
+    data_type: number
+  - name: sum_meddra_llt_code
+    expr: SUM(MEDDRA_LLT_CODE)
+    data_type: number
+- name: vw_meddra_snomedct_mapping
+  base_table:
+    database: RNDCONTROLLING
+    schema: DP_RDPORTFOLIO360
+    table: VW_MEDDRA_SNOMEDCT_MAPPING
+  dimensions:
+  - name: clinical_ind
+    expr: CLINICAL_IND
+    data_type: text
+  measures:
+  - name: sum_meddra_llt_code
+    expr: SUM(MEDDRA_LLT_CODE)
+    data_type: number
+  - name: sum_snomed_ct_code
+    expr: SUM(SNOMED_CT_CODE)
+    data_type: number
+- name: vw_project_indication_flat
+  base_table:
+    database: RNDCONTROLLING
+    schema: DP_RDPORTFOLIO360
+    table: VW_PROJECT_INDICATION_FLAT
+  dimensions:
+  - name: asset_mechanism_of_action
+    expr: ASSET_MECHANISM_OF_ACTION
+    data_type: text
+  - name: project_description
+    expr: PROJECT_DESCRIPTION
+    data_type: text
+  - name: project_status
+    expr: PROJECT_STATUS
+    data_type: text
+  - name: indication_unique_code
+    expr: INDICATION_UNIQUE_CODE
+    data_type: text
+  - name: indication_lead_flag
+    expr: INDICATION_LEAD_FLAG
+    data_type: boolean
+  - name: indication_sanofi_sub_therapeutic_area_franchise
+    expr: INDICATION_SANOFI_SUB_THERAPEUTIC_AREA_FRANCHISE
+    data_type: text
+  - name: asset_origin_of_active_substance
+    expr: ASSET_ORIGIN_OF_ACTIVE_SUBSTANCE
+    data_type: text
+  - name: project_sanofi_therapeutic_area
+    expr: PROJECT_SANOFI_THERAPEUTIC_AREA
+    data_type: text
+  - name: project_phase
+    expr: PROJECT_PHASE
+    data_type: text
+  - name: indication_name_meddra
+    expr: INDICATION_NAME_MEDDRA
+    data_type: text
+  - name: project_research_development_link
+    expr: PROJECT_RESEARCH_DEVELOPMENT_LINK
+    data_type: text
+  - name: project_code
+    expr: PROJECT_CODE
+    data_type: text
+  - name: asset_inn
+    expr: ASSET_INN
+    data_type: text
+  - name: project_organization
+    expr: PROJECT_ORGANIZATION
+    data_type: text
+  - name: project_name
+    expr: PROJECT_NAME
+    data_type: text
+  - name: indication_phase
+    expr: INDICATION_PHASE
+    data_type: text
+  - name: asset_pharmacological_effect
+    expr: ASSET_PHARMACOLOGICAL_EFFECT
+    data_type: text
+  - name: asset_active_substance_type
+    expr: ASSET_ACTIVE_SUBSTANCE_TYPE
+    data_type: text
+  - name: asset_active_substance_subtype
+    expr: ASSET_ACTIVE_SUBSTANCE_SUBTYPE
+    data_type: text
+  - name: indication_sanofi_therapeutic_area
+    expr: INDICATION_SANOFI_THERAPEUTIC_AREA
+    data_type: text
+  - name: asset_moa_short_name
+    expr: ASSET_MOA_SHORT_NAME
+    data_type: text
+  - name: project_category
+    expr: PROJECT_CATEGORY
+    data_type: text
+  - name: project_innovation_status
+    expr: PROJECT_INNOVATION_STATUS
+    data_type: text
+  - name: indication_longname
+    expr: INDICATION_LONGNAME
+    data_type: text
+  - name: asset_brand_name
+    expr: ASSET_BRAND_NAME
+    data_type: text
+  - name: indication_shortname
+    expr: INDICATION_SHORTNAME
+    data_type: text
+  - name: indication_status
+    expr: INDICATION_STATUS
+    data_type: text
+  - name: project_priority
+    expr: PROJECT_PRIORITY
+    data_type: text
+  measures:
+  - name: sum_gov_approved_phase_2a_pos
+    expr: SUM(GOV_APPROVED_PHASE_2A_POS)
+    data_type: number
+  - name: sum_gov_approved_phase_2_pos
+    expr: SUM(GOV_APPROVED_PHASE_2_POS)
+    data_type: number
+  - name: sum_gov_approved_phase_2b_pos
+    expr: SUM(GOV_APPROVED_PHASE_2B_POS)
+    data_type: number
+  - name: sum_indication_ptrs
+    expr: SUM(INDICATION_PTRS)
+    data_type: number
+  - name: sum_gov_approved_phase_1_pos
+    expr: SUM(GOV_APPROVED_PHASE_1_POS)
+    data_type: number
+  - name: sum_gov_approved_phase_3_pos
+    expr: SUM(GOV_APPROVED_PHASE_3_POS)
+    data_type: number
+  - name: sum_indication_code_meddra
+    expr: SUM(INDICATION_CODE_MEDDRA)
+    data_type: number
+  metrics:
+  - name: distinct_indications
+    description: Counts the unique therapeutic indications being researched. Use when questions ask about 'unique indications', 'different therapeutic targets', or 'distinct disease indications'. Helps assess the range of therapeutic areas and disease targets in the research portfolio.
+    expr: COUNT(DISTINCT indication_unique_code)
+  - name: distinct_medical_conditions
+    description: Counts the unique medical conditions (by MedDRA codes) being researched. Use when questions ask about 'different medical conditions', 'unique diseases', or 'distinct therapeutic areas'. Helps understand the breadth of medical conditions covered in the research portfolio.
+    expr: COUNT(DISTINCT indication_code_meddra)
+  - name: distinct_project_indication_pairs
+    description: Counts the unique combinations of projects and their therapeutic indications. Use when questions ask about 'unique project-indication combinations', 'distinct combinations', or 'how many different project and indication pairs'. Helps assess the diversity and scope of the pharmaceutical research portfolio by measuring the total number of unique disease targets being pursued across all projects.
+    expr: COUNT(DISTINCT HASH(indication_unique_code, project_code))
+  - name: distinct_projects
+    description: Counts the total number of unique research projects in the portfolio. Use when questions ask about 'total projects', 'number of unique projects', or 'how many different projects'. Helps measure the size and diversity of the research portfolio and track portfolio growth over time.
+    expr: COUNT(DISTINCT project_code)
+  - name: phase_1_pos_log_sum
+    description: Calculates the natural logarithm sum of non-zero Phase 1 probability of success values. Use when questions ask about 'combined Phase 1 success probabilities' or 'aggregate Phase 1 POS'. Helps evaluate the overall likelihood of success for Phase 1 trials across the portfolio.
+    expr: SUM(LN(NULLIF(gov_approved_phase_1_pos, 0)))
+  - name: total_meddra_codes
+    description: Counts all MedDRA indication codes, including duplicates. Use when questions ask about 'total medical conditions' or 'all disease codes'. Helps measure the total volume of medical condition classifications across all projects.
+    expr: COUNT(indication_code_meddra)
+  - name: total_project_count
+    description: Counts the total number of project entries, including duplicates. Use when questions ask about 'total project entries' or 'all project records'. Helps measure the overall volume of project records in the portfolio.
+    expr: COUNT(project_code)
+  - name: total_project_indication_pairs
+    description: Counts all project-indication combinations, including duplicates. Use when questions ask about 'total number of project-indication combinations' or 'all project and indication pairs'. Helps measure the total volume of research initiatives across all therapeutic areas.
+    expr: COUNT(indication_unique_code, project_code)
+- name: vw_project_indication_tpp
+  base_table:
+    database: RNDCONTROLLING
+    schema: DP_RDPORTFOLIO360
+    table: VW_PROJECT_INDICATION_TPP
+  dimensions:
+  - name: tpp_comparator_product1_name
+    expr: TPP_COMPARATOR_PRODUCT1_NAME
+    data_type: text
+  - name: tpp_base_profile_soc_for_subcategory
+    expr: TPP_BASE_PROFILE_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: project_code
+    expr: PROJECT_CODE
+    data_type: text
+  - name: tpp_soc_category
+    expr: TPP_SOC_CATEGORY
+    data_type: text
+  - name: tpp_minimally_marketable_vs_comparator_product1_soc_for_subcategory
+    expr: TPP_MINIMALLY_MARKETABLE_VS_COMPARATOR_PRODUCT1_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: tpp_comparator_product3_soc_for_subcategory
+    expr: TPP_COMPARATOR_PRODUCT3_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: tpp_status
+    expr: TPP_STATUS
+    data_type: text
+  - name: tpp_comparator_product1_soc_for_subcategory
+    expr: TPP_COMPARATOR_PRODUCT1_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: tpp_soc_subcategory
+    expr: TPP_SOC_SUBCATEGORY
+    data_type: text
+  - name: tpp_comparator_product3_name
+    expr: TPP_COMPARATOR_PRODUCT3_NAME
+    data_type: text
+  - name: tpp_base_vs_comparator_product3_soc_for_subcategory
+    expr: TPP_BASE_VS_COMPARATOR_PRODUCT3_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: tpp_upside_vs_comparator_product1_soc_for_subcategory
+    expr: TPP_UPSIDE_VS_COMPARATOR_PRODUCT1_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: indication_unique_code
+    expr: INDICATION_UNIQUE_CODE
+    data_type: text
+  - name: tpp_modified_date
+    expr: TPP_MODIFIED_DATE
+    data_type: timestamp_ntz
+  - name: tpp_minimally_marketable_vs_comparator_product3_soc_for_subcategory
+    expr: TPP_MINIMALLY_MARKETABLE_VS_COMPARATOR_PRODUCT3_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: tpp_upside_vs_comparator_product2_soc_for_subcategory
+    expr: TPP_UPSIDE_VS_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: tpp_upside_profile_soc_for_subcategory
+    expr: TPP_UPSIDE_PROFILE_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: tpp_created_date
+    expr: TPP_CREATED_DATE
+    data_type: timestamp_ntz
+  - name: tpp_minimally_marketable_vs_comparator_product2_soc_for_subcategory
+    expr: TPP_MINIMALLY_MARKETABLE_VS_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: tpp_comparator_product2_soc_for_subcategory
+    expr: TPP_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: tpp_base_vs_comparator_product1_soc_for_subcategory
+    expr: TPP_BASE_VS_COMPARATOR_PRODUCT1_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: tpp_base_vs_comparator_product2_soc_for_subcategory
+    expr: TPP_BASE_VS_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: tpp_upside_vs_comparator_product3_soc_for_subcategory
+    expr: TPP_UPSIDE_VS_COMPARATOR_PRODUCT3_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: tpp_comparator_product2_name
+    expr: TPP_COMPARATOR_PRODUCT2_NAME
+    data_type: text
+  - name: tpp_minimally_marketable_profile_soc_for_subcategory
+    expr: TPP_MINIMALLY_MARKETABLE_PROFILE_SOC_FOR_SUBCATEGORY
+    data_type: text
+  measures:
+  - name: sum_tpp_sys_id
+    expr: SUM(TPP_SYS_ID)
+    data_type: number
+- name: vw_project_tcp
+  base_table:
+    database: RNDCONTROLLING
+    schema: DP_RDPORTFOLIO360
+    table: VW_PROJECT_TCP
+  dimensions:
+  - name: tcp_characteristic_value
+    expr: TCP_CHARACTERISTIC_VALUE
+    data_type: text
+  - name: tcp_created_by
+    expr: TCP_CREATED_BY
+    data_type: text
+  - name: tcp_created_date
+    expr: TCP_CREATED_DATE
+    data_type: timestamp_ntz
+  - name: tcp_characteristic
+    expr: TCP_CHARACTERISTIC
+    data_type: text
+  - name: tcp_modified_date
+    expr: TCP_MODIFIED_DATE
+    data_type: timestamp_ntz
+  - name: tcp_status
+    expr: TCP_STATUS
+    data_type: text
+  - name: tcp_modified_by
+    expr: TCP_MODIFIED_BY
+    data_type: text
+  - name: project_name
+    expr: PROJECT_NAME
+    data_type: text
+  - name: project_code
+    expr: PROJECT_CODE
+    data_type: text
+  measures:
+  - name: sum_tcp_id
+    expr: SUM(TCP_ID)
+    data_type: number
+- name: vw_project_team_member
+  base_table:
+    database: RNDCONTROLLING
+    schema: DP_RDPORTFOLIO360
+    table: VW_PROJECT_TEAM_MEMBER
+  dimensions:
+  - name: project_team_member_scope_desc
+    expr: PROJECT_TEAM_MEMBER_SCOPE_DESC
+    data_type: text
+  - name: project_team_member_project_role_orig
+    expr: PROJECT_TEAM_MEMBER_PROJECT_ROLE_ORIG
+    data_type: text
+  - name: project_team_member_sub_teams
+    expr: PROJECT_TEAM_MEMBER_SUB_TEAMS
+    data_type: text
+  - name: project_team_member_email
+    expr: PROJECT_TEAM_MEMBER_EMAIL
+    data_type: text
+  - name: project_team_member_teams
+    expr: PROJECT_TEAM_MEMBER_TEAMS
+    data_type: text
+  - name: project_team_member_project_role
+    expr: PROJECT_TEAM_MEMBER_PROJECT_ROLE
+    data_type: text
+  - name: project_team_member_desc
+    expr: PROJECT_TEAM_MEMBER_DESC
+    data_type: text
+  - name: project_code
+    expr: PROJECT_CODE
+    data_type: text
+  - name: indication_unique_code
+    expr: INDICATION_UNIQUE_CODE
+    data_type: text
+  - name: project_team_member_department_code
+    expr: PROJECT_TEAM_MEMBER_DEPARTMENT_CODE
+    data_type: text
+  - name: project_team_member_function
+    expr: PROJECT_TEAM_MEMBER_FUNCTION
+    data_type: text
+  measures: []
+- name: vw_project_tvp
+  base_table:
+    database: RNDCONTROLLING
+    schema: DP_RDPORTFOLIO360
+    table: VW_PROJECT_TVP
+  dimensions:
+  - name: tvp_value_to_payers
+    expr: TVP_VALUE_TO_PAYERS
+    data_type: text
+  - name: created_date
+    expr: CREATED_DATE
+    data_type: timestamp_ntz
+  - name: modified_by
+    expr: MODIFIED_BY
+    data_type: text
+  - name: tvp_populations_of_interest
+    expr: TVP_POPULATIONS_OF_INTEREST
+    data_type: text
+  - name: modified_date
+    expr: MODIFIED_DATE
+    data_type: timestamp_ntz
+  - name: tvp_value_to_patients
+    expr: TVP_VALUE_TO_PATIENTS
+    data_type: text
+  - name: tvp_status
+    expr: TVP_STATUS
+    data_type: text
+  - name: tvp_need
+    expr: TVP_NEED
+    data_type: text
+  - name: tvp_competitive_positioning_current_soc
+    expr: TVP_COMPETITIVE_POSITIONING_CURRENT_SOC
+    data_type: text
+  - name: indication_unique_code
+    expr: INDICATION_UNIQUE_CODE
+    data_type: text
+  - name: tvp_value_to_prescribers
+    expr: TVP_VALUE_TO_PRESCRIBERS
+    data_type: text
+  - name: tvp_source_record_ids
+    expr: TVP_SOURCE_RECORD_IDS
+    data_type: text
+  - name: created_by
+    expr: CREATED_BY
+    data_type: text
+  - name: tvp_competitive_positioning_future_soc_competitors
+    expr: TVP_COMPETITIVE_POSITIONING_FUTURE_SOC_COMPETITORS
+    data_type: text
+  - name: project_code
+    expr: PROJECT_CODE
+    data_type: text
+  measures: []
+verified_queries:
+- name: What is the total number of unique therapeutic value proposition assessments
+    we have conducted, and what is their date range?
+  question: What is the total number of unique therapeutic value proposition assessments
+    we have conducted, and what is their date range?
+  sql: "SELECT\n            COUNT(\n            DISTINCT HASH(project_code, indication_unique_code)\n\
+    \            ) AS unique_tvp_assessments,\n            MIN(created_date) AS earliest_assessment_date,\n\
+    \            MAX(created_date) AS latest_assessment_date\n        FROM\n     \
+    \       vw_project_tvp"
+- name: What is the current distribution of research projects across unique therapeutic
+    indications and medical conditions in our pharmaceutical portfolio?
+  question: What is the current distribution of research projects across unique therapeutic
+    indications and medical conditions in our pharmaceutical portfolio?
+  sql: "SELECT\n        COUNT(indication_unique_code, project_code) AS count_indication_unique_code_project_code,\n\
+    \        COUNT(\n            DISTINCT HASH(indication_unique_code, project_code)\n\
+    \        ) AS distinct_indication_unique_code_project_code,\n        COUNT(project_code)\
+    \ AS count_project_code,\n        COUNT(DISTINCT project_code) AS distinct_project_code,\n\
+    \        COUNT(indication_code_meddra) AS count_indication_code_meddra,\n    \
+    \    COUNT(DISTINCT indication_code_meddra) AS distinct_indication_code_meddra\n\
+    \        FROM\n        vw_project_indication_flat"
+- name: How many unique project-indication combinations exist in our pharmaceutical
+    R&D portfolio?
+  question: How many unique project-indication combinations exist in our pharmaceutical
+    R&D portfolio?
+  sql: "SELECT\n                COUNT(indication_unique_code, project_code) AS count_indication_unique_code_project_code,\n\
+    \                COUNT(DISTINCT HASH(indication_unique_code, project_code)) \n\
+    \                AS distinct_indication_unique_code_project_code\n           \
+    \ FROM\n                vw_project_team_member "
+- name: Calculate the product (multiplication) of all non-null GOV_APPROVED_PHASE_1_POS
+    values across all records in the project indication flat table?
+  question: Calculate the product (multiplication) of all non-null GOV_APPROVED_PHASE_1_POS
+    values across all records in the project indication flat table?
+  sql: "SELECT\n        EXP(SUM(LN(NULLIF(gov_approved_phase_1_pos, 0)))) AS product_gov_approved_phase_1_pos\n\
+    \      FROM\n        vw_project_indication_flat\n      WHERE\n        NOT gov_approved_phase_1_pos\
+    \ IS NULL\n        AND gov_approved_phase_1_pos <> 0 "
+- name: Calculate the total sum of GOV_APPROVED_PHASE_1_POS across all records in
+    the entire available time period?
+  question: Calculate the total sum of GOV_APPROVED_PHASE_1_POS across all records
+    in the entire available time period?
+  sql: "SELECT\n        MIN(project_code) AS first_project,\n        MAX(project_code)\
+    \ AS last_project,\n        SUM(gov_approved_phase_1_pos) AS total_gov_approved_phase_1_pos\n\
+    \      FROM\n        vw_project_indication_flat "
+- name: How many unique project-indication combinations do we have in our pharmaceutical
+    R&D portfolio?
+  question: How many unique project-indication combinations do we have in our pharmaceutical
+    R&D portfolio?
+  sql: "SELECT\n        COUNT(indication_unique_code, project_code) AS count_indication_unique_code_project_code,\n\
+    \        COUNT(\n          DISTINCT HASH(indication_unique_code, project_code)\n\
+    \        ) AS distinct_indication_unique_code_project_code\n      FROM\n     \
+    \   vw_project_indication_tpp"
+- name: How many therapeutic value proposition assessments have we conducted in total,
+    and how many of these are unique combinations of indications and projects?
+  question: CaHow many therapeutic value proposition assessments have we conducted
+    in total, and how many of these are unique combinations of indications and projects?
+  sql: "SELECT\n        COUNT(indication_unique_code, project_code) AS count_indication_unique_code_project_code,\n\
+    \        COUNT(\n          DISTINCT HASH(indication_unique_code, project_code)\n\
+    \        ) AS distinct_indication_unique_code_project_code\n      FROM\n     \
+    \   vw_project_tvp "
+- name: What is the current scope of our pharmaceutical research portfolio in terms
+    of total projects, therapeutic indications, and unique project-indication combinations?
+  question: What is the current scope of our pharmaceutical research portfolio in
+    terms of total projects, therapeutic indications, and unique project-indication
+    combinations?
+  sql: "SELECT\n        COUNT(DISTINCT project_code) AS unique_projects,\n       \
+    \ COUNT(DISTINCT indication_unique_code) AS unique_indications,\n        COUNT(\n\
+    \          DISTINCT HASH(project_code, indication_unique_code)\n        ) AS unique_project_indication_pairs\n\
+    \      FROM\n        vw_project_indication_flat "

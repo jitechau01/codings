@@ -1,0 +1,75 @@
+[2026-03-10T07:55:10.274+0000] {processor.py:161} INFO - Started process (PID=364788) to work on /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:55:10.276+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py for tasks to queue
+[2026-03-10T07:55:10.278+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:55:10.277+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:55:10.322+0000] {processor.py:840} INFO - DAG(s) 'dag_PUSH_Updated_YML_To_Cortex' retrieved from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:55:10.525+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:55:10.524+0000] {override.py:1858} INFO - Created Permission View: can edit on DAG:dag_PUSH_Updated_YML_To_Cortex
+[2026-03-10T07:55:10.547+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:55:10.546+0000] {override.py:1858} INFO - Created Permission View: can delete on DAG:dag_PUSH_Updated_YML_To_Cortex
+[2026-03-10T07:55:10.565+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:55:10.564+0000] {override.py:1858} INFO - Created Permission View: can read on DAG:dag_PUSH_Updated_YML_To_Cortex
+[2026-03-10T07:55:10.566+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:55:10.565+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-03-10T07:55:10.587+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:55:10.587+0000] {dag.py:3111} INFO - Creating ORM DAG for dag_PUSH_Updated_YML_To_Cortex
+[2026-03-10T07:55:10.589+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:55:10.588+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_PUSH_Updated_YML_To_Cortex to None, run_after=None
+[2026-03-10T07:55:10.616+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py took 0.353 seconds
+[2026-03-10T07:55:41.500+0000] {processor.py:161} INFO - Started process (PID=365019) to work on /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:55:41.508+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py for tasks to queue
+[2026-03-10T07:55:41.509+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:55:41.508+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:55:41.563+0000] {processor.py:840} INFO - DAG(s) 'dag_PUSH_Updated_YML_To_Cortex' retrieved from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:55:41.593+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:55:41.592+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-03-10T07:55:41.619+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:55:41.619+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_PUSH_Updated_YML_To_Cortex to None, run_after=None
+[2026-03-10T07:55:41.667+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py took 0.177 seconds
+[2026-03-10T07:56:11.875+0000] {processor.py:161} INFO - Started process (PID=365280) to work on /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:56:11.893+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py for tasks to queue
+[2026-03-10T07:56:11.894+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:56:11.893+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:56:11.919+0000] {processor.py:840} INFO - DAG(s) 'dag_PUSH_Updated_YML_To_Cortex' retrieved from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:56:11.937+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:56:11.937+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-03-10T07:56:11.950+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:56:11.950+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_PUSH_Updated_YML_To_Cortex to None, run_after=None
+[2026-03-10T07:56:11.984+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py took 0.125 seconds
+[2026-03-10T07:56:42.689+0000] {processor.py:161} INFO - Started process (PID=365529) to work on /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:56:42.709+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py for tasks to queue
+[2026-03-10T07:56:42.714+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:56:42.711+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:56:42.833+0000] {processor.py:840} INFO - DAG(s) 'dag_PUSH_Updated_YML_To_Cortex' retrieved from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:56:42.869+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:56:42.868+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-03-10T07:56:42.887+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:56:42.887+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_PUSH_Updated_YML_To_Cortex to None, run_after=None
+[2026-03-10T07:56:42.918+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py took 0.253 seconds
+[2026-03-10T07:56:50.570+0000] {processor.py:161} INFO - Started process (PID=365693) to work on /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:56:50.590+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py for tasks to queue
+[2026-03-10T07:56:50.594+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:56:50.592+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:56:50.641+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:56:50.636+0000] {dagbag.py:355} ERROR - Failed to import: /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+Traceback (most recent call last):
+  File "/home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py", line 59, in <module>
+    python_callable=Generating_Semantic_Model
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'Generating_Semantic_Model' is not defined
+[2026-03-10T07:56:50.645+0000] {processor.py:842} WARNING - No viable dags retrieved from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:56:50.669+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py took 0.119 seconds
+[2026-03-10T07:56:59.702+0000] {processor.py:161} INFO - Started process (PID=365764) to work on /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:56:59.703+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py for tasks to queue
+[2026-03-10T07:56:59.705+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:56:59.704+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:56:59.770+0000] {processor.py:840} INFO - DAG(s) 'dag_PUSH_Updated_YML_To_Cortex' retrieved from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:56:59.800+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:56:59.799+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-03-10T07:56:59.818+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:56:59.817+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_PUSH_Updated_YML_To_Cortex to None, run_after=None
+[2026-03-10T07:56:59.857+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py took 0.168 seconds
+[2026-03-10T07:57:30.372+0000] {processor.py:161} INFO - Started process (PID=366128) to work on /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:57:30.399+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py for tasks to queue
+[2026-03-10T07:57:30.401+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:57:30.400+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:57:30.466+0000] {processor.py:840} INFO - DAG(s) 'dag_PUSH_Updated_YML_To_Cortex' retrieved from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:57:30.513+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:57:30.513+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-03-10T07:57:30.542+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:57:30.542+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_PUSH_Updated_YML_To_Cortex to None, run_after=None
+[2026-03-10T07:57:30.599+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py took 0.247 seconds
+[2026-03-10T07:58:00.875+0000] {processor.py:161} INFO - Started process (PID=366479) to work on /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:58:00.901+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py for tasks to queue
+[2026-03-10T07:58:00.904+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:58:00.903+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:58:00.954+0000] {processor.py:840} INFO - DAG(s) 'dag_PUSH_Updated_YML_To_Cortex' retrieved from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:58:00.984+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:58:00.983+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-03-10T07:58:01.007+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:58:01.007+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_PUSH_Updated_YML_To_Cortex to None, run_after=None
+[2026-03-10T07:58:01.071+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py took 0.212 seconds
+[2026-03-10T07:58:31.270+0000] {processor.py:161} INFO - Started process (PID=366834) to work on /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:58:31.295+0000] {processor.py:830} INFO - Processing file /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py for tasks to queue
+[2026-03-10T07:58:31.298+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:58:31.297+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:58:31.354+0000] {processor.py:840} INFO - DAG(s) 'dag_PUSH_Updated_YML_To_Cortex' retrieved from /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py
+[2026-03-10T07:58:31.388+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:58:31.387+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-03-10T07:58:31.409+0000] {logging_mixin.py:188} INFO - [2026-03-10T07:58:31.409+0000] {dag.py:3947} INFO - Setting next_dagrun for dag_PUSH_Updated_YML_To_Cortex to None, run_after=None
+[2026-03-10T07:58:31.432+0000] {processor.py:183} INFO - Processing /home/cloud/codings/airflow/dags/dag_PUSH_Updated_YML_To_Cortex.py took 0.177 seconds

@@ -9,7 +9,7 @@ with DAG(
     
     snowflake_test_task = SnowflakeOperator(
         task_id='test_snowflake_connection',
-        sql="""use schema working.DP_RDPORTFOLIO360;
+        sql="""use schema rndcontrolling.semantic;
         create or replace table test_airflow_snowflake as select current_version() as version;""",
-        snowflake_conn_id='snowflake_conn_id',
+        snowflake_conn_id='snowflake_conn_data_engineer',
         )

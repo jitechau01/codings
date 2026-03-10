@@ -26,7 +26,7 @@ def create_ProjectRole():
 def create_ProjectUser(): 
     print(f"---------->Creating user {userName}-----------------------") 
     try:
-        result=cur.execute(f"create user if not exists {userName}")
+        result=cur.execute(f"create user if not exists {userName}  password='guest' ")
         status=result.fetchone()
         if status:
             message=status[0]
@@ -37,6 +37,21 @@ def create_ProjectUser():
                 print(f"user {userName} successfully created")
     except Exception as e:
         print(f"Error: {e}")
+    
+    
+    cur.execute(f"alter user {userName} set default_role={dev_role} ")
+
+    print(f"Default role for user {userName} set to {dev_role}")
+    cur.execute(f"alter user {userName} set default_warehouse=compute_wh ")
+    print(f"Default warehouse for user {userName} set to 'compute_wh'")
+    cur.execute(f"""alter user {userName} set rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo8TAWiz1Efg1HUJHqUSr
+39UfvX2uebf3Z9vDpHhY/xwzgLYmgeDAwYIzZrSsDSRFDoPszlsgMOnrIqaI2222
+/1XBi51+TlEqzVy43re+p62pVtBrZEISG/urjUeACto6TLqjKCzCFSetZz1y7Elj
+fteEsDyx2+9caoRKAlSjSHBrm2S4OUO2nihdnIBz9sG1J96uuz99Si5g1QtZGAqR
+oq1I3P290x2IriCiykKMLRI2KptYH6gkOEustEgIvDzYCBl1bXGmuw3ZG6gymlBv
+KReLJyobBf/B8qgNJ1zKAusacNBrbMICw1OrSrLXdUT/ZRYCb5HZKdBf1cjaS/Nd
+qQIDAQAB' """)
+    print(f"RSA public key set for user {userName}")
 def grant_accesses_to_ProjectRole_and_ProjectUser():
     print(f"---------->Granting required privilages to role {dev_role}")
     try: 
@@ -57,7 +72,7 @@ def grant_accesses_to_ProjectRole_and_ProjectUser():
             CREATE PROCEDURE
             ON SCHEMA rndcontrolling.{schema} TO ROLE data_engineer """)
             # Table level (existing tables)
-            cur.execute(f"""GRANT SELECT, INSERT, UPDATE, DELETE, TRUNCATE ON ALL TABLES IN SCHEMA rndcontrolling.{schema} TO ROLE data_engineer """)
+            cur.execute(f"""GRANT SELECT, INSERT, UPDATE, DELETE, TRUNCATE  ON ALL TABLES IN SCHEMA rndcontrolling.{schema} TO ROLE data_engineer """)
             # Future tables
             cur.execute(f"""GRANT SELECT, INSERT, UPDATE, DELETE, TRUNCATE ON FUTURE TABLES IN SCHEMA rndcontrolling.{schema} TO ROLE data_engineer """)
             # View level (existing views)

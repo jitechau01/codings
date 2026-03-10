@@ -1,0 +1,72 @@
+{
+  "data_classification": [
+    {
+      "sensitivity_level": "HIGH_SENSITIVE",
+      "database": "RNDCONTROLLING",
+      "schema": "p360",
+      "views": [
+        "VW_PROJECT_INDICATION_FLAT"
+      ],
+      "attributes": [
+        "GOV_APPROVED_PHASE_1_POS",
+        "GOV_APPROVED_PHASE_2A_POS",
+        "GOV_APPROVED_PHASE_2B_POS",
+        "GOV_APPROVED_PHASE_2_POS",
+        "GOV_APPROVED_PHASE_3_POS"
+      ],
+      "consumers": "SILC"
+    },
+    {
+      "sensitivity_level": "MEDIUM_SENSITIVE",
+      "database": "RNDCONTROLLING",
+      "schema": "p360",
+      "views": [
+        "VW_PROJECT_INDICATION_FLAT",
+        "VW_PROJECT_TEAM_MEMBER"
+      ],
+      "attributes": [
+        "PROJECT_STATUS",
+        "PROJECT_PHASE",
+        "PROJECT_PRIORITY",
+        "PROJECT_TEAM_MEMBER_EMAIL"
+      ],
+      "consumers": [
+        "CMC"
+      ]
+    },
+    {
+      "sensitivity_level": "LOW_SENSITIVE",
+      "database": "RNDCONTROLLING",
+      "schema": "p360",
+      "views": [
+        "VW_MEDDRA_ICD10_MAPPING",
+        "VW_PROJECT_INDICATION_FLAT"
+      ],
+      "attributes": [
+        "MEDDRA_PT_CODE",
+        "MEDDRA_LLT_CODE",
+        "INDICATION_PHASE"
+      ],
+      "consumers": [
+        "RADAR"
+      ]
+    },
+    {
+      "sensitivity_level": "LIMITED",
+      "database": "RNDCONTROLLING",
+      "schema": "p360",
+      "views": [
+        "VW_PROJECT_TCP",
+        "VW_PROJECT_TVP"
+      ],
+      "attributes": [
+        "TCP_CHARACTERISTIC_VALUE",
+        "TCP_STATUS",
+        "TVP_STATUS"
+      ],
+      "consumers": [
+        "BBT"
+      ]
+    }
+  ]
+}

@@ -4,16 +4,12 @@ sys.path.insert(1,'/home/cloud/codings/snowflake_pythons')
 from __connections.__con_data_engineer import _conn
 
 cur=_conn()
-database='rndcontrolling'
-local_csv_stage='local_csv_stage'
-csv_file_format='ff_csv'
-parquet_file_format='ff_parquet'
-json_file_format='ff_json'
+database,semantic_schema,semantic_stage='rndcontrolling','semantic','istage'
+local_csv_stage,csv_file_format,parquet_file_format,json_file_format='local_csv_stage','ff_csv','ff_parquet','ff_json'
 csv_file_format_infer='ff_csv_infer'
 schema_list= ('landing','crdh_dea_iport_reporting', 'dp_rdportfolio360', 'semantic', 
               'srv_mdm_rndmasterdata', 'srv_rnd_df', 'stg_manual_inputs')
 landing,iport,p360,semantic,mdm,srv,stg=schema_list
-
 cur.execute(f"""use schema {database}.{landing}""")
           
 def create_file_format():
@@ -189,8 +185,52 @@ def create_landing_schema_Infered_tables():
                         print(f"Table {table_name} already exists, recreated with new schema based on staged csv file")
             except Exception as e:
                 print(f"Error: {e}")
+def load_csv_files_to_snowflake_landing_schema():
+    cur.execute(f"use schema {database}.landing")
+    print("\n//Loading csv files from local_csv_stage to landing tables...")
+    cur.execute("show tables")
+    tables=cur.fetchall()
+    table_list=[table[1] for table in tables]
+    for table in table_list:
+        cur.execute(f""" truncate table {table} """)
+        print(f"\n//Loading file '{table}.csv' into table '{table}'..." )
+        copy_command = f"""COPY INTO {table} FROM @{local_csv_stage}{table}.csv FILE_FORMAT = (format_name = ff_csv) ON_ERROR = 'skip_file' """
+        try:
+            result=cur.execute(copy_command)
+            status=result.fetchone()
+            if status:
+                message=status[1]
+                message=message.lower()
+                if "loaded" in message:
+                    print(f"    File '{table}.csv' loaded successfully into table '{table}'")
+                elif "skipped" in message:
+                    print(f"File '{table}.csv' skipped due to errors, check load history for details")
+        except Exception as e:
+            print(f"Error loading file '{table}.csv' into table '{table}': {e}") 
+            
+        cur.execute(""" alter table project_indication_flat add GOV_APPROVED_PHASE_1_POS float,GOV_APPROVED_PHASE_2A_POS float,GOV_APPROVED_PHASE_2B_POS float,GOV_APPROVED_PHASE_2_POS float,GOV_APPROVED_PHASE_3_POS float """)
 
-create_file_format()
-create_local_stage()
-stage_consumer_input_files()
-create_landing_schema_Infered_tables()
+        cur.execute(""" update project_indication_flat set GOV_APPROVED_PHASE_1_POS=1 ,GOV_APPROVED_PHASE_2A_POS=2 ,GOV_APPROVED_PHASE_2B_POS =3,GOV_APPROVED_PHASE_2_POS=4 ,GOV_APPROVED_PHASE_3_POS =5 """)            
+def Create_Semantic_Model():
+    cur.execute(f"use schema {database}.{semantic_schema}")
+    print("\n\n---------->Creating semantic stage...")
+    sql = f""" create stage if not exists {semantic_stage} DIRECTORY = (ENABLE = TRUE)"""
+    try:
+        result=cur.execute(sql)
+        status=result.fetchone()
+        if status:
+            message=status[0]
+            message=message.lower()
+            if "successfully created" in message:
+                print(f"stage {semantic_stage} created successfully")
+            elif "already exists" in message:
+                print(f"stage {semantic_stage} already exists. Message, skipped creation")
+    except Exception as e:
+        print(f"Error creating stage {semantic_stage}: {e}")
+    
+# create_file_format()
+# create_local_stage()
+# stage_consumer_input_files()
+# create_landing_schema_Infered_tables()
+# load_csv_files_to_snowflake_landing_schema()
+Create_Semantic_Model()

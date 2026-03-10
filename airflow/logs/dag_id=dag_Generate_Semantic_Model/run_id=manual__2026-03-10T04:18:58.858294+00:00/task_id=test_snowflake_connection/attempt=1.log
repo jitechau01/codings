@@ -1,0 +1,21 @@
+[2026-03-10T04:19:12.266+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-03-10T04:19:12.636+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_Generate_Semantic_Model.test_snowflake_connection manual__2026-03-10T04:18:58.858294+00:00 [queued]>
+[2026-03-10T04:19:12.668+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_Generate_Semantic_Model.test_snowflake_connection manual__2026-03-10T04:18:58.858294+00:00 [queued]>
+[2026-03-10T04:19:12.669+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-03-10T04:19:12.763+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): test_snowflake_connection> on 2026-03-10 04:18:58.858294+00:00
+[2026-03-10T04:19:12.775+0000] {standard_task_runner.py:64} INFO - Started process 260163 to run task
+[2026-03-10T04:19:12.790+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'dag_Generate_Semantic_Model', 'test_snowflake_connection', 'manual__2026-03-10T04:18:58.858294+00:00', '--job-id', '49', '--raw', '--subdir', 'DAGS_FOLDER/dag_Generate_Semantic_Model.py', '--cfg-path', '/tmp/tmpj0amoesh']
+[2026-03-10T04:19:12.800+0000] {standard_task_runner.py:91} INFO - Job 49: Subtask test_snowflake_connection
+[2026-03-10T04:19:13.022+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_Generate_Semantic_Model.test_snowflake_connection manual__2026-03-10T04:18:58.858294+00:00 [running]> on host DESKTOP-OGBECNS.localdomain
+[2026-03-10T04:19:13.295+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='dag_Generate_Semantic_Model' AIRFLOW_CTX_TASK_ID='test_snowflake_connection' AIRFLOW_CTX_EXECUTION_DATE='2026-03-10T04:18:58.858294+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-10T04:18:58.858294+00:00'
+[2026-03-10T04:19:13.298+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-03-10T04:19:16.280+0000] {connection.py:611} INFO - Snowflake Connector for Python Version: 4.2.0, Python Version: 3.12.3, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[2026-03-10T04:19:16.283+0000] {connection.py:1695} INFO - Connecting to GLOBAL Snowflake domain
+[2026-03-10T04:19:16.759+0000] {credentials.py:1278} INFO - Found credentials in shared credentials file: ~/.aws/credentials
+[2026-03-10T04:19:19.280+0000] {logging_mixin.py:188} INFO - /home/cloud/codings/source_files/yml
+[2026-03-10T04:19:19.281+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-03-10T04:19:19.282+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-03-10T04:19:19.308+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_Generate_Semantic_Model, task_id=test_snowflake_connection, run_id=manual__2026-03-10T04:18:58.858294+00:00, execution_date=20260310T041858, start_date=20260310T041912, end_date=20260310T041919
+[2026-03-10T04:19:19.402+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-03-10T04:19:19.444+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-10T04:19:19.446+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
