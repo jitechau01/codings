@@ -1,0 +1,44 @@
+version: 2
+sources:
+  - name: landing
+    database: rndcontrolling
+    schema: landing
+    tables:
+      - name: project_indication_tpp
+      - name: project_team_member
+      - name: project_tcp
+      - name: project_tvp
+      - name: project_indication_flat
+  - name: srv_mdm_rndmasterdata
+    database: rndcontrolling
+    schema: srv_mdm_rndmasterdata
+    tables:
+      - name: vw_mdm_clinical_indication
+      - name: vw_mdm_financial_organization_unit
+      - name: vw_mdm_project_ind_master
+      - name: vw_mdm_project_master
+  - name: stg_manual_inputs
+    database: rndcontrolling
+    schema: stg_manual_inputs
+    tables:
+      - name: icd10_meddra_mapping
+      - name: meddra_snomed_ct_mapping
+      - name: project_type
+  - name: crdh_dea_iport_reporting
+    database: rndcontrolling
+    schema: crdh_dea_iport_reporting
+    tables:
+      - name: prtfl_tcp_profile
+      - name: prtfl_tpp_profile
+      - name: prtfl_tvp_profile
+  - name: srv_rnd_df
+    database: rndcontrolling
+    schema: srv_rnd_df
+    tables:
+      - name: mvw_wbs_hierarchy
+      - name: vw_indication
+      - name: vw_phase
+      - name: vw_project
+      - name: vw_ref_baseline
+      - name: vw_task
+      - name: vw_team_member

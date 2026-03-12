@@ -1,8 +1,0 @@
-name: 'dbt_sales'
-profile: 'dbt_sales'
-
-models:
-  dbt_sales:
-    marts:
-      +materialized: view
-      +schema: p360

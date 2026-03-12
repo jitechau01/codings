@@ -60,12 +60,12 @@ tables:
   - name: project_status
     expr: PROJECT_STATUS
     data_type: text
-  - name: indication_unique_code
-    expr: INDICATION_UNIQUE_CODE
-    data_type: text
   - name: indication_lead_flag
     expr: INDICATION_LEAD_FLAG
     data_type: boolean
+  - name: indication_unique_code
+    expr: INDICATION_UNIQUE_CODE
+    data_type: text
   - name: indication_sanofi_sub_therapeutic_area_franchise
     expr: INDICATION_SANOFI_SUB_THERAPEUTIC_AREA_FRANCHISE
     data_type: text
@@ -108,11 +108,11 @@ tables:
   - name: asset_active_substance_subtype
     expr: ASSET_ACTIVE_SUBSTANCE_SUBTYPE
     data_type: text
-  - name: indication_sanofi_therapeutic_area
-    expr: INDICATION_SANOFI_THERAPEUTIC_AREA
-    data_type: text
   - name: asset_moa_short_name
     expr: ASSET_MOA_SHORT_NAME
+    data_type: text
+  - name: indication_sanofi_therapeutic_area
+    expr: INDICATION_SANOFI_THERAPEUTIC_AREA
     data_type: text
   - name: project_category
     expr: PROJECT_CATEGORY
@@ -157,31 +157,6 @@ tables:
   - name: sum_indication_code_meddra
     expr: SUM(INDICATION_CODE_MEDDRA)
     data_type: number
-  metrics:
-  - name: distinct_indications
-    description: Counts the unique therapeutic indications being researched. Use when questions ask about 'unique indications', 'different therapeutic targets', or 'distinct disease indications'. Helps assess the range of therapeutic areas and disease targets in the research portfolio.
-    expr: COUNT(DISTINCT indication_unique_code)
-  - name: distinct_medical_conditions
-    description: Counts the unique medical conditions (by MedDRA codes) being researched. Use when questions ask about 'different medical conditions', 'unique diseases', or 'distinct therapeutic areas'. Helps understand the breadth of medical conditions covered in the research portfolio.
-    expr: COUNT(DISTINCT indication_code_meddra)
-  - name: distinct_project_indication_pairs
-    description: Counts the unique combinations of projects and their therapeutic indications. Use when questions ask about 'unique project-indication combinations', 'distinct combinations', or 'how many different project and indication pairs'. Helps assess the diversity and scope of the pharmaceutical research portfolio by measuring the total number of unique disease targets being pursued across all projects.
-    expr: COUNT(DISTINCT HASH(indication_unique_code, project_code))
-  - name: distinct_projects
-    description: Counts the total number of unique research projects in the portfolio. Use when questions ask about 'total projects', 'number of unique projects', or 'how many different projects'. Helps measure the size and diversity of the research portfolio and track portfolio growth over time.
-    expr: COUNT(DISTINCT project_code)
-  - name: phase_1_pos_log_sum
-    description: Calculates the natural logarithm sum of non-zero Phase 1 probability of success values. Use when questions ask about 'combined Phase 1 success probabilities' or 'aggregate Phase 1 POS'. Helps evaluate the overall likelihood of success for Phase 1 trials across the portfolio.
-    expr: SUM(LN(NULLIF(gov_approved_phase_1_pos, 0)))
-  - name: total_meddra_codes
-    description: Counts all MedDRA indication codes, including duplicates. Use when questions ask about 'total medical conditions' or 'all disease codes'. Helps measure the total volume of medical condition classifications across all projects.
-    expr: COUNT(indication_code_meddra)
-  - name: total_project_count
-    description: Counts the total number of project entries, including duplicates. Use when questions ask about 'total project entries' or 'all project records'. Helps measure the overall volume of project records in the portfolio.
-    expr: COUNT(project_code)
-  - name: total_project_indication_pairs
-    description: Counts all project-indication combinations, including duplicates. Use when questions ask about 'total number of project-indication combinations' or 'all project and indication pairs'. Helps measure the total volume of research initiatives across all therapeutic areas.
-    expr: COUNT(indication_unique_code, project_code)
 - name: vw_project_indication_tpp
   base_table:
     database: RNDCONTROLLING
@@ -197,11 +172,11 @@ tables:
   - name: project_code
     expr: PROJECT_CODE
     data_type: text
-  - name: tpp_soc_category
-    expr: TPP_SOC_CATEGORY
-    data_type: text
   - name: tpp_minimally_marketable_vs_comparator_product1_soc_for_subcategory
     expr: TPP_MINIMALLY_MARKETABLE_VS_COMPARATOR_PRODUCT1_SOC_FOR_SUBCATEGORY
+    data_type: text
+  - name: tpp_soc_category
+    expr: TPP_SOC_CATEGORY
     data_type: text
   - name: tpp_comparator_product3_soc_for_subcategory
     expr: TPP_COMPARATOR_PRODUCT3_SOC_FOR_SUBCATEGORY
@@ -236,12 +211,12 @@ tables:
   - name: tpp_upside_vs_comparator_product2_soc_for_subcategory
     expr: TPP_UPSIDE_VS_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY
     data_type: text
-  - name: tpp_upside_profile_soc_for_subcategory
-    expr: TPP_UPSIDE_PROFILE_SOC_FOR_SUBCATEGORY
-    data_type: text
   - name: tpp_created_date
     expr: TPP_CREATED_DATE
     data_type: timestamp_ntz
+  - name: tpp_upside_profile_soc_for_subcategory
+    expr: TPP_UPSIDE_PROFILE_SOC_FOR_SUBCATEGORY
+    data_type: text
   - name: tpp_minimally_marketable_vs_comparator_product2_soc_for_subcategory
     expr: TPP_MINIMALLY_MARKETABLE_VS_COMPARATOR_PRODUCT2_SOC_FOR_SUBCATEGORY
     data_type: text
@@ -285,12 +260,12 @@ tables:
   - name: tcp_characteristic
     expr: TCP_CHARACTERISTIC
     data_type: text
-  - name: tcp_modified_date
-    expr: TCP_MODIFIED_DATE
-    data_type: timestamp_ntz
   - name: tcp_status
     expr: TCP_STATUS
     data_type: text
+  - name: tcp_modified_date
+    expr: TCP_MODIFIED_DATE
+    data_type: timestamp_ntz
   - name: tcp_modified_by
     expr: TCP_MODIFIED_BY
     data_type: text
@@ -322,14 +297,14 @@ tables:
   - name: project_team_member_email
     expr: PROJECT_TEAM_MEMBER_EMAIL
     data_type: text
-  - name: project_team_member_teams
-    expr: PROJECT_TEAM_MEMBER_TEAMS
+  - name: project_team_member_desc
+    expr: PROJECT_TEAM_MEMBER_DESC
     data_type: text
   - name: project_team_member_project_role
     expr: PROJECT_TEAM_MEMBER_PROJECT_ROLE
     data_type: text
-  - name: project_team_member_desc
-    expr: PROJECT_TEAM_MEMBER_DESC
+  - name: project_team_member_teams
+    expr: PROJECT_TEAM_MEMBER_TEAMS
     data_type: text
   - name: project_code
     expr: PROJECT_CODE

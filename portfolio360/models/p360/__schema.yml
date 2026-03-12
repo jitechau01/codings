@@ -1,0 +1,22 @@
+models:
+    - name: VW_MEDDRA_ICD10_MAPPING
+      config:
+        schema: DP_RDPORTFOLIO360
+    - name: VW_MEDDRA_SNOMEDCT_MAPPING
+      config:
+        schema: DP_RDPORTFOLIO360
+    - name: VW_PROJECT_INDICATION_FLAT
+      config:
+        schema: DP_RDPORTFOLIO360
+    - name: VW_PROJECT_INDICATION_TPP
+      config:
+        schema: DP_RDPORTFOLIO360
+    - name: VW_PROJECT_TCP
+      config:
+        schema: DP_RDPORTFOLIO360
+    - name: VW_PROJECT_TEAM_MEMBER
+      config:
+        schema: DP_RDPORTFOLIO360
+    - name: VW_PROJECT_TVP
+      config:
+        schema: DP_RDPORTFOLIO360

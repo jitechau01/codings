@@ -1,0 +1,49 @@
+[2026-03-10T11:35:51.905+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-03-10T11:35:52.036+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 0_dag_run_dbt_internediate_execution.dbt_tasks.dbt_run manual__2026-03-10T11:35:47.616882+00:00 [queued]>
+[2026-03-10T11:35:52.043+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 0_dag_run_dbt_internediate_execution.dbt_tasks.dbt_run manual__2026-03-10T11:35:47.616882+00:00 [queued]>
+[2026-03-10T11:35:52.043+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-03-10T11:35:52.086+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_tasks.dbt_run> on 2026-03-10 11:35:47.616882+00:00
+[2026-03-10T11:35:52.090+0000] {standard_task_runner.py:64} INFO - Started process 445832 to run task
+[2026-03-10T11:35:52.095+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', '0_dag_run_dbt_internediate_execution', 'dbt_tasks.dbt_run', 'manual__2026-03-10T11:35:47.616882+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/0_dag_run_dbt_internediate_execution.py', '--cfg-path', '/tmp/tmppph80ceg']
+[2026-03-10T11:35:52.097+0000] {standard_task_runner.py:91} INFO - Job 64: Subtask dbt_tasks.dbt_run
+[2026-03-10T11:35:52.160+0000] {task_command.py:426} INFO - Running <TaskInstance: 0_dag_run_dbt_internediate_execution.dbt_tasks.dbt_run manual__2026-03-10T11:35:47.616882+00:00 [running]> on host DESKTOP-OGBECNS.localdomain
+[2026-03-10T11:35:52.273+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='0_dag_run_dbt_internediate_execution' AIRFLOW_CTX_TASK_ID='dbt_tasks.dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2026-03-10T11:35:47.616882+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-10T11:35:47.616882+00:00'
+[2026-03-10T11:35:52.274+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-03-10T11:35:52.308+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-03-10T11:35:52.311+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dbt run --project-dir /home/cloud/codings/portfolio360 --profiles-dir ~/.dbt']
+[2026-03-10T11:35:52.321+0000] {subprocess.py:86} INFO - Output:
+[2026-03-10T11:35:55.251+0000] {subprocess.py:93} INFO - [0m11:35:55  Running with dbt=1.11.3
+[2026-03-10T11:35:57.223+0000] {subprocess.py:93} INFO - [0m11:35:57  Registered adapter: snowflake=1.11.1
+[2026-03-10T11:35:57.636+0000] {subprocess.py:93} INFO - [0m11:35:57  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2026-03-10T11:35:57.636+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2026-03-10T11:35:57.636+0000] {subprocess.py:93} INFO - - models.portfolio360.example
+[2026-03-10T11:35:57.828+0000] {subprocess.py:93} INFO - [0m11:35:57  Found 7 models, 22 sources, 523 macros
+[2026-03-10T11:35:57.833+0000] {subprocess.py:93} INFO - [0m11:35:57
+[2026-03-10T11:35:57.834+0000] {subprocess.py:93} INFO - [0m11:35:57  Concurrency: 1 threads (target='dev')
+[2026-03-10T11:35:57.835+0000] {subprocess.py:93} INFO - [0m11:35:57
+[2026-03-10T11:36:01.332+0000] {subprocess.py:93} INFO - [0m11:36:01  1 of 7 START sql view model DP_RDPORTFOLIO360.VW_MEDDRA_ICD10_MAPPING .......... [RUN]
+[2026-03-10T11:36:02.280+0000] {subprocess.py:93} INFO - [0m11:36:02  1 of 7 OK created sql view model DP_RDPORTFOLIO360.VW_MEDDRA_ICD10_MAPPING ..... [[32mSUCCESS 1[0m in 0.94s]
+[2026-03-10T11:36:02.283+0000] {subprocess.py:93} INFO - [0m11:36:02  2 of 7 START sql view model DP_RDPORTFOLIO360.VW_MEDDRA_SNOMEDCT_MAPPING ....... [RUN]
+[2026-03-10T11:36:03.152+0000] {subprocess.py:93} INFO - [0m11:36:03  2 of 7 OK created sql view model DP_RDPORTFOLIO360.VW_MEDDRA_SNOMEDCT_MAPPING .. [[32mSUCCESS 1[0m in 0.86s]
+[2026-03-10T11:36:03.165+0000] {subprocess.py:93} INFO - [0m11:36:03  3 of 7 START sql view model DP_RDPORTFOLIO360.VW_PROJECT_INDICATION_FLAT ....... [RUN]
+[2026-03-10T11:36:06.894+0000] {subprocess.py:93} INFO - [0m11:36:06  3 of 7 OK created sql view model DP_RDPORTFOLIO360.VW_PROJECT_INDICATION_FLAT .. [[32mSUCCESS 1[0m in 3.72s]
+[2026-03-10T11:36:06.898+0000] {subprocess.py:93} INFO - [0m11:36:06  4 of 7 START sql view model DP_RDPORTFOLIO360.VW_PROJECT_INDICATION_TPP ........ [RUN]
+[2026-03-10T11:36:07.750+0000] {subprocess.py:93} INFO - [0m11:36:07  4 of 7 OK created sql view model DP_RDPORTFOLIO360.VW_PROJECT_INDICATION_TPP ... [[32mSUCCESS 1[0m in 0.85s]
+[2026-03-10T11:36:07.754+0000] {subprocess.py:93} INFO - [0m11:36:07  5 of 7 START sql view model DP_RDPORTFOLIO360.VW_PROJECT_TCP ................... [RUN]
+[2026-03-10T11:36:08.568+0000] {subprocess.py:93} INFO - [0m11:36:08  5 of 7 OK created sql view model DP_RDPORTFOLIO360.VW_PROJECT_TCP .............. [[32mSUCCESS 1[0m in 0.81s]
+[2026-03-10T11:36:08.576+0000] {subprocess.py:93} INFO - [0m11:36:08  6 of 7 START sql view model DP_RDPORTFOLIO360.VW_PROJECT_TEAM_MEMBER ........... [RUN]
+[2026-03-10T11:36:09.395+0000] {subprocess.py:93} INFO - [0m11:36:09  6 of 7 OK created sql view model DP_RDPORTFOLIO360.VW_PROJECT_TEAM_MEMBER ...... [[32mSUCCESS 1[0m in 0.81s]
+[2026-03-10T11:36:09.400+0000] {subprocess.py:93} INFO - [0m11:36:09  7 of 7 START sql view model DP_RDPORTFOLIO360.VW_PROJECT_TVP ................... [RUN]
+[2026-03-10T11:36:10.106+0000] {subprocess.py:93} INFO - [0m11:36:10  7 of 7 OK created sql view model DP_RDPORTFOLIO360.VW_PROJECT_TVP .............. [[32mSUCCESS 1[0m in 0.70s]
+[2026-03-10T11:36:10.866+0000] {subprocess.py:93} INFO - [0m11:36:10
+[2026-03-10T11:36:10.867+0000] {subprocess.py:93} INFO - [0m11:36:10  Finished running 7 view models in 0 hours 0 minutes and 13.03 seconds (13.03s).
+[2026-03-10T11:36:10.933+0000] {subprocess.py:93} INFO - [0m11:36:10
+[2026-03-10T11:36:10.933+0000] {subprocess.py:93} INFO - [0m11:36:10  [32mCompleted successfully[0m
+[2026-03-10T11:36:10.934+0000] {subprocess.py:93} INFO - [0m11:36:10
+[2026-03-10T11:36:10.934+0000] {subprocess.py:93} INFO - [0m11:36:10  Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[2026-03-10T11:36:13.800+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-03-10T11:36:13.801+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-03-10T11:36:13.842+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=0_dag_run_dbt_internediate_execution, task_id=dbt_tasks.dbt_run, run_id=manual__2026-03-10T11:35:47.616882+00:00, execution_date=20260310T113547, start_date=20260310T113552, end_date=20260310T113613
+[2026-03-10T11:36:13.867+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-03-10T11:36:13.877+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-10T11:36:13.878+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

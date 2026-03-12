@@ -1,4 +1,0 @@
-models:
-  - name: smv_project_indication_analysis
-    config:
-      schema: SEMANTIC

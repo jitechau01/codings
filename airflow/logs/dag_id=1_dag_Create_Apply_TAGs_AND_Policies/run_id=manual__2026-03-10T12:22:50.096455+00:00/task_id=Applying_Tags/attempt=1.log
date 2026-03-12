@@ -1,0 +1,218 @@
+[2026-03-10T12:23:02.964+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-03-10T12:23:02.988+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 1_dag_Create_Apply_TAGs_AND_Policies.Applying_Tags manual__2026-03-10T12:22:50.096455+00:00 [queued]>
+[2026-03-10T12:23:02.998+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 1_dag_Create_Apply_TAGs_AND_Policies.Applying_Tags manual__2026-03-10T12:22:50.096455+00:00 [queued]>
+[2026-03-10T12:23:02.998+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-03-10T12:23:03.022+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Applying_Tags> on 2026-03-10 12:22:50.096455+00:00
+[2026-03-10T12:23:03.036+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', '1_dag_Create_Apply_TAGs_AND_Policies', 'Applying_Tags', 'manual__2026-03-10T12:22:50.096455+00:00', '--job-id', '69', '--raw', '--subdir', 'DAGS_FOLDER/1_dag_Create_Apply_TAGs_AND_Policies.py', '--cfg-path', '/tmp/tmp3vr98pqa']
+[2026-03-10T12:23:03.043+0000] {standard_task_runner.py:91} INFO - Job 69: Subtask Applying_Tags
+[2026-03-10T12:23:03.043+0000] {logging_mixin.py:188} WARNING - /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=469926) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-10T12:23:03.044+0000] {standard_task_runner.py:64} INFO - Started process 470010 to run task
+[2026-03-10T12:23:03.118+0000] {task_command.py:426} INFO - Running <TaskInstance: 1_dag_Create_Apply_TAGs_AND_Policies.Applying_Tags manual__2026-03-10T12:22:50.096455+00:00 [running]> on host DESKTOP-OGBECNS.localdomain
+[2026-03-10T12:23:03.290+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='1_dag_Create_Apply_TAGs_AND_Policies' AIRFLOW_CTX_TASK_ID='Applying_Tags' AIRFLOW_CTX_EXECUTION_DATE='2026-03-10T12:22:50.096455+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-10T12:22:50.096455+00:00'
+[2026-03-10T12:23:03.294+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-03-10T12:23:03.329+0000] {connection.py:611} INFO - Snowflake Connector for Python Version: 4.2.0, Python Version: 3.12.3, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[2026-03-10T12:23:03.331+0000] {connection.py:1695} INFO - Connecting to GLOBAL Snowflake domain
+[2026-03-10T12:23:03.736+0000] {credentials.py:1278} INFO - Found credentials in shared credentials file: ~/.aws/credentials
+[2026-03-10T12:23:06.192+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.indication_ptrs
+[2026-03-10T12:23:06.781+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:06.782+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.gov_approved_phase_1_pos
+[2026-03-10T12:23:07.239+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:07.240+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.gov_approved_phase_2a_pos
+[2026-03-10T12:23:07.756+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:07.756+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.gov_approved_phase_2b_pos
+[2026-03-10T12:23:08.211+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:08.212+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.gov_approved_phase_2_pos
+[2026-03-10T12:23:08.665+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:08.666+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.gov_approved_phase_3_pos
+[2026-03-10T12:23:09.180+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:09.181+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_base_profile_soc_for_subcategory
+[2026-03-10T12:23:09.650+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:09.651+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_upside_profile_soc_for_subcategory
+[2026-03-10T12:23:10.050+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:10.050+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_minimally_marketable_profile_soc_for_subcategory
+[2026-03-10T12:23:10.543+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:10.544+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_base_vs_comparator_product1_soc_for_subcategory
+[2026-03-10T12:23:10.995+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:10.996+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_upside_vs_comparator_product1_soc_for_subcategory
+[2026-03-10T12:23:11.407+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:11.408+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_minimally_marketable_vs_comparator_product1_soc_for_subcategory
+[2026-03-10T12:23:12.279+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:12.279+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_base_vs_comparator_product2_soc_for_subcategory
+[2026-03-10T12:23:12.656+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:12.656+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_upside_vs_comparator_product2_soc_for_subcategory
+[2026-03-10T12:23:13.259+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:13.260+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_minimally_marketable_vs_comparator_product2_soc_for_subcategory
+[2026-03-10T12:23:13.717+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:13.717+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_base_vs_comparator_product3_soc_for_subcategory
+[2026-03-10T12:23:14.096+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:14.096+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_upside_vs_comparator_product3_soc_for_subcategory
+[2026-03-10T12:23:14.487+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:14.488+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_minimally_marketable_vs_comparator_product3_soc_for_subcategory
+[2026-03-10T12:23:14.924+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:14.924+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TCP.tcp_characteristic_value
+[2026-03-10T12:23:15.330+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:15.330+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TCP.tcp_created_by
+[2026-03-10T12:23:15.758+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:15.759+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TCP.tcp_modified_by
+[2026-03-10T12:23:16.126+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:16.126+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TEAM_MEMBER.project_team_member_email
+[2026-03-10T12:23:16.522+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:16.522+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TVP.tvp_populations_of_interest
+[2026-03-10T12:23:16.909+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:16.909+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TVP.tvp_populations_of_interest
+[2026-03-10T12:23:17.288+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:17.288+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TVP.tvp_need
+[2026-03-10T12:23:17.769+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:17.769+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TVP.tvp_competitive_positioning_current_soc
+[2026-03-10T12:23:18.278+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:18.278+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TVP.tvp_competitive_positioning_future_soc_competitors
+[2026-03-10T12:23:18.651+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:18.652+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TVP.tvp_value_to_prescribers
+[2026-03-10T12:23:19.107+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:19.108+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TVP.tvp_value_to_patients
+[2026-03-10T12:23:19.499+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:19.500+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TVP.tvp_value_to_payers
+[2026-03-10T12:23:19.955+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:19.956+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.project_name
+[2026-03-10T12:23:20.326+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:20.327+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.project_description
+[2026-03-10T12:23:20.707+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:20.708+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.project_phase
+[2026-03-10T12:23:21.174+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:21.174+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.project_priority
+[2026-03-10T12:23:21.565+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:21.566+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.project_innovation_status
+[2026-03-10T12:23:21.947+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:21.948+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.project_research_development_link
+[2026-03-10T12:23:22.327+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:22.327+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.asset_brand_name
+[2026-03-10T12:23:22.740+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:22.740+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.asset_mechanism_of_action
+[2026-03-10T12:23:23.128+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:23.128+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.asset_pharmacological_effect
+[2026-03-10T12:23:23.498+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:23.499+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.indication_phase
+[2026-03-10T12:23:23.900+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:23.900+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_soc_category
+[2026-03-10T12:23:24.272+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:24.272+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_soc_subcategory
+[2026-03-10T12:23:24.680+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:24.681+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_comparator_product1_name
+[2026-03-10T12:23:25.112+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:25.113+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_comparator_product1_soc_for_subcategory
+[2026-03-10T12:23:25.550+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:25.551+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_comparator_product2_name
+[2026-03-10T12:23:25.939+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:25.939+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_comparator_product2_soc_for_subcategory
+[2026-03-10T12:23:26.399+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:26.399+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_comparator_product3_name
+[2026-03-10T12:23:26.772+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:26.772+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_comparator_product3_soc_for_subcategory
+[2026-03-10T12:23:27.172+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:27.173+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TCP.project_name
+[2026-03-10T12:23:27.548+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:27.548+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TCP.tcp_characteristic
+[2026-03-10T12:23:27.951+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:27.952+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TEAM_MEMBER.project_team_member_teams
+[2026-03-10T12:23:28.321+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:28.321+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TEAM_MEMBER.project_team_member_project_role_orig
+[2026-03-10T12:23:28.692+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:28.692+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TEAM_MEMBER.project_team_member_desc
+[2026-03-10T12:23:29.084+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:29.084+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TEAM_MEMBER.project_team_member_sub_teams
+[2026-03-10T12:23:29.467+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:29.468+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TEAM_MEMBER.project_team_member_department_code
+[2026-03-10T12:23:29.870+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:29.870+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TEAM_MEMBER.project_team_member_function
+[2026-03-10T12:23:30.236+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:30.237+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TEAM_MEMBER.project_team_member_scope_desc
+[2026-03-10T12:23:30.621+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:30.621+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TEAM_MEMBER.project_team_member_project_role
+[2026-03-10T12:23:30.992+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:30.992+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TVP.tvp_source_record_ids
+[2026-03-10T12:23:31.389+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:31.390+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.project_code
+[2026-03-10T12:23:31.771+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:31.772+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.project_category
+[2026-03-10T12:23:32.185+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:32.186+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.project_organization
+[2026-03-10T12:23:32.555+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:32.556+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.project_status
+[2026-03-10T12:23:33.419+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:33.420+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.project_sanofi_therapeutic_area
+[2026-03-10T12:23:33.863+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:33.864+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.asset_inn
+[2026-03-10T12:23:34.275+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:34.275+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.asset_moa_short_name
+[2026-03-10T12:23:34.653+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:34.654+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.asset_active_substance_type
+[2026-03-10T12:23:35.040+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:35.041+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.asset_active_substance_subtype
+[2026-03-10T12:23:35.427+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:35.428+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.asset_origin_of_active_substance
+[2026-03-10T12:23:35.816+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:35.816+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.indication_unique_code
+[2026-03-10T12:23:36.195+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:36.195+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.indication_lead_flag
+[2026-03-10T12:23:36.616+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:36.617+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.indication_longname
+[2026-03-10T12:23:36.989+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:36.989+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.indication_shortname
+[2026-03-10T12:23:37.383+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:37.384+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.indication_status
+[2026-03-10T12:23:37.772+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:37.772+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.indication_sanofi_therapeutic_area
+[2026-03-10T12:23:38.197+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:38.197+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.indication_sanofi_sub_therapeutic_area_franchise
+[2026-03-10T12:23:38.582+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:38.583+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_sys_id
+[2026-03-10T12:23:38.964+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:38.965+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.project_code
+[2026-03-10T12:23:39.353+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:39.353+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.indication_unique_code
+[2026-03-10T12:23:39.732+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:39.732+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_TPP.tpp_status
+[2026-03-10T12:23:40.127+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:40.128+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TCP.tcp_id
+[2026-03-10T12:23:40.526+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:40.527+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TCP.project_code
+[2026-03-10T12:23:40.928+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:40.928+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TCP.tcp_status
+[2026-03-10T12:23:41.307+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:41.307+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TEAM_MEMBER.project_code
+[2026-03-10T12:23:41.717+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:41.717+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TEAM_MEMBER.indication_unique_code
+[2026-03-10T12:23:42.117+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:42.118+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TVP.project_code
+[2026-03-10T12:23:42.548+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:42.549+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TVP.indication_unique_code
+[2026-03-10T12:23:42.973+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:42.974+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_TVP.tvp_status
+[2026-03-10T12:23:43.367+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:43.368+0000] {logging_mixin.py:188} INFO - Applying tag on VW_MEDDRA_ICD10_MAPPING.sanofi_meddra_indication_code
+[2026-03-10T12:23:43.755+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:43.755+0000] {logging_mixin.py:188} INFO - Applying tag on VW_MEDDRA_ICD10_MAPPING.icd10_code_2019_intl_core_ver
+[2026-03-10T12:23:44.163+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:44.163+0000] {logging_mixin.py:188} INFO - Applying tag on VW_MEDDRA_ICD10_MAPPING.meddra_pt_code
+[2026-03-10T12:23:44.545+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:44.545+0000] {logging_mixin.py:188} INFO - Applying tag on VW_MEDDRA_ICD10_MAPPING.meddra_llt_code
+[2026-03-10T12:23:45.381+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:45.383+0000] {logging_mixin.py:188} INFO - Applying tag on VW_MEDDRA_SNOMEDCT_MAPPING.clinical_ind
+[2026-03-10T12:23:45.760+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:45.761+0000] {logging_mixin.py:188} INFO - Applying tag on VW_MEDDRA_SNOMEDCT_MAPPING.meddra_llt_code
+[2026-03-10T12:23:46.148+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:46.149+0000] {logging_mixin.py:188} INFO - Applying tag on VW_MEDDRA_SNOMEDCT_MAPPING.snomed_ct_code
+[2026-03-10T12:23:46.577+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:46.578+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.indication_code_meddra
+[2026-03-10T12:23:46.968+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:46.969+0000] {logging_mixin.py:188} INFO - Applying tag on VW_PROJECT_INDICATION_FLAT.indication_name_meddra
+[2026-03-10T12:23:47.368+0000] {logging_mixin.py:188} INFO -      tag applied successfully
+[2026-03-10T12:23:47.368+0000] {logging_mixin.py:188} INFO - 
+
+Tagging Process Completed Successfully.
+[2026-03-10T12:23:47.372+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-03-10T12:23:47.373+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-03-10T12:23:47.379+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=1_dag_Create_Apply_TAGs_AND_Policies, task_id=Applying_Tags, run_id=manual__2026-03-10T12:22:50.096455+00:00, execution_date=20260310T122250, start_date=20260310T122302, end_date=20260310T122347
+[2026-03-10T12:23:47.413+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-03-10T12:23:47.421+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-10T12:23:47.422+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

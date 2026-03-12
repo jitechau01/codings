@@ -164,8 +164,8 @@ def Apply_Policies_To_Tag():
     print("""       FLOAT_POLICY applied to tag""")
     
 if __name__ == "__main__":
-    # create_tags()
-    # Apply_tags()
-    # Create_Policies()
+    create_tags()
+    Apply_tags()
+    Create_Policies()
     Apply_Policies_To_Tag()
     print("\n---------->Process completed.")

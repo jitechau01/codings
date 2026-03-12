@@ -30,3 +30,37 @@ Runtime Error
 [0m11:19:19.466596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78d622740650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78d623673e00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78d6230fc9b0>]}
 [0m11:19:19.467306 [debug] [MainThread]: Flushing usage events
 [0m11:19:20.429898 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m08:48:15.170341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70302605aed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703026a5e840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70302682d640>]}
+
+
+============================== 08:48:15.176726 | ec425ed1-9642-44b1-a3af-71ac92bc9be0 ==============================
+[0m08:48:15.176726 [info ] [MainThread]: Running with dbt=1.11.3
+[0m08:48:15.177538 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'profiles_dir': '/home/cloud/.dbt', 'log_path': 'logs', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'introspect': 'True', 'quiet': 'False', 'write_json': 'True', 'use_colors': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'warn_error': 'None', 'use_experimental_parser': 'False', 'no_print': 'None', 'log_cache_events': 'False', 'invocation_command': 'dbt init', 'empty': 'None', 'indirect_selection': 'eager', 'static_parser': 'True', 'partial_parse': 'True', 'printer_width': '80', 'target_path': 'None'}
+[0m08:48:15.197263 [info ] [MainThread]: Creating dbt configuration folder at /home/cloud/.dbt
+[0m08:48:28.786385 [debug] [MainThread]: Starter project path: /home/cloud/codings/mvenv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m08:48:28.795567 [info ] [MainThread]: 
+Your new dbt project "portfolio360" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m08:48:28.796209 [info ] [MainThread]: Setting up your profile.
+[0m08:48:32.668941 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m08:48:32.669732 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m08:48:32.670100 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m08:49:42.991701 [info ] [MainThread]: Profile portfolio360 written to /home/cloud/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m08:49:42.993168 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 87.90288, "process_in_blocks": "27368", "process_kernel_time": 1.386599, "process_mem_max_rss": "194532", "process_out_blocks": "80", "process_user_time": 3.120871}
+[0m08:49:42.994002 [debug] [MainThread]: Command `dbt init` succeeded at 08:49:42.993892 after 87.90 seconds
+[0m08:49:42.994390 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703027bb02f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703009003bc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7030086cf6b0>]}
+[0m08:49:42.994826 [debug] [MainThread]: Flushing usage events
+[0m08:49:44.646242 [debug] [MainThread]: An error was encountered while trying to flush usage events

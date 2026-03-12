@@ -1,0 +1,23 @@
+[2026-03-10T12:11:17.954+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-03-10T12:11:17.976+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 1_dag_Create_Apply_TAGs_AND_Policies.Creating_Tags manual__2026-03-10T12:11:13.093742+00:00 [queued]>
+[2026-03-10T12:11:17.981+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 1_dag_Create_Apply_TAGs_AND_Policies.Creating_Tags manual__2026-03-10T12:11:13.093742+00:00 [queued]>
+[2026-03-10T12:11:17.981+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-03-10T12:11:18.002+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Creating_Tags> on 2026-03-10 12:11:13.093742+00:00
+[2026-03-10T12:11:18.012+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', '1_dag_Create_Apply_TAGs_AND_Policies', 'Creating_Tags', 'manual__2026-03-10T12:11:13.093742+00:00', '--job-id', '66', '--raw', '--subdir', 'DAGS_FOLDER/1_dag_Create_Apply_TAGs_AND_Policies.py', '--cfg-path', '/tmp/tmp_mu9p3_t']
+[2026-03-10T12:11:18.015+0000] {standard_task_runner.py:91} INFO - Job 66: Subtask Creating_Tags
+[2026-03-10T12:11:18.017+0000] {logging_mixin.py:188} WARNING - /home/cloud/codings/mvenv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=465169) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-10T12:11:18.017+0000] {standard_task_runner.py:64} INFO - Started process 465222 to run task
+[2026-03-10T12:11:18.095+0000] {task_command.py:426} INFO - Running <TaskInstance: 1_dag_Create_Apply_TAGs_AND_Policies.Creating_Tags manual__2026-03-10T12:11:13.093742+00:00 [running]> on host DESKTOP-OGBECNS.localdomain
+[2026-03-10T12:11:18.256+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='1_dag_Create_Apply_TAGs_AND_Policies' AIRFLOW_CTX_TASK_ID='Creating_Tags' AIRFLOW_CTX_EXECUTION_DATE='2026-03-10T12:11:13.093742+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-10T12:11:13.093742+00:00'
+[2026-03-10T12:11:18.258+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-03-10T12:11:18.292+0000] {connection.py:611} INFO - Snowflake Connector for Python Version: 4.2.0, Python Version: 3.12.3, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[2026-03-10T12:11:18.294+0000] {connection.py:1695} INFO - Connecting to GLOBAL Snowflake domain
+[2026-03-10T12:11:18.708+0000] {credentials.py:1278} INFO - Found credentials in shared credentials file: ~/.aws/credentials
+[2026-03-10T12:11:21.086+0000] {logging_mixin.py:188} INFO - ---------->creating tag SENSITIVITY_LEVEL 
+[2026-03-10T12:11:22.375+0000] {logging_mixin.py:188} INFO - Tag SENSITIVITY_LEVEL already exists, skipped creation
+[2026-03-10T12:11:22.376+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-03-10T12:11:22.376+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-03-10T12:11:22.379+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=1_dag_Create_Apply_TAGs_AND_Policies, task_id=Creating_Tags, run_id=manual__2026-03-10T12:11:13.093742+00:00, execution_date=20260310T121113, start_date=20260310T121117, end_date=20260310T121122
+[2026-03-10T12:11:22.433+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-03-10T12:11:22.443+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-10T12:11:22.444+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

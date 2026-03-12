@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator 
 from airflow.models import Variable
 
-dag_config=Variable.get("snowflake_conn", deserialize_json=True)
+dag_config=Variable.get("snowflake_conn_dev", deserialize_json=True)
 account=dag_config.get("account")
 user=dag_config.get("user") 
 password=Variable.get("__password") 
